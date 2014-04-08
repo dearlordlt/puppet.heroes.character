@@ -28,4 +28,3 @@ var ncg_tpl = {
 var map_tpl = {
     title : "Map"
 }
-
