@@ -1,7 +1,18 @@
+/*
+* Main templates
+*/
 var header_tpl = {
     title : 'Puppet Heroes'
 }
 
+var footer_tpl = {
+    footnote : "All rights unreserved 2014"
+}
+
+
+/*
+* Custom templates
+*/
 var home_tpl = {
     title : "home sweet home"
 }
@@ -18,6 +29,3 @@ var map_tpl = {
     title : "Map"
 }
 
-var footer_tpl = {
-    footnote : "All rights unreserved 2014"
-}

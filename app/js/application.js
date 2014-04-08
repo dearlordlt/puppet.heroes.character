@@ -19,25 +19,10 @@ $( window ).on('hashchange', function(e) {
     var path = hash.slice(1, hash.length);
     if(path != "" && path != "undefined") {
         var compiledTemplate = Handlebars.getTemplate(path);
-        if(path == "home_tpl") {
-            var html = compiledTemplate( home_tpl );
+        if(getPath(path) != false) {
+            var html = compiledTemplate( window[getPath(path)] );
             $("#body-template").html( html );
-            console.log("Loading: " + path);
-        }
-        if(path == "cg_tpl") {
-            var html = compiledTemplate( cg_tpl );
-            $("#body-template").html( html );
-            console.log("Loading: " + path);
-        }
-        if(path == "ncg_tpl") {
-            var html = compiledTemplate( ncg_tpl );
-            $("#body-template").html( html );
-            console.log("Loading: " + path);
-        }
-        if(path == "map_tpl") {
-            var html = compiledTemplate( map_tpl );
-            $("#body-template").html( html );
-            console.log("Loading: " + path);
+            console.log("Loading 'tpl': " + path);
         }
     }
 });
