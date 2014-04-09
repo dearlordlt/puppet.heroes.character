@@ -14,9 +14,7 @@ Handlebars.getTemplate = function(name) {
 	return Handlebars.templates[name];
 };
 
-$( window ).on('hashchange', function(e) {
-    var hash = window.location.hash;
-    var path = hash.slice(1, hash.length);
+function loadPath(path) {
     if(path != "" && path != "undefined") {
         var compiledTemplate = Handlebars.getTemplate(path);
         if(getPath(path) != false) {
@@ -25,7 +23,7 @@ $( window ).on('hashchange', function(e) {
             console.log("Loading 'tpl': " + path);
         }
     }
-});
+}
 
 $( document ).ready(function() {
     var compiledTemplate = Handlebars.getTemplate("header_tpl");
@@ -40,3 +38,8 @@ $( document ).ready(function() {
     var html = compiledTemplate( footer_tpl );
     $("#footer-template").html( html );
 });
+
+/*
+* Events
+*/
+
