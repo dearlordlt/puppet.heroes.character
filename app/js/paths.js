@@ -13,5 +13,3 @@ function getPath(path) {
     }
     return false;
 }
-
-//getPath("map_tpl");
