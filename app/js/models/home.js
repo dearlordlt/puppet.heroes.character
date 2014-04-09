@@ -4,6 +4,6 @@ var module_home_tpl = function (title, logo) {
 }
 
 var home_tpl = new module_home_tpl (
-    "Puppet Hero",
+    "Puppet Heroes",
     "./app/img/puppet-hero-black.png"
 )
