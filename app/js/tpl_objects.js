@@ -14,7 +14,7 @@ var footer_tpl = {
 * Custom templates
 */
 var home_tpl = {
-    title : "home sweet home"
+    title : "Puppet Hero"
 }
 
 var cg_tpl = {
