@@ -6,7 +6,7 @@ var header_tpl = {
 }
 
 var footer_tpl = {
-    footnote : "All rights unreserved 2014"
+    title : "All rights unreserved 2014"
 }
 
 

@@ -1,22 +1,26 @@
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name">
-      <h1><a id="menu_home">{{title}}</a></h1>
-    </li>
-    <li class="toggle-topbar menu-icon"><a href="javascript:void();">Menu</a></li>
-  </ul>
+<nav class="navbar navbar-inverse" role="navigation">
 
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right"></ul>
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" id="menu_home" >{{title}}</a>
+        </div>
 
-    <!-- Left Nav Section -->
-    <ul class="left">
-        <li><a id="menu_cg">Combat gear</a></li>
-        <li><a id="menu_ncg">Non combat gear</a></li>
-        <li><a id="menu_map">Map</a></li>
-    </ul>
-  </section>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a id="menu_cg">Combat gear</a></li>
+                <li><a id="menu_ncg">Non combat gear</a></li>
+                <li><a id="menu_map">Map</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
 </nav>
 
 <script type="text/javascript" src="./app/js/header.js"></script>
