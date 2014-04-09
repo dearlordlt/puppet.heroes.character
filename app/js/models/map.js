@@ -1,10 +1,3 @@
-/* Old way
-var map_tpl = {
-    title : "Map"
-}
-*/
-
-/* New Way */
 var model_map_tpl = function(title, size) {
     this.title = title;
     this.size = size;
