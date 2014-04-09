@@ -1,3 +1,7 @@
+/**
+ * Loads and returns compiles handlebars template
+ * @param {string} name
+ */
 Handlebars.getTemplate = function(name) {
 	if (Handlebars.templates === undefined || Handlebars.templates[name] === undefined) {
 		$.ajax({
@@ -14,6 +18,10 @@ Handlebars.getTemplate = function(name) {
 	return Handlebars.templates[name];
 };
 
+/**
+ * Loads new template in to #body-template
+ * @param {string} path
+ */
 function loadPath(path) {
     if(path != "" && path != "undefined") {
         var compiledTemplate = Handlebars.getTemplate(path);
