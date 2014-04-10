@@ -11,14 +11,6 @@ mapCanvas.appendChild(canvas);
 
 paper.setup(canvas);
 
-function isNumber(n) {
-   return n == parseFloat(n);
-}
-
-function isEven(n) {
-   return isNumber(n) && (n % 2 == 0);
-}
-
 for (var i = 0; i < map_tpl.sizeX; i++) {
     for(var j = 0; j < map_tpl.sizeY; j++) {
         var xpos, ypos;
