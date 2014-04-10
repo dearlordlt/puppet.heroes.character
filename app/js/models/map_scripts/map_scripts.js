@@ -25,7 +25,7 @@ for (var i = 0; i < map_tpl.sizeX; i++) {
 
         var hexagon = new paper.Path.RegularPolygon(new paper.Point(xpos, ypos), 6, 25);
         hexagon.style = {
-            fillColor: '#ff0000',
+            fillColor: '#5F9EA0',
             strokeColor: 'black',
             strokeWidth: 1
         }
@@ -35,11 +35,13 @@ for (var i = 0; i < map_tpl.sizeX; i++) {
         }
 
         hexagon.onMouseEnter = function (event) {
-            this.fillColor = '#042277';
+            this.fillColor = '#ADD8E6';
+            $("#tileX").text(this.data.gridX);
+            $("#tileY").text(this.data.gridY);
         }
 
         hexagon.onMouseLeave = function (event) {
-            this.fillColor = '#ff0000';
+            this.fillColor = '#5F9EA0';
         }
 
         var text = new paper.PointText(new paper.Point(xpos, ypos+3));
