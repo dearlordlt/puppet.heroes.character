@@ -1,9 +1,31 @@
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                {{title}}
+<div class="col-xs-12 col-md-8 col-lg-8">
+    <legend>Skills</legend>
+    <ul>
+        {{#each skills}}
+            <li id="skillNumber{{@index}}">{{this.skillName}}: {{this.skillValue}}</li>
+            <div id="editSkill{{@index}}">
+                <input type="hidden" value="{{this.skillName}}" id="hiddenSkillName{{@index}}">
+                <input type="text" id="editSkillName{{@index}}" value="{{this.skillName}}">
+                <input type="number" id="editSkillValue{{@index}}" value="{{this.skillValue}}">
+                <button type="button" id="saveSkill{{@index}}">Save</button>
+                <button type="butoon" id="cancelSkill{{@index}}">Cancel</button>
             </div>
-        </div>
+            {{#if this.skillSpecialization}}
+                <ul>
+                    {{#each skillSpecialization}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        {{/each}}
+    </ul>
+    <div>
+        
+            <input id="newSkillName" type="text">
+            <input id="newSkillValue" type="number">
+            <button id="newSkillButton">Add</button>
+       
+
     </div>
 </div>
+<script src="./app/js/models/ncg_scripts/ncg.js"></script>
