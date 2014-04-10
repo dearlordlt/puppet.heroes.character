@@ -11,5 +11,8 @@ mapCanvas.appendChild(canvas);
 
 paper.setup(canvas);
 
-var hexagon = new paper.Path.RegularPolygon(new paper.Point(200, 200), 6, 100);
+var hexagon = new paper.Path.RegularPolygon(new paper.Point(50, 50), 6, 25);
 hexagon.strokeColor = '#ff0000';
+
+//This must be last line of the code
+paper.view.draw();
