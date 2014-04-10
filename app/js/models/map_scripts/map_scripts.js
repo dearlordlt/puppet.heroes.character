@@ -1,6 +1,6 @@
 var canvas = document.createElement('canvas');
 canvas.id               = "MapLayer";
-canvas.width            = 600;
+canvas.width            = 700;
 canvas.height           = 600;
 //canvas.style.zIndex   = 8;
 //canvas.style.position = "absolute";
@@ -10,6 +10,8 @@ mapCanvas = document.getElementById("mapCanvas");
 mapCanvas.appendChild(canvas);
 
 paper.setup(canvas);
+
+canvas.width = $("#mapCanvas").width();
 
 for (var i = 0; i < map_tpl.sizeX; i++) {
     var margin = 30;
