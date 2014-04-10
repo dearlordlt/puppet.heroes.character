@@ -25,7 +25,7 @@ function refreshSkills () {
                 if (ncg_tpl.skills[i].skillName == skillToEdit) {
                     ncg_tpl.skills[i].skillName = editSkillName;
                     ncg_tpl.skills[i].skillValue = editSkillValue;
-                    brake;
+                    break;
                 }
             }
             
