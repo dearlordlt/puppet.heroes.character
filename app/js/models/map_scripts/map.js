@@ -1,5 +1,5 @@
 var canvas = document.createElement('canvas');
-canvas.id     = "CursorLayer";
+canvas.id     = "MapLayer";
 canvas.width  = 600;
 canvas.height = 600;
 //canvas.style.zIndex   = 8;
