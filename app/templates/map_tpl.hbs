@@ -1,9 +1,17 @@
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>{{title}}</strong>
+                <span class="label label-default">Map tile :</span>
+                <span id="tileX" class="label label-success">0</span>
+                <span id="tileY" class="label label-danger">0</span>
+            </div>
             <div class="panel-body">
-                {{title}}
+                <div id="mapCanvas"></div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="./app/js/models/map_scripts/map_scripts.js"></script>
