@@ -1,4 +1,5 @@
 var skillToEdit = "";
+var skillToDelete = "";
 
 function refreshSkills () {
     
@@ -8,6 +9,7 @@ function refreshSkills () {
         $("#skillNumber"+x).data("index",x);
         $("#saveSkill"+x).data("index",x);
         $("#cancelSkill"+x).data("index",x);
+        $("#deleteSkill"+x).data("index",x);
 
         $("#skillNumber"+x).click(function() {
             var index = $(this).data("index");
@@ -39,6 +41,23 @@ function refreshSkills () {
             var index = $(this).data("index");
             $("#skillNumber"+index).toggle();
             $("#editSkill"+index).toggle();
+        });
+
+
+        $("#deleteSkill"+x).click(function() {
+            var index = $(this).data("index");
+
+            for (var i=0; i < ncg_tpl.skills.length ; i++) {
+                if (ncg_tpl.skills[i].skillName == skillToDelete) {
+
+                    skillToDelete.splice(i,1);
+                    break;
+                }
+            }
+
+            $("#skillNumber"+index).toggle();
+            $("#editSkill"+index).toggle();
+            loadPath("ncg_tpl");
         });
 
     }

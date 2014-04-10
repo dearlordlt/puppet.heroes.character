@@ -7,8 +7,9 @@
                 <input type="hidden" value="{{this.skillName}}" id="hiddenSkillName{{@index}}">
                 <input type="text" id="editSkillName{{@index}}" value="{{this.skillName}}">
                 <input type="number" id="editSkillValue{{@index}}" value="{{this.skillValue}}">
-                <button type="button" id="saveSkill{{@index}}">Save</button>
-                <button type="butoon" id="cancelSkill{{@index}}">Cancel</button>
+                <button id="saveSkill{{@index}}">Save</button>
+                <button id="cancelSkill{{@index}}">Cancel</button>
+                <button id="deleteSkill{{@index}}">Delete</button>
             </div>
             {{#if this.skillSpecialization}}
                 <ul>
