@@ -23,9 +23,8 @@ for (var i = 0; i < map_tpl.sizeX; i++) {
         }
 
         var hexagon = new paper.Path.RegularPolygon(new paper.Point(xpos, ypos), 6, 25);
-        //hexagon.strokeColor = '#ff0000';
         hexagon.style = {
-            fillColor: new paper.Color(1, 0, 0),
+            fillColor: '#ff0000',
             strokeColor: 'black',
             strokeWidth: 1
         }
