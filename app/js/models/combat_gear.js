@@ -6,11 +6,18 @@ var model_cg_tpl = function(title, Attributes) {
 var cg_tpl = new model_cg_tpl(
     "Combat Gear",
     [
-        [{attributeName : "Strength"},  {attributeValue : 10}],
-        [{attributeName : "Stamina"},   {attributeValue : 12}],
-        [{attributeName : "Dexterity"}, {attributeValue : 13}],
-        [{attributeName : "Reflex"},    {attributeValue : 14}],
-        [{attributeName : "Perseption"},{attributeValue : 15}],
-        [{attributeName : "Will"},      {attributeValue : 10}]
+        {attributeName : "Strength",   attributeValue : 10},
+        {attributeName : "Stamina",    attributeValue : 12},
+        {attributeName : "Dexterity",  attributeValue : 13},
+        {attributeName : "Reflex",     attributeValue : 14},
+        {attributeName : "Perseption", attributeValue : 15},
+        {attributeName : "Will",       attributeValue : 10}
     ]
 );
+
+
+
+    [
+        {skillName : "Riding",          skillValue : 1},
+        {skillName : "Stoneworker",     skillValue : 4}
+    ]
