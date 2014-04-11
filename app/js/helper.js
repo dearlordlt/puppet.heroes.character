@@ -44,8 +44,7 @@ function refreshPoints () {
 * Hanlebars helper for advanced if :D
 */
 Handlebars.registerHelper("ifCond",function(v1,operator,v2,options) {
-    switch (operator)
-    {
+    switch (operator) {
         case "==":
             return (v1==v2)?options.fn(this):options.inverse(this);
 
