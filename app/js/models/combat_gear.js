@@ -1,7 +1,9 @@
-var model_cg_tpl = function(title, points, Attributes) {
+var model_cg_tpl = function(title, points, Attributes, minAttribute, maxAttribute) {
     this.title = title;
     this.Attributes = Attributes;
     this.points = points;
+    this.minAttribute = minAttribute;
+    this.maxAttribute = maxAttribute;
 }
 
 var cg_tpl = new model_cg_tpl(
@@ -14,5 +16,7 @@ var cg_tpl = new model_cg_tpl(
         {attributeName : "Reflex",     attributeValue : 14},
         {attributeName : "Perseption", attributeValue : 15},
         {attributeName : "Will",       attributeValue : 10}
-    ]
+    ],
+    7,
+    20
 );
