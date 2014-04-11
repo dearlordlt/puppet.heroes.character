@@ -2,8 +2,61 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-body">
-                {{title}}
+               <a href="#" id="test"> {{title}}</a>
             </div>
         </div>
     </div>
 </div>
+
+<div class="row">
+      <div class="col-xs-4">
+    <div class="col-md-12">
+<fieldset>
+
+    <legend>Attributes</legend>
+    TOTAL POINTS SPENT: {{points}}
+          {{#each Attributes}}
+
+       <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne{{@index}}">
+            {{this.attributeName}} : {{this.attributeValue}}
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne{{@index}}" class="panel-collapse collapse">
+      <div class="panel-body">
+
+          {{#ifCond this.attributeValue '<=' ../minAttribute}}
+          <button id="attrMinusButton{{@index}}" type="button" class="btn btn-default btn-sm" disabled>
+              <span class="glyphicon glyphicon-minus"></span>
+          </button>
+              {{else}}
+              <button id="attrMinusButton{{@index}}" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-minus"></span>
+              </button>
+          {{/ifCond}}
+
+       {{this.attributeValue}}
+
+           {{#ifCond this.attributeValue '>=' ../maxAttribute}}
+          <button id="attrPlusButton{{@index}}"type="button" class="btn btn-default btn-sm" disabled>
+              <span class="glyphicon glyphicon-plus"></span>
+          </button>
+          {{else}}
+          <button id="attrPlusButton{{@index}}"type="button" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-plus"></span>
+          </button>
+          {{/ifCond}}
+      </div>
+    </div>
+  </div>
+
+           {{/each}}
+</fieldset>
+        </div>
+</div>
+</div>
+<script src="./app/js/models/cg_scripts/cg_script.js"/>
