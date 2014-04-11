@@ -1,16 +1,53 @@
 <div>
-    <legend>Skills</legend>
+    <h3>{{title}}</h3>
+</div>
+<div>
+    <ul>
+        {{#each character}}
+            <li>
+                {{@key}}: {{this}}
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+<div>
+    <h3>Talents</h3>
+    <ul>
+        {{#each talents}}
+            <li>
+                {{@key}}: {{this}}
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+<div>
+    <h3>Skills</h3>
     <ul>
         {{#each skills}}
             <li id="skillNumber{{@index}}">{{this.skillName}}: {{this.skillValue}}</li>
-            <div id="editSkill{{@index}}">
-                <input type="hidden" value="{{this.skillName}}" id="hiddenSkillName{{@index}}">
-                <input type="text" id="editSkillName{{@index}}" value="{{this.skillName}}">
-                <input type="number" id="editSkillValue{{@index}}" value="{{this.skillValue}}">
-                <button id="saveSkill{{@index}}">Save</button>
-                <button id="cancelSkill{{@index}}">Cancel</button>
-                <button id="deleteSkill{{@index}}">Delete</button>
-            </div>
+               <div class="form-inline skillEditForm" id="editSkill{{@index}}">
+                    <div class="form-group">
+                        <input type="hidden" value="{{this.skillName}}" class="form-control" id="hiddenSkillName{{@index}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="editSkillName{{@index}}" class="form-control" value="{{this.skillName}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="editSkillValue{{@index}}" class="form-control" value="{{this.skillValue}}">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="saveSkillButton{{@index}}">Save</button>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="cancelSkillButton{{@index}}">Cancel</button>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="deleteSkillButton{{@index}}">Delete</button>
+                    </div>
+                </div>
+
             {{#if this.skillSpecialization}}
                 <ul>
                     {{#each skillSpecialization}}
@@ -20,13 +57,68 @@
             {{/if}}
         {{/each}}
     </ul>
-    <div>
-        
-            <input id="newSkillName" type="text">
-            <input id="newSkillValue" type="number">
-            <button id="newSkillButton">Add</button>
-       
-
+    <div class="form-inline" id="newSkill">
+        <div class="form-group">
+            <input type="hidden" value="{{this.skillName}}" class="form-control" id="hiddenNewSkillName{{@index}}">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="newSkillName">New Skill</label>
+            <input id="newSkillName" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="newSkillName">Skill Level</label>
+            <input id="newSkillValue" class="form-control" type="number">
+        </div>
+        <div class="form-group">
+            <button id="newSkillButton" class="btn btn-primary">Add</button>
+        </div>
     </div>
 </div>
+
+<div>
+    <h3>Possessions</h3>
+    <ul>
+        {{#each possessions}}
+            <li>
+                {{this}}
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+<div>
+    <h3>Goals</h3>
+    <ul>
+        {{#each goals}}
+            <li>
+                {{this}}
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+<div>
+    <h3>Knowledges</h3>
+    <ul>
+        {{#each knowledges}}
+            <li>
+                {{this}}
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+<div>
+    <h3>Pockets</h3>
+    <ul>
+        {{#each pockets}}
+            <li>
+                {{this}}
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+
+
 <script src="./app/js/models/ncg_scripts/ncg.js"></script>
