@@ -45,9 +45,10 @@ $( document ).ready(function() {
     var compiledTemplate = Handlebars.getTemplate("footer_tpl");
     var html = compiledTemplate( footer_tpl );
     $("#footer-template").html( html );
+
+    refreshPoints ();
 });
 
 /*
 * Events
 */
-

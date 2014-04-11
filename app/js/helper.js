@@ -25,3 +25,17 @@ function isEven(n) {
 function isOdd(n) {
    return isNumber(n) && (Math.abs(n) % 2 == 1);
 }
+
+/**
+ * Refreshes points totall in header
+ */
+function refreshPoints () {
+    if(isNumber(cg_tpl.points) && isNumber(ncg_tpl.points)) {
+        var _pointsTotall = parseInt(cg_tpl.points) + parseInt(ncg_tpl.points);
+        $("#pointsTotallLabel").html(_pointsTotall);
+        console.log("Points spent = " + _pointsTotall);
+    } else {
+        $("#pointsTotallLabel").html("None");
+        console.log("Points spent = None");
+    }
+}
