@@ -13,11 +13,9 @@ function refreshSkills ()
 
         $("#skillNumber"+x).click(function()
         {
-
+            var index = $(this).data("index");
             if (recentSkillForm != "") $(recentSkillForm).hide();
             if (recentSkillNumber != "") $(recentSkillNumber).show();
-            var index = $(this).data("index");
-
             skillToEdit = $("#hiddenSkillName"+index).val();
             $("#editSkill"+index).toggle();
             $("#skillNumber"+index).hide();
@@ -30,12 +28,10 @@ function refreshSkills ()
             var index = $(this).data("index");
             $("#skillNumber"+index).show();
             $("#editSkill"+index).toggle();
-
         });
 
         $("#saveSkillButton"+x).click(function()
         {
-
             var index = $(this).data("index");
             var editSkillName = $("#editSkillName"+index).val();
             var editSkillValue = $("#editSkillValue"+index).val();
@@ -56,9 +52,7 @@ function refreshSkills ()
                 {
                     ncg_tpl.skills[i].skillName = editSkillName;
                     ncg_tpl.skills[i].skillValue = editSkillValue;
-
                     break;
-
                 }
                 else if (ncg_tpl.skills[i].skillName == skillToEdit)
                 {
@@ -68,7 +62,6 @@ function refreshSkills ()
 
             $("#skillNumber"+index).show();
             $("#editSkill"+index).toggle();
-
             loadPath("ncg_tpl");
         });
 
@@ -98,8 +91,11 @@ $("#newSkillButton").click(function()
     var _found = false;
     for (var i = 0; i < ncg_tpl.skills.length; i++)
     {
-
-        if ($("#newSkillName").val().toLowerCase() == ncg_tpl.skills[i].skillName.toLowerCase()) _found = true;
+        if ($("#newSkillName").val().toLowerCase() == ncg_tpl.skills[i].skillName.toLowerCase())
+        {
+            _found = true;
+            break;
+        }
     }
 
     if (!_found)
