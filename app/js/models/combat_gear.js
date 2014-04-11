@@ -1,10 +1,12 @@
-var model_cg_tpl = function(title, Attributes) {
+var model_cg_tpl = function(title, points, Attributes) {
     this.title = title;
     this.Attributes = Attributes;
+    this.points = points;
 }
 
 var cg_tpl = new model_cg_tpl(
     "Combat Gear",
+    0,
     [
         {attributeName : "Strength",   attributeValue : 10},
         {attributeName : "Stamina",    attributeValue : 12},
@@ -14,10 +16,3 @@ var cg_tpl = new model_cg_tpl(
         {attributeName : "Will",       attributeValue : 10}
     ]
 );
-
-
-
-    [
-        {skillName : "Riding",          skillValue : 1},
-        {skillName : "Stoneworker",     skillValue : 4}
-    ]
