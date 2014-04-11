@@ -1,5 +1,4 @@
 var skillToEdit = "";
-var skillToDelete = "";
 
 function refreshSkills () {
     
@@ -46,15 +45,12 @@ function refreshSkills () {
 
         $("#deleteSkill"+x).click(function() {
             var index = $(this).data("index");
-
             for (var i=0; i < ncg_tpl.skills.length ; i++) {
-                if (ncg_tpl.skills[i].skillName == skillToDelete) {
-
-                    skillToDelete.splice(i,1);
-                    break;
+                if (i == index) {
+                    ncg_tpl.skills.splice(i,1);
+                break;
                 }
             }
-
             $("#skillNumber"+index).toggle();
             $("#editSkill"+index).toggle();
             loadPath("ncg_tpl");
