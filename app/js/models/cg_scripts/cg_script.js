@@ -3,6 +3,7 @@ $("fieldset legend").click(function() {
                 $(this).siblings('.hidingParts').toggle();
         });
 
+
 $("button[id^=attrMinusButton]").click(function() {
     var arrayPlace = this.id.match(/\d+/);
     var _validatesmall = cg_tpl.Attributes[arrayPlace].attributeValue - 1;

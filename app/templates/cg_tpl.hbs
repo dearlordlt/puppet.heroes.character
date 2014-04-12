@@ -6,7 +6,7 @@
                <a href="#" id="test"> {{title}} </a>
                     </div>
                  <div class="col-sm-2">
-                    <button class="btn btn-primary" type="button">Create mode</button>
+                    <button class="btn btn-primary" id="hideCreationButton" type="button">Create mode</button>
                      </div>
             </div>
         </div>
@@ -30,6 +30,15 @@
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne{{@index}}">
             {{this.attributeName}} : {{this.attributeValue}}
+            <!-- Buttons for template framework-->
+            <button type="button" class="btn btn-default btn-xs creationButton">
+                <span class="glyphicon glyphicon-minus"></span>
+            </button>
+             <button type="button" class="btn btn-default btn-xs creationButton">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+            <!-- end of buttons for template framework-->
+
         </a>
       </h4>
     </div>
