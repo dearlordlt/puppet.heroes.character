@@ -2,73 +2,42 @@
   <h1>{{title}} <small>{{description}}</small></h1>
 </div>
 
-<div class="contaier-padded">
-    <div class="row">
-        <div class="col-xs-6 outlined">
+<div class="gridster">
+    <ul style="list-style-type:none">
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Panel title
-                    <button type="button" class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-fullscreen"></span></button>
-                </div>
-                <div class="panel-body">
-                    Panel content
-                </div>
+                <div class="panel-heading">[1:1]</div>
+                <div class="panel-body">Panel content</div>
             </div>
-        </div>
-        <div class="col-xs-6 outlined">
+        </li>
+        <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Panel title
-                    <button type="button" class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-fullscreen"></span></button>
-                </div>
-                <div class="panel-body">
-                    Panel content
-                </div>
+                <div class="panel-heading">[1:2]</div>
+                <div class="panel-body">Panel content</div>
             </div>
-        </div>
-        <div class="col-xs-12 outlined">
+        </li>
+
+        <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Panel title
-                    <button type="button" class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-fullscreen"></span></button>
-                </div>
-                <div class="panel-body">
-                    Panel content
-                </div>
+                <div class="panel-heading">[2:1]</div>
+                <div class="panel-body">Panel content</div>
             </div>
-        </div>
-        <div class="col-xs-6 outlined">
+        </li>
+
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                   Panel title
-                    <button type="button" class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-fullscreen"></span></button>
-                </div>
-                <div class="panel-body">
-                    Panel content
-                </div>
+                <div class="panel-heading">[3:1]</div>
+                <div class="panel-body">Panel content</div>
             </div>
-        </div>
-        <div class="col-xs-6 outlined">
+        </li>
+        <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Panel title
-                    <button type="button" class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-fullscreen"></span></button>
-                </div>
-                <div class="panel-body">
-                    Panel content
-                </div>
+                <div class="panel-heading">[3:2]</div>
+                <div class="panel-body">Panel content</div>
             </div>
-        </div>
-        <div class="col-xs-12 outlined">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Panel title
-                    <button type="button" class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-fullscreen"></span></button>
-                </div>
-                <div class="panel-body">
-                    Panel content
-                </div>
-            </div>
-        </div>
-    </div>
+        </li>
+    </ul>
 </div>
+
+
+<script src="./app/js/models/dnd_scripts/dnd_script.js"></script>
