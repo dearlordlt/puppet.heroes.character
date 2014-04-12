@@ -2,7 +2,12 @@
     <div class="col-sm-12">
         <div class="panel panel-default">
             <div class="panel-body">
-               <a href="#" id="test"> {{title}}</a>
+                <div class="col-sm-10">
+               <a href="#" id="test"> {{title}} </a>
+                    </div>
+                 <div class="col-sm-2">
+                    <button class="btn btn-primary" type="button">Create mode</button>
+                     </div>
             </div>
         </div>
     </div>
@@ -15,11 +20,11 @@
         <div class="col-sm-12">
 <fieldset>
 
-    <legend>Attributes</legend>
-    TOTAL POINTS SPENT: {{points}}
+    <legend>Attributes  <span class="label label-success">{{points}}</span></legend>
+
           {{#each Attributes}}
 
-       <div class="panel-group" id="accordion">
+       <div class="panel-group hidingParts" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -70,7 +75,7 @@
 
     <legend>Encumberance</legend>
 
-    <table class="table table-condensed table-bordered">
+    <table class="table table-condensed table-bordered hidingParts">
   <tr>
   <th>Athletics</th>
   <td>5</td>
@@ -115,14 +120,13 @@
 
     </div>
 <div class="col-sm-8">
-      <div class="col-sm-12">
+      <div class="col-sm-12 ">
 <fieldset>
 
-    <legend>Combat Skills</legend>
-    TOTAL POINTS SPENT: {{points}}
+    <legend>Combat Skills  <span class="label label-success">{{points}}</span></legend>
           {{#each Attributes}}
 
-       <div class="panel-group" id="accordion">
+       <div class="panel-group hidingParts" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -173,8 +177,8 @@
 
     <legend>Combat Gear</legend>
 <!-- Weapon table start -->
-<div class="row">
-<div class="col-sm-12">
+<div class="row hidingParts">
+<div class="col-sm-12 ">
     <table class="table table-condensed table-bordered">
 
 <tr>
@@ -203,10 +207,8 @@
      <td>Best shit ever</td>
     </table>
 </div>
-</div>
 <!--Weapon table end -->
 <!-- Shield table start -->
-<div class="row">
 <div class="col-sm-12">
     <table class="table table-condensed table-bordered">
 
@@ -230,10 +232,9 @@
      <td>Best shit ever</td>
     </table>
 </div>
-</div>
 <!-- Shield table end -->
 <!-- Ranged weapon and ammo start -->
-<div class="row">
+<div class="col-sm-12">
     <!-- Ranged weapon  start -->
 <div class="col-sm-8">
     <table class="table table-condensed table-bordered">
@@ -281,14 +282,21 @@
 </div>
 <!-- Shield table end -->
 </fieldset>
+
+     </div>
     <!-- Combat gear end -->
+
+
+
+
+
 <!-- Damage and Vigor div -->
 <div class="row">
       <!-- Damage div -->
     <div class="col-sm-6">
     <fieldset>
-    <label>Damage</label>
-       <table class="table table-condensed table-bordered">
+    <legend>Damage</legend>
+       <table class="table table-condensed table-bordered hidingParts">
 
 <tr>
   <th></th>
@@ -353,47 +361,48 @@
       <!-- Vigor div -->
       <div class="col-sm-6">
     <fieldset>
-    <label>Vigor</label>
-    <table class="table table-condensed table-bordered">
-   <th></th>
-  <th>1</th>
-  <th>2</th>
-  <th>3</th>
-  <th>4</th>
-  <th>5</th>
-  <th>6</th>
-  <th>7</th>
-  <th>8</th>
-  <th>9</th>
-  <th>10</th>
-  <th>11</th>
-  <th>12</th>
-  <th>13</th>
-</tr>
-  <tr>
-     <th>0</th>
-     <td>/</td>
-     <td>/</td>
-     <td>/</td>
-     <td>/</td>
-     <td>/</td>
-     <td>/</td>
-     <td>/</td>
-     <td>/</td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-  </tr>
-  <tr>
-     <th>-1</th>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td></td>
+        <legend>Vigor</legend>
+    <table class="table table-condensed table-bordered hidingParts">
+        <tr>
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+        <th>11</th>
+        <th>12</th>
+        <th>13</th>
+        </tr>
+        <tr>
+            <th>0</th>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>-1</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
      <td></td>
      <td></td>
      <td></td>
