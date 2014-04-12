@@ -8,3 +8,15 @@
 
 .map_controlls {
 }
+
+.outlined {
+    outline:#666666 dotted thin;
+    padding: -5px;
+    margin-top: 5px;
+    padding-top: 10px;
+}
+
+.container-padded {
+    margin: 5px;
+    padding: 5px;
+}
