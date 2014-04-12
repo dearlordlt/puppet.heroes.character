@@ -13,3 +13,7 @@ $("#menu_ncg").click(function () {
 $("#menu_map").click(function () {
         loadPath("map_tpl");
 });
+
+$("#dnd_map").click(function () {
+        loadPath("dnd_tpl");
+});

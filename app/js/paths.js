@@ -2,7 +2,8 @@ var paths = [
     {tpl: "home_tpl"},
     {tpl: "cg_tpl"},
     {tpl: "ncg_tpl"},
-    {tpl: "map_tpl"}
+    {tpl: "map_tpl"},
+    {tpl: "dnd_tpl"}
 ];
 
 function getPath(path) {
