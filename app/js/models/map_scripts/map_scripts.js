@@ -16,10 +16,15 @@ var mapLayer = new paper.Layer();
 //canvas.width = $("#mapCanvas").width(); //Uncomment to make map canvas width dynamic
 
 var man_blue = new paper.Raster('man-blue');
+    man_blue.data.color = 'man-blue';
 var man_black = new paper.Raster('man-black');
+    man_black.data.color = 'man-black';
 var man_green = new paper.Raster('man-green');
+    man_green.data.color = 'man-green';
 var man_orange = new paper.Raster('man-orange');
+    man_orange.data.color = 'man-orange';
 var man_red = new paper.Raster('man-red');
+    man_red.data.color = 'man-red';
 
 var dummys_arr = [];
 var coords_arr = [];
@@ -91,8 +96,12 @@ function initMap() {
             }
 
             hexagon.onMouseDown = function (event) {
-                var newDummy = selectedDummy.clone(true);
-                newDummy.position = this.position;
+                if(selectedDummy != "") {
+                    var man = new paper.Raster(selectedDummy.data.color);
+                    man.selected = false;
+                    man.position = this.position;
+                    console.log("Hexahon clicked");
+                }
             }
 
             var text = new paper.PointText(new paper.Point(xpos, ypos+3));
