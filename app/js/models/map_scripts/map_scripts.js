@@ -34,7 +34,7 @@ var selectedDummy = "";
 function toggleCoordsText() {
     map_tpl.toggleCoords = !map_tpl.toggleCoords;
 
-    if(map_tpl.toggleCoords) $("#toggleCoords").val("Hide coords");
+    if(!map_tpl.toggleCoords) $("#toggleCoords").val("Hide coords");
     else $("#toggleCoords").val("Show coords");
 
     for(var i=0; i < coords_arr.length; i++) {
@@ -96,9 +96,9 @@ function initMap() {
             }
 
             hexagon.onMouseDown = function (event) {
-                if(selectedDummy != "") {
+                if(selectedDummy != "" && selectedDummy.selected) {
                     var man = new paper.Raster(selectedDummy.data.color);
-                    man.selected = false;
+                    man.selected = false; selectedDummy.selected = false;
                     man.position = this.position;
                     console.log("Hexahon clicked");
                 }
