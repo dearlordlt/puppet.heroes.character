@@ -33,6 +33,7 @@ function initDefaultCharacters() {
 
         dummy.onMouseDown = function(event) {
             selectedDummy = this;
+            selectedDummy.selected = !selectedDummy.selected;
         }
     }
 }
