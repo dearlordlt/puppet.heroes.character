@@ -21,11 +21,25 @@ var man_green = new paper.Raster('man-green');
 var man_orange = new paper.Raster('man-orange');
 var man_red = new paper.Raster('man-red');
 
-var dummys_arr = [man_blue, man_black, man_green, man_orange, man_red];
+var dummys_arr = [];
+var coords_arr = [];
 
 var selectedDummy = "";
 
+function toggleCoordsText() {
+    map_tpl.toggleCoords = !map_tpl.toggleCoords;
+
+    if(map_tpl.toggleCoords) $("#toggleCoords").val("Hide coords");
+    else $("#toggleCoords").val("Show coords");
+
+    for(var i=0; i < coords_arr.length; i++) {
+        coords_arr[i].visible = map_tpl.toggleCoords;
+    }
+    paper.view.draw();
+} toggleCoordsText();
+
 function initDefaultCharacters() {
+    dummys_arr = [man_blue, man_black, man_green, man_orange, man_red];
     for(var i=0; i < dummys_arr.length; i++) {
         var dummy = dummys_arr[i];
         dummy.position.x = 750;
@@ -39,6 +53,7 @@ function initDefaultCharacters() {
             selectedDummy.selected = !selectedDummy.selected;
         }
     }
+    console.log("Characters placed");
 }
 
 function initMap() {
@@ -56,7 +71,7 @@ function initMap() {
 
             var hexagon = new paper.Path.RegularPolygon(new paper.Point(xpos, ypos), 6, 25);
             hexagon.style = {
-                fillColor: '#5F9EA0',
+                fillColor: '#F2FBEF',
                 strokeColor: 'black',
                 strokeWidth: 1
             }
@@ -72,11 +87,11 @@ function initMap() {
             }
 
             hexagon.onMouseLeave = function (event) {
-                this.fillColor = '#5F9EA0';
+                this.fillColor = '#F2FBEF';
             }
 
             var text = new paper.PointText(new paper.Point(xpos, ypos+3));
-
+            coords_arr.push(text);
             text.justification = 'center';
             text.fillColor = 'black';
             text.content = '['+i+':'+j+']';
@@ -91,6 +106,10 @@ function initMap() {
 }
 
 initMap();
+
+$("#toggleCoords").click(function () {
+    toggleCoordsText();
+});
 
 $("#changeMapSizeBnt").click(function () {
     map_tpl.sizeX = parseInt($("#inpSizeX").val());
