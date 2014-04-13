@@ -11,7 +11,7 @@ mapCanvas.appendChild(canvas);
 
 paper.setup(canvas);
 
- var mapLayer = new paper.Layer();
+var mapLayer = new paper.Layer();
 
 //canvas.width = $("#mapCanvas").width(); //Uncomment to make map canvas width dynamic
 
@@ -58,6 +58,7 @@ function initMap() {
         }
     }
     console.log("Map size : [" + map_tpl.sizeX + " : " + map_tpl.sizeY + "]");
+
     paper.view.draw();
 }
 
