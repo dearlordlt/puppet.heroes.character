@@ -90,6 +90,11 @@ function initMap() {
                 this.fillColor = '#F2FBEF';
             }
 
+            hexagon.onMouseDown = function (event) {
+                var newDummy = selectedDummy.clone(true);
+                newDummy.position = this.position;
+            }
+
             var text = new paper.PointText(new paper.Point(xpos, ypos+3));
             coords_arr.push(text);
             text.justification = 'center';
