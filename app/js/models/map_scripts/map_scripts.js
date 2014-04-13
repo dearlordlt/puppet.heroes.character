@@ -32,6 +32,9 @@ function initDefaultCharacters() {
         dummy.position.y = i*35+25;
 
         dummy.onMouseDown = function(event) {
+            for(var j = 0; j < dummys_arr.length; j++) {
+                dummys_arr[j].selected = false;
+            }
             selectedDummy = this;
             selectedDummy.selected = !selectedDummy.selected;
         }
