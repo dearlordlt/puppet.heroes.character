@@ -5,24 +5,3 @@
 #footer-template {
     margin: 5px;
 }
-
-.map_controlls {
-}
-
-.droppable {
-    outline:#666666 dotted thin;
-    padding: -5px;
-    margin-top: 5px;
-    padding-top: 10px;
-    min-height: 100px;
-}
-
-.container-padded {
-    margin: 5px;
-    padding: 5px;
-}
-
-.sortable-placeholder {
-    height: 100px;
-    background-color: "#666666";
-}
