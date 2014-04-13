@@ -18,3 +18,4 @@ Todo
 *   Drag'n'Drop icon
 *   All values are class badges
 *   Code tag for tooltips
+*   Combat has to have roll log bar
