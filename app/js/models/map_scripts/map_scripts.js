@@ -1,6 +1,6 @@
 var canvas = document.createElement('canvas');
 canvas.id               = "MapLayer";
-canvas.width            = 700;
+canvas.width            = 800;
 canvas.height           = 600;
 //canvas.style.zIndex   = 8;
 //canvas.style.position = "absolute";
@@ -13,7 +13,7 @@ paper.setup(canvas);
 
  var mapLayer = new paper.Layer();
 
-canvas.width = $("#mapCanvas").width();
+//canvas.width = $("#mapCanvas").width(); //Uncomment to make map canvas width dynamic
 
 function initMap() {
     for (var i = 0; i < map_tpl.sizeX; i++) {
