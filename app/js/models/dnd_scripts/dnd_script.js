@@ -1,7 +1,7 @@
 var gridster;
 
 $(function() {
-    gridster = $(".gridster ul").gridster({
+    gridster = $(".gridster").gridster({
         widget_base_dimensions: [
             300,
             100],
