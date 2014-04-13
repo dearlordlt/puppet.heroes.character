@@ -1,2 +1,10 @@
 .map_controlls {
 }
+
+.map-spacer {
+    height: 50px;
+}
+
+.map-assets {
+    visibility: hidden;
+}

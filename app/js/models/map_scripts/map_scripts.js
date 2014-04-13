@@ -15,6 +15,28 @@ var mapLayer = new paper.Layer();
 
 //canvas.width = $("#mapCanvas").width(); //Uncomment to make map canvas width dynamic
 
+var man_blue = new paper.Raster('man-blue');
+var man_black = new paper.Raster('man-black');
+var man_green = new paper.Raster('man-green');
+var man_orange = new paper.Raster('man-orange');
+var man_red = new paper.Raster('man-red');
+
+var dummys_arr = [man_blue, man_black, man_green, man_orange, man_red];
+
+var selectedDummy = "";
+
+function initDefaultCharacters() {
+    for(var i=0; i < dummys_arr.length; i++) {
+        var dummy = dummys_arr[i];
+        dummy.position.x = 750;
+        dummy.position.y = i*35+25;
+
+        dummy.onMouseDown = function(event) {
+            selectedDummy = this;
+        }
+    }
+}
+
 function initMap() {
     for (var i = 0; i < map_tpl.sizeX; i++) {
         var margin = 30;
@@ -58,6 +80,8 @@ function initMap() {
         }
     }
     console.log("Map size : [" + map_tpl.sizeX + " : " + map_tpl.sizeY + "]");
+
+    initDefaultCharacters();
 
     paper.view.draw();
 }
