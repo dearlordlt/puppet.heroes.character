@@ -13,9 +13,12 @@
     </div>
 </div>
 
+
 <div class="row">
+
+    TOTAL POINTS = {{points}}
         <div class="panel panel-default col-sm-6" >
-                    <div class="panel-heading">Attributes  <span class="label label-success">{{points}}</span>
+                    <div class="panel-heading">Attributes  <span class="label label-success pull-right">{{attributesPoints}}</span>
                         </div>
                         <div class="panel-body">
                             <ul class="list-group">
@@ -48,11 +51,19 @@
                  </ul>
 
                         </div>
-        </div>
+       <div class="row">
+    <div class="panel panel-default col-sm-12">
+    <div class="panel-heading">Encumberance</span>
+                    </div>
+                        <div class="panel-body">Encumberance content
+                            </div>
+    </div>
+</div>
+    </div>
 
-<div class="row">
+
      <div class="panel panel-default col-sm-6">
-                    <div class="panel-heading">Combat Skills  <span class="label label-success">{{points}}</span>
+                    <div class="panel-heading">Combat Skills  <span class="label pull-right">{{combatSkillPoints}}</span>
                     </div>
                        <div class="panel-body">
                             <ul class="list-group">
@@ -77,11 +88,5 @@
 
 </div>
 
-    <div class="panel panel-default col-sm-6">
-    <div class="panel-heading">Encumberance</span>
-                    </div>
-                        <div class="panel-body">Encumberance content
-                            </div>
-    </div>
-</div>
+
 <script src="./app/js/models/cg_scripts/cg_script.js"/>
