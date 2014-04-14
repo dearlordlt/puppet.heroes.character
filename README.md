@@ -19,3 +19,16 @@ Todo
 *   All values are class badges
 *   Code tag for tooltips
 *   Combat has to have roll log bar
+*   Temporary bonus points badge
+
+Urgent
+*   All in line edit is done in panel header
+*   Encumberance style is same as skills
+*   Mockup with bootsrap for combat gear with all remove add buttons,main hand and offhand should be visible and easy to understand
+*   Separate range weapons from melee weapons
+*   All number values are in badges
+*   Add total efects for damage colums
+*   Damage type icons from Achilies
+*   Icons for Vigor markings
+*   Mockup vigor limit and highlight used vigor
+*   All panels have h4 (to align need to add CSS)
