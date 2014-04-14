@@ -55,7 +55,11 @@ function initDefaultCharacters() {
                 dummys_arr[j].selected = false;
             }
             selectedDummy = this;
-            selectedDummy.selected = !selectedDummy.selected;
+            this.selected = !this.selected;
+
+            if(this.selected) {
+                this.rotate(60);
+            }
         }
     }
     console.log("Characters placed");
@@ -98,8 +102,10 @@ function initMap() {
             hexagon.onMouseDown = function (event) {
                 if(selectedDummy != "" && selectedDummy.selected) {
                     var man = new paper.Raster(selectedDummy.data.color);
-                    man.selected = false; selectedDummy.selected = false;
+                    man.selected = false;
                     man.position = this.position;
+                    man.rotation = selectedDummy.rotation;
+                    selectedDummy.selected = false;
                     console.log("Hexahon clicked");
                 }
             }
