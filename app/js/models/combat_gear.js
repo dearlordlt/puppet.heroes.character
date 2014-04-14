@@ -13,7 +13,7 @@ var cg_tpl = new model_cg_tpl(
     "Combat Gear",
     0,
     0,
-    0,
+    3,
     [
         {attributeName : "Strength",   attributeValue : 10},
         {attributeName : "Stamina",    attributeValue : 10},

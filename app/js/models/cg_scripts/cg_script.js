@@ -1,3 +1,9 @@
+/* FUNCTION FOR SHOWCASE ONLY HIDES COMBAT SKILL EDIT CONTROLS*/
+/*------------------------------------*/
+$("li[id^=editCombatSkill]").hide();
+
+/*------------------------------------*/
+
 $("button[id^=attrMinusButton]").click(function () {
     var arrayPlace = this.id.match(/\d+/),
         _validatesmall = cg_tpl.Attributes[arrayPlace].attributeValue - 1,
@@ -49,5 +55,18 @@ $("button[id^=attrPlusButton]").click(function () {
     $("#collapseOne" + arrayPlace).addClass("panel-collapse collapse in");
 });
 
+$("#newCombatSkill").toggle();
 
+$("#addNewCombatSkillButton").click(function()
+{
+    $("#addNewCombatSkillButton").hide();
+    $("#newCombatSkill").show();
+});
+
+$("#cancelNewCombatSkillButton").click(function()
+{
+    $("#newCombatSkill").hide();
+    $("#addNewCombatSkillButton").show();
+
+});
 
