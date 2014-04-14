@@ -30,21 +30,21 @@
                             <li class="list-group-item">
                                 {{this.attributeName}}  <span class="badge pull-right">{{this.attributeValue}}</span>
                                 {{#ifCond this.attributeValue '>=' ../maxAttribute}}
-                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-default btn-xs pull-right" disabled>
+                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-xs pull-right" disabled>
                                     <span class="glyphicon glyphicon-plus"></span>
                                     </button>
                                 {{else}}
-                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-default btn-xs pull-right">
+                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-xs pull-right">
                                     <span class="glyphicon glyphicon-plus"></span>
                                     </button>
                                 {{/ifCond}}
 
                                 {{#ifCond this.attributeValue '<=' ../minAttribute}}
-                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-default btn-xs pull-right" disabled>
+                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-xs pull-right" disabled>
                                         <span class="glyphicon glyphicon-minus"></span>
                                     </button>
                                 {{else}}
-                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-default btn-xs pull-right">
+                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-xs pull-right">
                                         <span class="glyphicon glyphicon-minus"></span>
                                     </button>
                                 {{/ifCond}}
@@ -65,62 +65,69 @@
     </div>
 
 
-     <div class="panel panel-default col-sm-6">
-                    <div class="panel-heading">Combat Skills  <span class="label pull-right">{{combatSkillPoints}}</span>
-                    </div>
-                       <div class="panel-body">
-                                <ul>
-        {{#each combatSkills}}
-            <li id="skillNumber{{@index}}">{{this.combatSkillname}}: {{this.combatSkillname}}</li>
-               <div class="form-inline skillEditForm" id="editSkill{{@index}}">
-                    <div class="form-group">
-                        <input type="hidden" value="{{this.combatSkillname}}" class="form-control" id="hiddenSkillName{{@index}}">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="editSkillName{{@index}}" class="form-control" value="{{this.combatSkillname}}">
-                    </div>
-                    <div class="form-group">
-                        <input type="number" id="editSkillValue{{@index}}" class="form-control" value="{{this.combatSkillValue}}">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" id="saveSkillButton{{@index}}">Save</button>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" id="cancelSkillButton{{@index}}">Cancel</button>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" id="deleteSkillButton{{@index}}">Delete</button>
+  <ul class="list-group split-list">
+                        {{#each talents}}
+                            <li class="list-group-item">
+                                {{@key}}: {{this}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </li>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <span>Skills</span>
+                        </div>
+                        <div class="col-sm-11">
+                            <div class="btn-group" id="addNewSkillButton">
+                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+                            </div>
+
+                        <div class="form-inline" id="newSkill">
+                            <div class="form-group input-group-sm">
+                                <input type="hidden" value="{{this.skillName}}" class="form-control" id="hiddenNewSkillName{{@index}}">
+                            </div>
+                            <div class="form-group input-group-sm">
+                                <input id="newSkillName" class="form-control" type="text">
+                                <input id="newSkillValue" min="1" class="form-control" type="number">
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-primary btn-sm" id="newSkillButton"><span class="glyphicon glyphicon-ok"></span></button>
+                                <button class="btn btn-primary btn-sm" id="cancelNewSkillButton"><span class="glyphicon glyphicon-remove"></span></button>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
+                <div class="panel-body">
 
-            {{#if this.skillSpecialization}}
-                <ul>
-                    {{#each skillSpecialization}}
-                        <li>{{this}}</li>
-                    {{/each}}
-                </ul>
-            {{/if}}
-        {{/each}}
-    </ul>
-    <div class="form-inline" id="newSkill">
-        <div class="form-group">
-            <input type="hidden" value="{{this.combatSkillname}}" class="form-control" id="hiddenNewSkillName{{@index}}">
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="newSkillName">New Skill</label>
-            <input id="newSkillName" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="newSkillName">Skill Level</label>
-            <input id="newSkillValue" class="form-control" type="number">
-        </div>
-        <div class="form-group">
-            <button id="newSkillButton" class="btn btn-primary">Add</button>
-        </div>
-    </div>
-</div>
-
-                           </div>
+                    <ul class="list-group split-list">
+                        {{#each combatSkills}}
+                            <li class="list-group-item" id="skillNumber{{@index}}">
+                                <span class="badge">{{this.combatSkillValue}}</span>
+                                {{this.combatSkillname}}
+                            </li>
+                            <li class="list-group-item" id="editSkill{{@index}}">
+                                <div class="form-inline">
+                                    <div class="form-group input-group-sm">
+                                        <input type="hidden" value="{{this.combatSkillname}}" class="form-control" id="hiddenSkillName{{@index}}">
+                                        <input type="text" id="editSkillName{{@index}}" class="form-control" value="{{this.combatSkillname}}">
+                                        <input type="number" id="editSkillValue{{@index}}" class="form-control" min="1" value="{{this.combatSkillValue}}">
+                                    </div>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm" id="saveSkillButton{{@index}}"><span class="glyphicon glyphicon-ok"></button>
+                                        <button class="btn btn-primary btn-sm" id="cancelSkillButton{{@index}}"><span class="glyphicon glyphicon-remove"></button>
+                                        <button class="btn btn-primary btn-sm" id="deleteSkillButton{{@index}}"><span class="glyphicon glyphicon-minus"></button>
+                                    </div>
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
 
 
          </div>
