@@ -1,4 +1,4 @@
-var model_cg_tpl = function(title, points, attributesPoints, combatSkillPoints, Attributes, minAttribute, maxAttribute) {
+var model_cg_tpl = function(title, points, attributesPoints, combatSkillPoints, Attributes, minAttribute, maxAttribute, combatSkills) {
     this.title = title;
     this.attributesPoints = attributesPoints;
     this.combatSkillPoints = combatSkillPoints;
@@ -6,6 +6,7 @@ var model_cg_tpl = function(title, points, attributesPoints, combatSkillPoints, 
     this.points = points;
     this.minAttribute = minAttribute;
     this.maxAttribute = maxAttribute;
+    this.combatSkills = combatSkills;
 }
 
 var cg_tpl = new model_cg_tpl(
@@ -22,5 +23,10 @@ var cg_tpl = new model_cg_tpl(
         {attributeName : "Will",       attributeValue : 10}
     ],
     7,
-    20
+    20,
+    [
+        {combatSkillname: "Athletics",      combatSkillValue: 1},
+        {combatSkillname: "Evade",          combatSkillValue: 1},
+        {combatSkillname: "Close Quarters", combatSkillValue: 1}
+    ]
 );

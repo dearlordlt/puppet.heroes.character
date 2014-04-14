@@ -1,17 +1,20 @@
-<div class="row" style="margin-top:40px">
-    <div class="col-sm-12">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="col-sm-10">
-               <a href="#" id="test"> {{title}} </a>
-                    </div>
-                 <div class="col-sm-2">
-                    <button class="btn btn-primary" id="hideCreationButton" type="button">Create mode</button>
-                     </div>
+<div id="" style="margin-top:50px;"></div>
+<nav class="" role="navigation">
+    <ul class="list-group">
+        <li class="list-group-item form-inline">
+            <span>Layout types</span>
+            <div class="btn-group">
+                <button class="btn btn-primary"><span class="glyphicon glyphicon-star"></span></button>
+                <button class="btn btn-primary"><span class="glyphicon glyphicon-user"></span></button>
             </div>
-        </div>
-    </div>
-</div>
+            <span>Edit mode</span>
+            <div class="btn-group">
+                <button class="btn btn-primary"><span class="glyphicon glyphicon-th-large"></span></button>
+                <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+            </div>
+        </li>
+    </ul>
+</nav>
 
 
 <div class="row">
@@ -66,20 +69,56 @@
                     <div class="panel-heading">Combat Skills  <span class="label pull-right">{{combatSkillPoints}}</span>
                     </div>
                        <div class="panel-body">
-                            <ul class="list-group">
-                                <li class="list-group-item"> Combat skill content</li>
-                                <li class="list-group-item"> Combat skill content</li>
-                                <li class="list-group-item"> Combat skill content</li>
-                                <li class="list-group-item"> Combat skill content</li>
-                                <li class="list-group-item"> Combat skill content</li>
-                                <li class="list-group-item"> Combat skill content</li>
-                                <li class="list-group-item"> Combat skill content</li>
-                                <li class="list-group-item"> Combat skill content</li>
-                                <li class="list-group-item"> Combat skill content</li>
-                                <li class="list-group-item"> Combat skill content</li>
-                                <li class="list-group-item"> Combat skill content</li>
-                                <li class="list-group-item"> Combat skill content</li>
-                           </ul>
+                                <ul>
+        {{#each combatSkills}}
+            <li id="skillNumber{{@index}}">{{this.combatSkillname}}: {{this.combatSkillname}}</li>
+               <div class="form-inline skillEditForm" id="editSkill{{@index}}">
+                    <div class="form-group">
+                        <input type="hidden" value="{{this.combatSkillname}}" class="form-control" id="hiddenSkillName{{@index}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="editSkillName{{@index}}" class="form-control" value="{{this.combatSkillname}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="editSkillValue{{@index}}" class="form-control" value="{{this.combatSkillValue}}">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="saveSkillButton{{@index}}">Save</button>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="cancelSkillButton{{@index}}">Cancel</button>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="deleteSkillButton{{@index}}">Delete</button>
+                    </div>
+                </div>
+
+            {{#if this.skillSpecialization}}
+                <ul>
+                    {{#each skillSpecialization}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        {{/each}}
+    </ul>
+    <div class="form-inline" id="newSkill">
+        <div class="form-group">
+            <input type="hidden" value="{{this.combatSkillname}}" class="form-control" id="hiddenNewSkillName{{@index}}">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="newSkillName">New Skill</label>
+            <input id="newSkillName" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="newSkillName">Skill Level</label>
+            <input id="newSkillValue" class="form-control" type="number">
+        </div>
+        <div class="form-group">
+            <button id="newSkillButton" class="btn btn-primary">Add</button>
+        </div>
+    </div>
+</div>
 
                            </div>
 
