@@ -1,6 +1,6 @@
 var canvas = document.createElement('canvas');
 canvas.id               = "MapLayer";
-canvas.width            = 700;
+canvas.width            = 800;
 canvas.height           = 600;
 //canvas.style.zIndex   = 8;
 //canvas.style.position = "absolute";
@@ -11,9 +11,59 @@ mapCanvas.appendChild(canvas);
 
 paper.setup(canvas);
 
- var mapLayer = new paper.Layer();
+var mapLayer = new paper.Layer();
 
-canvas.width = $("#mapCanvas").width();
+//canvas.width = $("#mapCanvas").width(); //Uncomment to make map canvas width dynamic
+
+var man_blue = new paper.Raster('man-blue');
+    man_blue.data.color = 'man-blue';
+var man_black = new paper.Raster('man-black');
+    man_black.data.color = 'man-black';
+var man_green = new paper.Raster('man-green');
+    man_green.data.color = 'man-green';
+var man_orange = new paper.Raster('man-orange');
+    man_orange.data.color = 'man-orange';
+var man_red = new paper.Raster('man-red');
+    man_red.data.color = 'man-red';
+
+var dummys_arr = [];
+var coords_arr = [];
+
+var selectedDummy = "";
+
+function toggleCoordsText() {
+    map_tpl.toggleCoords = !map_tpl.toggleCoords;
+
+    if(!map_tpl.toggleCoords) $("#toggleCoords").val("Hide coords");
+    else $("#toggleCoords").val("Show coords");
+
+    for(var i=0; i < coords_arr.length; i++) {
+        coords_arr[i].visible = map_tpl.toggleCoords;
+    }
+    paper.view.draw();
+} toggleCoordsText();
+
+function initDefaultCharacters() {
+    dummys_arr = [man_blue, man_black, man_green, man_orange, man_red];
+    for(var i=0; i < dummys_arr.length; i++) {
+        var dummy = dummys_arr[i];
+        dummy.position.x = 750;
+        dummy.position.y = i*35+25;
+
+        dummy.onMouseDown = function(event) {
+            for(var j = 0; j < dummys_arr.length; j++) {
+                dummys_arr[j].selected = false;
+            }
+            selectedDummy = this;
+            this.selected = !this.selected;
+
+            if(this.selected) {
+                this.rotate(60);
+            }
+        }
+    }
+    console.log("Characters placed");
+}
 
 function initMap() {
     for (var i = 0; i < map_tpl.sizeX; i++) {
@@ -30,7 +80,7 @@ function initMap() {
 
             var hexagon = new paper.Path.RegularPolygon(new paper.Point(xpos, ypos), 6, 25);
             hexagon.style = {
-                fillColor: '#5F9EA0',
+                fillColor: '#F2FBEF',
                 strokeColor: 'black',
                 strokeWidth: 1
             }
@@ -46,11 +96,22 @@ function initMap() {
             }
 
             hexagon.onMouseLeave = function (event) {
-                this.fillColor = '#5F9EA0';
+                this.fillColor = '#F2FBEF';
+            }
+
+            hexagon.onMouseDown = function (event) {
+                if(selectedDummy != "" && selectedDummy.selected) {
+                    var man = new paper.Raster(selectedDummy.data.color);
+                    man.selected = false;
+                    man.position = this.position;
+                    man.rotation = selectedDummy.rotation;
+                    selectedDummy.selected = false;
+                    console.log("Hexahon clicked");
+                }
             }
 
             var text = new paper.PointText(new paper.Point(xpos, ypos+3));
-
+            coords_arr.push(text);
             text.justification = 'center';
             text.fillColor = 'black';
             text.content = '['+i+':'+j+']';
@@ -58,10 +119,17 @@ function initMap() {
         }
     }
     console.log("Map size : [" + map_tpl.sizeX + " : " + map_tpl.sizeY + "]");
+
+    initDefaultCharacters();
+
     paper.view.draw();
 }
 
 initMap();
+
+$("#toggleCoords").click(function () {
+    toggleCoordsText();
+});
 
 $("#changeMapSizeBnt").click(function () {
     map_tpl.sizeX = parseInt($("#inpSizeX").val());
