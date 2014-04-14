@@ -23,34 +23,49 @@
 
     <div class="col-sm-6">
         <div class="panel panel-default" >
-                    <div class="panel-heading">Attributes  <span class="label label-success pull-right">{{attributesPoints}}</span>
+                    <div class="panel-heading">
+                        <div class="row">
+                             <div class="col-sm-10">
+                             <h4>Attributes</h4>
+                             </div>
+                                <div class="col-sm-2 vertical-align:middle">
+                                <span class="label label-success pull-right">{{attributesPoints}}</span>
+                                </div>
+                        </div>
                         </div>
                         <div class="panel-body">
                             <ul class="list-group">
-
                                 {{#each Attributes}}
                                 <li class="list-group-item">
-                                {{this.attributeName}}  <span class="badge pull-right">{{this.attributeValue}}</span>
-                                {{#ifCond this.attributeValue '>=' ../maxAttribute}}
-                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-xs pull-right" disabled>
+                                    <div class="row">
+                                    <div class="col-sm-4">
+                                {{this.attributeName}}
+                                </div>
+                                    <div class="col-sm-6 btn-group">
+
+                                    {{#ifCond this.attributeValue '>=' ../maxAttribute}}
+                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm pull-right" disabled >
                                     <span class="glyphicon glyphicon-plus"></span>
                                     </button>
                                 {{else}}
-                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-xs pull-right">
+                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm pull-right" >
                                     <span class="glyphicon glyphicon-plus"></span>
                                     </button>
                                 {{/ifCond}}
 
                                 {{#ifCond this.attributeValue '<=' ../minAttribute}}
-                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-xs pull-right" disabled>
+                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm pull-right" disabled>
                                         <span class="glyphicon glyphicon-minus"></span>
                                     </button>
                                 {{else}}
-                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-xs pull-right">
+                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm pull-right">
                                         <span class="glyphicon glyphicon-minus"></span>
                                     </button>
                                  {{/ifCond}}
-
+                                        </div>
+                                <div class="col-sm-2">
+                                    <span class="badge pull-right">{{this.attributeValue}}</span>
+                                    </div>
                                 </li>
                                 {{/each}}
                             </ul>
@@ -59,61 +74,36 @@
         </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="panel panel-default col-sm-12">
-                            <div class="panel-heading">Encumberance</span>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h4>Encumberance</h4></span>
                             </div>
                             <div class="panel-body">
-
-
-                                <table class="table table-condensed table-bordered hidingParts">
-                                                  <tr>
-                                                  <th>Athletics</th>
-                                                  <td>5</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>STA+PER-10</th>
-                                                  <td>10</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Armor</th>
-                                                  <td>3</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Shield</th>
-                                                  <td>2</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Main hand</th>
-                                                  <td>1</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Offhand</th>
-                                                  <td>52</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Burden</th>
-                                                  <td>3</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Total</th>
-                                                  <td>9000</td>
-                                                </tr>
-                                                </table>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Athletics   <span class="badge pull-right">5</span></li>
+                                    <li class="list-group-item">STA+PER-10  <span class="badge pull-right">3</span></li>
+                                    <li class="list-group-item">Armor       <span class="badge pull-right">8</span></li>
+                                    <li class="list-group-item">Shield      <span class="badge pull-right">6</span></li>
+                                    <li class="list-group-item">Main hand   <span class="badge pull-right">7</span></li>
+                                    <li class="list-group-item">Offhand     <span class="badge pull-right">8</span></li>
+                                    <li class="list-group-item">Burden      <span class="badge pull-right">5</span></li>
+                                    <li class="list-group-item">Total       <span class="badge pull-right">10</span></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+
     </div>
     <div class="col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-sm-2">
-                            <span>Combat skills</span>
+                        <div class="col-sm-3">
+                            <h4>Combat skills</h4>
                         </div>
-                        <div class="col-sm-9">
+                        <div class="col-sm-8">
                             <div class="btn-group" id="addNewCombatSkillButton">
-                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+                                <button class="btn btn-primary btn-sm "><span class="glyphicon glyphicon-plus"></span></button>
                             </div>
 
                         <div class="form-inline" id="newCombatSkill">
@@ -165,6 +155,201 @@
 
 
         </div>
+                 <!-- Damage div -->
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+  <div class="panel-heading"><h4>Damage</h4></div>
+  <div class="panel-body">
+                    <table class="table">
+
+                                            <tr>
+                                              <th></th>
+                                              <th>Armor</th>
+                                              <th>Trauma</th>
+                                              <th>Bleed</th>
+                                              <th>Critical</th>
+                                              <th>Total</th>
+                                            </tr>
+                                              <tr>
+                                                 <th>Head</th>
+                                                 <td><span class="badge">3</span></td>
+                                                 <td><span class="badge">1</span><img src="./app/img/assets/Trauma.png"/></td>
+                                                 <td><span class="badge"></td>
+                                                 <td><span class="badge"></td>
+                                                 <td><span class="badge">1</span></td>
+                                              </tr>
+                                              <tr>
+                                                 <th>Body</th>
+                                                 <td><span class="badge">3</span></td>
+                                                 <td></td>
+                                                 <td><span class="badge">2</span><img src="./app/img/assets/Bleed.png"/></td>
+                                                 <td><span class="badge">1</span><img src="./app/img/assets/Critical.png"/></td>
+                                                 <td><span class="badge">3</span></td>
+                                              </tr>
+                                              <tr>
+                                                 <th>L.Arm</th>
+                                                 <td><span class="badge">3</span></td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 <td><span class="badge">0</span></td>
+                                              </tr>
+                                                <tr>
+                                                 <th>R.Arm</th>
+                                                 <td><span class="badge">3</span></td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 <td><span class="badge">0</span></td>
+                                              </tr>
+                                                <tr>
+                                                 <th>L.Leg</th>
+                                                 <td><span class="badge">3</span></td>
+                                                 <td></td>
+                                                 <td><span class="badge">3</span><img src="./app/img/assets/Bleed.png"/></td>
+                                                 <td></td>
+                                                 <td><span class="badge">3</span></td>
+                                              </tr>
+                                              <tr>
+                                                 <th>R.Leg</th>
+                                                 <td><span class="badge">3</span></td>
+                                                 <td><span class="badge">1</span><img src="./app/img/assets/Trauma.png"/></td>
+                                                 <td><span class="badge">1</span><img src="./app/img/assets/Bleed.png"/></td>
+                                                 <td><span class="badge">1</span><img src="./app/img/assets/Critical.png"/></td>
+                                                 <td><span class="badge">3</span></td>
+                                              </tr>
+                        </table>
+
+
+            </div>
+        </div>
+    </div>
+      <!-- Damage div end-->
+                   <!-- Vigor div -->
+
+
+      <div class="col-sm-6">
+          <div class="panel panel-default">
+  <div class="panel-heading"><h4>Vigor</h4></div>
+  <div class="panel-body">
+   <table class="table">
+                                                <tr>
+                                                <th></th>
+                                                <th>1</th>
+                                                <th>2</th>
+                                                <th>3</th>
+                                                <th>4</th>
+                                                <th>5</th>
+                                                <th>6</th>
+                                                <th>7</th>
+                                                <th>8</th>
+                                                <th>9</th>
+                                                <th class="active">10</th>
+                                                <th class="active">11</th>
+                                                <th class="active">12</th>
+                                                <th class="active">13</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>0</th>
+                                                         <td><span class="glyphicon glyphicon-fire vigor-permanent"></td>
+                                                         <td><span class="glyphicon glyphicon-fire vigor-permanent"></td>
+                                                         <td><span class="glyphicon glyphicon-fire vigor-permanent"></td>
+                                                         <td><span class="glyphicon glyphicon-fire vigor-permanent"></td>
+                                                         <td><span class="glyphicon glyphicon-fire vigor-used"></td>
+                                                         <td><span class="glyphicon glyphicon-fire vigor-used"></td>
+                                                         <td><span class="glyphicon glyphicon-fire vigor-used"></td>
+                                                         <td><span class="glyphicon glyphicon-fire vigor-used"></td>
+                                                         <td><span class="glyphicon glyphicon-fire vigor-used"></td>
+                                                        <td class="active"></td>
+                                                        <td class="active"></td>
+                                                        <td class="active" ></td>
+                                                        <td class="active"></td>
+                                                </tr>
+                                                <tr >
+                                                    <th>-1</th>
+                                                                 <td><span class="glyphicon glyphicon-fire vigor-used"></td>
+                                                                 <td><span class="glyphicon glyphicon-fire vigor-used"></td>
+                                                                 <td><span class="glyphicon glyphicon-fire vigor-select"></td>
+                                                                 <td><span class="glyphicon glyphicon-fire vigor-select"></td>
+                                                                 <td><span class="glyphicon glyphicon-fire vigor-select"></td>
+                                                                 <td><span class="glyphicon glyphicon-fire vigor-select"></td>
+                                                                 <td><span class="glyphicon glyphicon-fire vigor-select"></td>
+                                                                 <td><span class="glyphicon glyphicon-fire vigor-select"></td>
+                                                                 <td></td>
+                                                         <td class="active"></td>
+                                                         <td class="active"></td>
+                                                         <td class="active"></td>
+                                                         <td class="active"></td>
+                                          </tr>
+                                           <tr>
+                                             <th>-2</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                         <td class="active"></td>
+                                                         <td class="active"></td>
+                                                         <td class="active"></td>
+                                                         <td class="active"></td>
+                                          </tr>
+                                            <tr>
+                                             <th>-3</th>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                                 <td class="active"></td>
+                                                 <td class="active"></td>
+                                                 <td class="active"></td>
+                                                 <td class="active"></td>
+                                          </tr>
+                                           <tr>
+                                             <th>-4</th>
+                                                 <td ></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                 <td class="active"></td>
+                                                 <td class="active"></td>
+                                                 <td class="active"></td>
+                                                 <td class="active"></td>
+                                          </tr>
+                                          <tr>
+                                             <th>-5</th>
+
+                                               <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                 <td class="active"></td>
+                                                 <td class="active"></td>
+                                                 <td class="active"></td>
+                                                 <td class="active"></td>
+                                          </tr>
+                                            </table>
+                                          </div>
+                                        </div>
+    <!-- Vigor div end -->
     </div>
 
 <!-- SHOWCASE DATA ONLY FROM HERE ON OUT!!!!   -->
@@ -298,200 +483,8 @@
 
 <!-- Damage and Vigor div -->
 <div class="row">
-      <!-- Damage div -->
-    <div class="col-sm-6">
-        <div class="panel panel-default">
-  <div class="panel-heading">Damage</div>
-  <div class="panel-body">
-                    <table class="table table-condensed table-bordered hidingParts">
-
-                                            <tr>
-                                              <th></th>
-                                              <th>Armor</th>
-                                              <th>Trauma</th>
-                                              <th>Bleed</th>
-                                              <th>Critical</th>
-                                              <th>Total</th>
-                                            </tr>
-                                              <tr>
-                                                 <th>Head</th>
-                                                 <td>3</td>
-                                                 <td>2</td>
-                                                 <td>3</td>
-                                                 <td>3</td>
-                                                 <td>2</td>
-                                              </tr>
-                                              <tr>
-                                                 <th>Body</th>
-                                                 <td>1</td>
-                                                 <td>2</td>
-                                                 <td>4</td>
-                                                 <td>5</td>
-                                                 <td>6</td>
-                                              </tr>
-                                              <tr>
-                                                 <th>L.Arm</th>
-                                                 <td>1</td>
-                                                 <td>2</td>
-                                                 <td>4</td>
-                                                 <td>5</td>
-                                                 <td>6</td>
-                                              </tr>
-                                                <tr>
-                                                 <th>R.Arm</th>
-                                                 <td>1</td>
-                                                 <td>2</td>
-                                                 <td>4</td>
-                                                 <td>5</td>
-                                                 <td>6</td>
-                                              </tr>
-                                                <tr>
-                                                 <th>L.Leg</th>
-                                                 <td>1</td>
-                                                 <td>2</td>
-                                                 <td>4</td>
-                                                 <td>5</td>
-                                                 <td>6</td>
-                                              </tr>
-                                              <tr>
-                                                 <th>R.Leg</th>
-                                                 <td>1</td>
-                                                 <td>2</td>
-                                                 <td>4</td>
-                                                 <td>5</td>
-                                                 <td>6</td>
-                                              </tr>
-                        </table>
 
 
-            </div>
-        </div>
-    </div>
-      <!-- Damage div end-->
-      <!-- Vigor div -->
-
-
-      <div class="col-sm-6">
-          <div class="panel panel-default">
-  <div class="panel-heading">Vigor</div>
-  <div class="panel-body">
-   <table class="table table-condensed table-bordered hidingParts">
-                                                <tr>
-                                                <th></th>
-                                                <th>1</th>
-                                                <th>2</th>
-                                                <th>3</th>
-                                                <th>4</th>
-                                                <th>5</th>
-                                                <th>6</th>
-                                                <th>7</th>
-                                                <th>8</th>
-                                                <th>9</th>
-                                                <th>10</th>
-                                                <th>11</th>
-                                                <th>12</th>
-                                                <th>13</th>
-                                                </tr>
-                                                <tr>
-                                                    <th>0</th>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>-1</th>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                          </tr>
-                                           <tr>
-                                             <th>-2</th>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                          </tr>
-                                            <tr>
-                                             <th>-3</th>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                          </tr>
-                                           <tr>
-                                             <th>-4</th>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                          </tr>
-                                          <tr>
-                                             <th>-5</th>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                          </tr>
-                                            </table>
-                                          </div>
-                                        </div>
-    <!-- Vigor div end -->
     <!-- Damage and Vigor div end -->
 
 
