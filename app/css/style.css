@@ -65,7 +65,7 @@ float: none;
     min-width: 300px;
 =======
 .vigor-used {
-    color: #eea236;
+    color: #101010;
 }
 
 .vigor-permanent {
@@ -73,6 +73,18 @@ float: none;
 }
 
 .vigor-select{
+<<<<<<< HEAD
     color :#4cae4c;
 >>>>>>> Updated visual styling of Encumberance, Vigor, Damage panels
+=======
+    color :#ddd;
+}
+
+.total-color{
+    background-color:#d9534f;
+}
+
+.points-color{
+    background-color:  #5cb85c;
+>>>>>>> Upgraded combat gear melee weapon panel
 }
