@@ -4,7 +4,7 @@
 
 /**
  * Checks is given argument is valid number
- * @param {Type} n
+ * @param {int} n
  */
 function isNumber(n) {
    return n == parseFloat(n);
@@ -12,7 +12,7 @@ function isNumber(n) {
 
 /**
  * Checks is given argument is even
- * @param {Type} n
+ * @param {int} n
  */
 function isEven(n) {
    return isNumber(n) && (n % 2 == 0);
@@ -20,7 +20,7 @@ function isEven(n) {
 
 /**
  * Checks is given argument is odd
- * @param {Type} n
+ * @param {int} n
  */
 function isOdd(n) {
    return isNumber(n) && (Math.abs(n) % 2 == 1);
