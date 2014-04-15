@@ -88,3 +88,14 @@ float: none;
     background-color:  #5cb85c;
 >>>>>>> Upgraded combat gear melee weapon panel
 }
+
+
+ .vcenter {
+display: table-cell;
+vertical-align: middle;
+float: none;
+}
+
+.vcenter-col{
+    height: 40px;
+}
