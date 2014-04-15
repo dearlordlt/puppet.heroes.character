@@ -44,21 +44,22 @@
                                     <div class="col-sm-6 btn-group">
 
                                     {{#ifCond this.attributeValue '>=' ../maxAttribute}}
-                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm pull-right" disabled >
+                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm" disabled >
                                     <span class="glyphicon glyphicon-plus"></span>
                                     </button>
                                 {{else}}
-                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm pull-right" >
+                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm" >
                                     <span class="glyphicon glyphicon-plus"></span>
                                     </button>
                                 {{/ifCond}}
 
                                 {{#ifCond this.attributeValue '<=' ../minAttribute}}
-                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm pull-right" disabled>
+
+                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm" disabled>
                                         <span class="glyphicon glyphicon-minus"></span>
                                     </button>
                                 {{else}}
-                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm pull-right">
+                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm">
                                         <span class="glyphicon glyphicon-minus"></span>
                                     </button>
                                  {{/ifCond}}
@@ -94,68 +95,6 @@
                 </div>
 
     </div>
-    <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <h4>Combat skills</h4>
-                        </div>
-                        <div class="col-sm-8">
-                            <div class="form-inline" id="newCombatSkill">
-                                <div class="form-group input-group-sm">
-                                    <input type="hidden" value="{{this.combatSkillName}}" class="form-control" id="hiddenNewCombatSkillName{{@index}}">
-                                </div>
-                                <div class="form-group input-group-sm">
-                                    <input id="newCombatSkillName" class="form-control" type="text">
-                                    <input id="newCombatSkillValue" min="1" class="form-control" type="number">
-                                </div>
-                                <div class="btn-group">
-                                    <button class="btn btn-primary btn-sm" id="newCombatSkillButton"><span class="glyphicon glyphicon-ok"></span></button>
-                                    <button class="btn btn-primary btn-sm" id="cancelNewCombatSkillButton"><span class="glyphicon glyphicon-remove"></span></button>
-                                </div>
-                            </div>
-
-                            <div class="btn-group pull-righ" style="align:right"id="addNewCombatSkillButton">
-                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-1">
-                            <span class="badge points-color pull-right">{{combatSkillPoints}}</span>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="panel-body">
-
-                    <ul class="list-group split-list">
-                        {{#each combatSkills}}
-                            <li class="list-group-item" id="combatSkillNumber{{@index}}">
-                                <span class="badge">{{this.combatSkillValue}}</span>
-                                {{this.combatSkillname}}
-                            </li>
-                            <li class="list-group-item" id="editCombatSkill{{@index}}">
-                                <div class="form-inline">
-                                    <div class="form-group input-group-sm">
-                                        <input type="hidden" value="{{this.combatSkillname}}" class="form-control" id="hiddenCombatSkillName{{@index}}">
-                                        <input type="text" id="editCombatSkillName{{@index}}" class="form-control" value="{{this.combatSkillname}}">
-                                        <input type="number" id="editCombatSkillValue{{@index}}" class="form-control" min="1" value="{{this.combatSkillValue}}">
-                                    </div>
-                                    <div class="btn-group">
-                                        <button class="btn btn-primary btn-sm" id="saveCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-ok"></button>
-                                        <button class="btn btn-primary btn-sm" id="cancelCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-remove"></button>
-                                        <button class="btn btn-primary btn-sm" id="deleteCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-minus"></button>
-                                    </div>
-                                </div>
-                            </li>
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
-
-
-        </div>
                  <!-- Damage div -->
     <div class="col-sm-6">
         <div class="panel panel-default">
@@ -330,6 +269,71 @@
 <!-- SHOWCASE DATA ONLY FROM HERE ON OUT!!!!   -->
 
   <!-- Combat gear table start -->
+
+
+    <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h4>Combat skills</h4>
+                        </div>
+                        <div class="col-sm-7 vcenter vcenter-col">
+                            <div class="form-inline" id="newCombatSkill">
+                                <div class="form-group input-group-sm">
+                                    <input type="hidden" value="{{this.combatSkillName}}" class="form-control" id="hiddenNewCombatSkillName{{@index}}">
+                                </div>
+                                <div class="btn-group pull-right">
+                                    <button class="btn btn-primary btn-sm" id="newCombatSkillButton"><span class="glyphicon glyphicon-ok"></span></button>
+                                    <button class="btn btn-primary btn-sm" id="cancelNewCombatSkillButton"><span class="glyphicon glyphicon-remove"></span></button>
+                                </div>
+                                <div class="form-group input-group-sm pull-right">
+                                    <input id="newCombatSkillName" class="form-control" type="text">
+                                </div>
+                            </div>
+
+                            <div class="btn-group pull-right" id="addNewCombatSkillButton">
+                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 vcenter vcenter-col ">
+                            <span class="badge points-color pull-right">{{combatSkillPoints}}</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="panel-body">
+
+                    <ul class="list-group split-list">
+                        {{#each combatSkills}}
+                            <li class="list-group-item" id="combatSkillNumber{{@index}}">
+                                <span class="badge">{{this.combatSkillValue}}</span>
+                                {{this.combatSkillname}}
+                            </li>
+                            <li class="list-group-item" id="editCombatSkill{{@index}}">
+                                <div class="form-inline">
+                                    <div class="form-group input-group-sm">
+                                        <input type="hidden" value="{{this.combatSkillname}}" class="form-control" id="hiddenCombatSkillName{{@index}}">
+                                        <input type="text" id="editCombatSkillName{{@index}}" class="form-control" value="{{this.combatSkillname}}">
+                                        <input type="number" id="editCombatSkillValue{{@index}}" class="form-control" min="1" value="{{this.combatSkillValue}}">
+                                    </div>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm" id="saveCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-ok"></button>
+                                        <button class="btn btn-primary btn-sm" id="cancelCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-remove"></button>
+                                        <button class="btn btn-primary btn-sm" id="deleteCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-minus"></button>
+                                    </div>
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+
 
 <!-- Weapon table start -->
         <div class="col-sm-12">
