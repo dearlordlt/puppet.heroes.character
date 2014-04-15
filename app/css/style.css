@@ -5,3 +5,13 @@
 #footer-template {
     margin: 5px;
 }
+
+ .vcenter {
+display: table-cell;
+vertical-align: middle;
+float: none;
+}
+
+.vcenter-col{
+    height: 40px;
+}
