@@ -57,6 +57,7 @@ float: none;
     top: 50%;
     left: 200px;
     z-index: 10000000;
+    display: none;
 }
 
 .alert-body {
