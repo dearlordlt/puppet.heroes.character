@@ -188,6 +188,14 @@ $("#close-map-popup").click(function () {
     $("#map-popup").hide(100);
 });
 
+$("#close-map-top-menu").click(function () {
+    $(".map_controlls").toggle(100);
+    if($(".map_controlls").css('display') == 'none')
+        $("#tmap-hide-show-icon").attr('class', 'glyphicon glyphicon-chevron-up');
+    else
+        $("#tmap-hide-show-icon").attr('class', 'glyphicon glyphicon-chevron-down');
+});
+
 // To initially run the function:
 $(window).resize();
 
