@@ -1,124 +1,388 @@
-<div>
-    <h3>{{title}}</h3>
-</div>
-<div>
-    <ul>
-        {{#each character}}
-            <li>
-                {{@key}}: {{this}}
-            </li>
-        {{/each}}
-    </ul>
-</div>
-
-<div>
-    <h3>Talents</h3>
-    <ul>
-        {{#each talents}}
-            <li>
-                {{@key}}: {{this}}
-            </li>
-        {{/each}}
-    </ul>
-</div>
-
-<div>
-    <h3>Skills</h3>
-    <ul>
-        {{#each skills}}
-            <li id="skillNumber{{@index}}">{{this.skillName}}: {{this.skillValue}}</li>
-               <div class="form-inline skillEditForm" id="editSkill{{@index}}">
-                    <div class="form-group">
-                        <input type="hidden" value="{{this.skillName}}" class="form-control" id="hiddenSkillName{{@index}}">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="editSkillName{{@index}}" class="form-control" value="{{this.skillName}}">
-                    </div>
-                    <div class="form-group">
-                        <input type="number" id="editSkillValue{{@index}}" class="form-control" value="{{this.skillValue}}">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" id="saveSkillButton{{@index}}">Save</button>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" id="cancelSkillButton{{@index}}">Cancel</button>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" id="deleteSkillButton{{@index}}">Delete</button>
+<div class="container-fluid">
+    <div class="" style="position: fixed; right: 0; left: 0; top: 51px; z-index: 1;">
+<div class="row" >
+<div class="col-sm-12" >
+                <div class="list-group" >
+                    <div class="list-group-item form-inline">
+                        <span>Layout types</span>
+                        <div class="btn-group">
+                            <button class="btn btn-primary"><span class="glyphicon glyphicon-star"></span></button>
+                            <button class="btn btn-primary"><span class="glyphicon glyphicon-user"></span></button>
+                        </div>
+                        <span>Edit mode</span>
+                        <div class="btn-group">
+                            <button class="btn btn-primary"><span class="glyphicon glyphicon-th-large"></span></button>
+                            <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+                        </div>
                     </div>
                 </div>
-
-            {{#if this.skillSpecialization}}
-                <ul>
-                    {{#each skillSpecialization}}
-                        <li>{{this}}</li>
-                    {{/each}}
-                </ul>
-            {{/if}}
-        {{/each}}
-    </ul>
-    <div class="form-inline" id="newSkill">
-        <div class="form-group">
-            <input type="hidden" value="{{this.skillName}}" class="form-control" id="hiddenNewSkillName{{@index}}">
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="newSkillName">New Skill</label>
-            <input id="newSkillName" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="newSkillName">Skill Level</label>
-            <input id="newSkillValue" class="form-control" type="number">
-        </div>
-        <div class="form-group">
-            <button id="newSkillButton" class="btn btn-primary">Add</button>
-        </div>
+    </div>
     </div>
 </div>
-
-<div>
-    <h3>Possessions</h3>
-    <ul>
-        {{#each possessions}}
-            <li>
-                {{this}}
-            </li>
-        {{/each}}
-    </ul>
 </div>
-
-<div>
-    <h3>Goals</h3>
-    <ul>
-        {{#each goals}}
-            <li>
-                {{this}}
-            </li>
-        {{/each}}
-    </ul>
-</div>
-
-<div>
-    <h3>Knowledges</h3>
-    <ul>
-        {{#each knowledges}}
-            <li>
-                {{this}}
-            </li>
-        {{/each}}
-    </ul>
-</div>
-
-<div>
-    <h3>Pockets</h3>
-    <ul>
-        {{#each pockets}}
-            <li>
-                {{this}}
-            </li>
-        {{/each}}
-    </ul>
-</div>
+<div class="container-fluid" style="padding-top: 70px;">
+    <div class="row">
+        <div class="col-sm-12">
 
 
+            <div class="row">
+                <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h4>Roll Logs</h4></div>
+                            <div class="panel-body scrollable-panel">
+                                <div class="list-group">
+                                    <a class="list-group-item">
+                                        Roll roll
+                                    </a>
+                                    <a class="list-group-item">
+                                        Roll roll
+                                    </a>
+                                    <a class="list-group-item">
+                                        Roll roll
+                                    </a>
+                                    <a class="list-group-item">
+                                        Roll roll
+                                    </a>
+                                    <a class="list-group-item">
+                                        Roll roll
+                                    </a>
+                                    <a class="list-group-item">
+                                        Roll roll
+                                    </a>
+                                    <a class="list-group-item">
+                                        Roll roll
+                                    </a>
+                                    <a class="list-group-item">
+                                        Roll roll
+                                    </a>
+                                    <a class="list-group-item">
+                                        Roll roll
+                                    </a>
+                                    <a class="list-group-item">
+                                        Roll roll
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row"><!-- Edit menu start -->
+                                    <div class="col-sm-3 edit-mode-menu">
+                                        <h4>Character</h4>
+                                    </div>
+                                    <div class="col-sm-9 edit-mode-menu">
+                                        <div class="input-group input-group-sm">
+                                            <input class="form-control" type="text">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- Edit menu end -->
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group">
+                                    {{#each character}}
+                                        <a class="list-group-item">
+                                            {{@key}}: {{this}}
+                                        </a>
+                                    {{/each}}
+                                </div>
 
-<script src="./app/js/models/ncg_scripts/ncg.js"></script>
+                            </div>
+                        </div>
+                   </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-3 edit-mode-menu">
+                                    <h4>Talents</h4>
+                                </div>
+                                <div class="col-sm-9 edit-mode-menu">
+                                    <div class="pull-right">
+                                    <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                <span class="badge badge-success edit-mode-menu-talents">3</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="276px" height="276px" viewBox="0 0 276 276" enable-background="new 0 0 276 276" xml:space="preserve">
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="performer" data-column="1" data-row="1" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="189.422,12.644 85.868,12.644 101.4,50.144 173.891,50.144 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="performer" data-column="1" data-row="2" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="116.933,87.644 101.4,50.144 173.89,50.144 158.356,87.644 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="performer" data-column="1" data-row="3" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="116.933,87.644 137.644,137.644 158.356,87.644 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="operator" data-column="2" data-row="1" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="262.646,85.867 189.423,12.644 173.889,50.144 225.147,101.402 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="operator" data-column="2" data-row="2" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="158.355,87.644 173.888,50.143 225.145,101.401 187.645,116.934 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="operator" data-column="2" data-row="3" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="158.355,87.644 137.645,137.644 187.645,116.934 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="laborer" data-column="3" data-row="1" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="262.646,189.421 262.646,85.867 225.144,101.399 225.144,173.89 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="laborer" data-column="3" data-row="2" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="187.644,116.932 225.144,101.398 225.144,173.889 187.644,158.355 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="laborer" data-column="3" data-row="3" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="187.644,116.932 137.644,137.644 187.644,158.355 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="craftsman" data-column="4" data-row="1" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="189.421,262.644 262.646,189.421 225.145,173.887 173.887,225.145 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="craftsman" data-column="4" data-row="2" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="187.645,158.353 225.145,173.887 173.888,225.144 158.354,187.644 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="craftsman" data-column="4" data-row="3" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="187.645,158.353 137.645,137.644 158.354,187.644 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="analytic" data-column="5" data-row="1" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="85.868,262.644 189.421,262.644 173.889,225.144 101.399,225.144 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="analytic" data-column="5" data-row="2" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="158.356,187.644 173.89,225.144 101.4,225.144 116.933,187.644 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="analytic" data-column="5" data-row="3" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="158.356,187.644 137.645,137.644 116.933,187.644 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="architect" data-column="6" data-row="1" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="12.644,189.42 85.868,262.644 101.403,225.144 50.143,173.886 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="architect" data-column="6" data-row="2" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="116.935,187.644 101.403,225.144 50.144,173.886 87.644,158.353 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="architect" data-column="6" data-row="3" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="116.935,187.644 137.645,137.644 87.644,158.353 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="leader" data-column="7" data-row="1" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="12.644,85.868 12.644,189.421 50.145,173.889 50.145,101.399 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="leader" data-column="7" data-row="2" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="87.645,158.356 50.145,173.889 50.145,101.4 87.645,116.933 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="leader" data-column="7" data-row="3" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="87.645,158.356 137.645,137.645 87.645,116.933 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="artist" data-column="8" data-row="1" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="85.868,12.644 12.644,85.867 50.144,101.401 101.404,50.143 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="artist" data-column="8" data-row="2" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="87.644,116.935 50.144,101.402 101.403,50.144 116.935,87.644 "/>
+                                        <polygon class="ncgTalentPolygon" data-status="enabled" data-name="artist" data-column="8" data-row="3" fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" points="87.644,116.935 137.644,137.644 116.935,87.644 "/>
+                                        <text transform="matrix(1 0 0 1 110.4031 32.3943)" font-family="'ArialMT'" font-size="12">Performer</text>
+                                        <text transform="matrix(0.7071 0.7071 -0.7071 0.7071 194.6736 45.7239)" font-family="'ArialMT'" font-size="12">Operator</text>
+                                        <text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 248.2107 157.6892)" font-family="'ArialMT'" font-size="12">Laborer</text>
+                                        <text transform="matrix(0.7071 -0.7071 0.7071 0.7071 196.6804 235.95)" font-family="'ArialMT'" font-size="12">Craftsman</text>
+                                        <text transform="matrix(1 0 0 1 114.6438 247.8669)" font-family="'ArialMT'" font-size="12">Analytic</text>
+                                        <text transform="matrix(0.7071 0.7071 -0.7071 0.7071 41.4998 199.2883)" font-family="'ArialMT'" font-size="12">Architect</text>
+                                        <text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 33.4006 155.6892)" font-family="'ArialMT'" font-size="12">Leader</text>
+                                        <text transform="matrix(0.7071 -0.7071 0.7071 0.7071 54.325 74.2229)" font-family="'ArialMT'" font-size="12">Artist</text>
+                                        <circle class="ncgTalentBtn" data-children="1,7;1,8;1,1;1,2" data-siblings="2,8;2,1;2,2" data-row="1" data-column="1" data-status="enabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="85.868" cy="12.644" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="1,8;1,1;1,2;1,3" data-siblings="2,1;2,2;2,3" data-row="1" data-column="2" data-status="enabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="189.422" cy="12.644" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="1,1;1,2;1,3;1,4" data-siblings="2,2;2,3;2,4" data-row="1" data-column="3" data-status="enabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="262.646" cy="85.868" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="1,2;1,3;1,4;1,5" data-siblings="2,3;2,4;2,5" data-row="1" data-column="4" data-status="enabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="262.646" cy="189.421" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="1,3;1,4;1,5;1,6" data-siblings="2,4;2,5;2,6" data-row="1" data-column="5" data-status="enabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="189.422" cy="262.644" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="1,4;1,5;1,6;1,7" data-siblings="2,5;2,6;2,7" data-row="1" data-column="6" data-status="enabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="85.868" cy="262.644" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="1,5;1,6;1,7;1,8" data-siblings="2,6;2,7;2,8" data-row="1" data-column="7" data-status="enabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="12.644" cy="189.421" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="1,6;1,7;1,8;1,1" data-siblings="2,7;2,8;2,1" data-row="1" data-column="8" data-status="enabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="12.644" cy="85.867" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="2,8;2,1" data-siblings="3,8;3,1" data-row="2" data-column="1" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="101.4" cy="50.144" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="2,1;2,2" data-siblings="3,1;3,2" data-row="2" data-column="2" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="173.887" cy="50.144" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="2,2;2,3" data-siblings="3,2;3,3" data-row="2" data-column="3" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="225.145" cy="101.398" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="2,3;2,4" data-siblings="3,3;3,4" data-row="2" data-column="4" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="225.145" cy="173.886" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="2,4;2,5" data-siblings="3,4;3,5" data-row="2" data-column="5" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="173.887" cy="225.144" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="2,5;2,6" data-siblings="3,5;3,6" data-row="2" data-column="6" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="101.4" cy="225.144" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="2,6;2,7" data-siblings="3,6;3,7" data-row="2" data-column="7" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="50.145" cy="173.886" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="2,7;2,8" data-siblings="3,7;3,8" data-row="2" data-column="8" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="50.144" cy="101.398" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="3,1" data-row="3" data-column="1" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="137.644" cy="87.644" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="3,2" data-row="3" data-column="2" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="173.887" cy="101.402" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="3,3" data-row="3" data-column="3" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="187.645" cy="137.644" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="3,4" data-row="3" data-column="4" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="173.978" cy="171.886" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="3,5" data-row="3" data-column="5" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="137.645" cy="187.644" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="3,6" data-row="3" data-column="6" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="101.4" cy="171.886" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="3,7" data-row="3" data-column="7" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="87.644" cy="137.644" r="11.644"/>
+                                        <circle class="ncgTalentBtn" data-children="3,8" data-row="3" data-column="8" data-status="disabled" fill="#cccccc" stroke="#000000" stroke-miterlimit="10" cx="101.4" cy="101.402" r="11.644"/>
+                                    </svg>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="list-group row">
+                                        <div class="col-sm-12">
+                                            {{#each talents}}
+                                            <a class="list-group-item col-sm-6">
+                                                {{@key}}<span class="badge">{{this}}</span>
+                                            </a>
+                                            {{/each}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-5 edit-mode-menu">
+                                    <h4>Skills</h4>
+                                </div>
+                                <div class="col-sm-7 edit-mode-menu">
+                                    <div class="pull-right">
+                                    <div class="input-group input-group-sm">
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li><a href="#">Super awesome skill</a></li>
+                                                <li><a href="#">Another super awesome skill</a></li>
+                                                <li><a href="#">Less awesome skill</a></li>
+                                                <li><a href="#">Awesome skill</a></li>
+                                                <li><a href="#">Super awesome</a></li>
+                                            </ul>
+                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                            <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+
+                                            <span class="badge badge-success edit-mode-menu-skills">3</span>
+
+                                        </div>
+
+                                    </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-sm-12">
+                                <div class="list-group row">
+
+                                    {{#each skills}}
+
+                                    <a class="list-group-item col-sm-6">
+
+                                        <div class="col-sm-3 edit-mode-menu">
+                                        {{this.skillName}}
+                                            </div>
+                                        <div class="col-sm-9 edit-mode-menu">
+                                        <div class="pull-right">
+                                        <div class="btn-group btn-group-sm edit-mode-menu">
+                                            <button class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+                                            <button class="btn btn-primary"><span class="glyphicon glyphicon-minus"></span></button>
+                                        </div>
+                                             <span class="badge edit-mode-menu-skills">{{this.skillValue}}</span>
+                                        </div>
+                                        </div>
+                                    </a>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <div class="row"><!-- Edit menu start -->
+                               <div class="col-sm-4 edit-mode-menu">
+                                   <h4>Possessions</h4>
+                               </div>
+                               <div class="col-sm-8 edit-mode-menu">
+                                   <div class="input-group input-group-sm">
+                                       <input class="form-control" type="text">
+                                       <div class="input-group-btn">
+                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                           <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                                       </div>
+                                   </div>
+                               </div>
+                            </div><!-- Edit menu end -->
+                        </div>
+                        <div class="panel-body scrollable-panel">
+                            <div class="list-group">
+                                {{#each possessions}}
+                                    <a class="list-group-item">
+                                        {{this}}
+                                    </a>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="row"><!-- Edit menu start -->
+                               <div class="col-sm-3 edit-mode-menu">
+                                   <h4>Goals</h4>
+                               </div>
+                               <div class="col-sm-9 edit-mode-menu">
+                                   <div class="input-group input-group-sm">
+                                       <input class="form-control" type="text">
+                                       <div class="input-group-btn">
+                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                           <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                                       </div>
+                                   </div>
+                               </div>
+                            </div><!-- Edit menu end -->
+                        </div>
+                        <div class="panel-body scrollable-panel">
+                            <div class="list-group">
+                                {{#each goals}}
+                                    <a class="list-group-item">
+                                        {{this}}
+                                    </a>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="row"><!-- Edit menu start -->
+                                <div class="col-sm-4 edit-mode-menu">
+                                   <h4>Knowledges</h4>
+                                </div>
+                                <div class="col-sm-8 edit-mode-menu">
+                                    <div class="input-group input-group-sm">
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                            <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- Edit menu end -->
+                        </div>
+                        <div class="panel-body scrollable-panel">
+                            <div class="list-group">
+                                {{#each knowledges}}
+                                    <a class="list-group-item">
+                                        {{this}}
+                                    </a>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <div class="row"><!-- Edit menu start -->
+                               <div class="col-sm-3 edit-mode-menu">
+                                   <h4>Pockets</h4>
+                               </div>
+                               <div class="col-sm-9 edit-mode-menu">
+                                   <div class="input-group input-group-sm">
+                                       <input class="form-control" type="text">
+                                       <div class="input-group-btn">
+                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                           <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                                       </div>
+                                   </div>
+                               </div>
+                            </div><!-- Edit menu end -->
+                        </div>
+                        <div class="panel-body scrollable-panel">
+                            <div class="list-group">
+                                {{#each pockets}}
+                                    <a class="list-group-item">
+                                        {{this}}
+                                    </a>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+<script src="./app/js/models/ncg_scripts/ncg_gridster.js"></script>
+<script src="./app/js/models/ncg_scripts/ncg_talents.js"></script>
+<script src="./app/js/models/ncg_scripts/ncg_skills.js"></script>
