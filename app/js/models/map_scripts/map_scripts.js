@@ -184,6 +184,10 @@ $("#toggleCoords").click(function () {
     toggleCoordsText();
 }); toggleCoordsText();
 
+$("#close-map-popup").click(function () {
+    $("#map-popup").hide(100);
+});
+
 // To initially run the function:
 $(window).resize();
 
