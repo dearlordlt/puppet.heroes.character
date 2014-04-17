@@ -33,6 +33,21 @@ var selected_soldier = "";
 var placed_soldiers = [];
 var selectedDummy = "";
 
+/*
+* changes size of map
+* @param {_inpSizeX} width
+* @param {_inpSizeX} height
+*/
+function changeMapSize (_inpSizeX, _inpSizeX) {
+    map_tpl.sizeX = _inpSizeX;
+    map_tpl.sizeY = _inpSizeY;
+
+    project.activeLayer.remove();
+    mapLayer = new paper.Layer();
+
+    initMap();
+});
+
 /**
 * Displays Alert
 * @param {str} _message
@@ -43,12 +58,18 @@ function mapAlert(_message) {
     $("#map-alert-message").text(_message);
 }
 
+/*
+* Deselcts al soldiers
+*/
 function deselectAllSoldiers () {
     for(var i = 0; i < placed_soldiers.length; i++) {
         placed_soldiers[i].selected = false;
     }
 }
 
+/*
+* Show-hide texts
+*/
 function toggleCoordsText() {
     map_tpl.toggleCoords = !map_tpl.toggleCoords;
 
@@ -162,16 +183,6 @@ initMap();
 $("#toggleCoords").click(function () {
     toggleCoordsText();
 }); toggleCoordsText();
-
-$("#changeMapSizeBnt").click(function () {
-    map_tpl.sizeX = parseInt($("#inpSizeX").val());
-    map_tpl.sizeY = parseInt($("#inpSizeY").val());
-
-    project.activeLayer.remove();
-    mapLayer = new paper.Layer();
-
-    initMap();
-});
 
 //This must be last line of 'paper' operations
 paper.view.draw();
