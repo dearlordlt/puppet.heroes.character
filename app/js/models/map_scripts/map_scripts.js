@@ -1,3 +1,5 @@
+$("#map-alert").hide(0);
+
 var canvas = document.createElement('canvas');
 canvas.id               = "MapLayer";
 canvas.width            = 800;
@@ -26,6 +28,12 @@ var dummys_arr = [];
 var coords_arr = [];
 
 var selectedDummy = "";
+
+function mapAlert(_message) {
+    $("#map-alert").hide(0);
+    $("#map-alert").show(300);
+    $("#map-alert-message").text(_message);
+}
 
 function toggleCoordsText() {
     map_tpl.toggleCoords = !map_tpl.toggleCoords;
@@ -75,7 +83,7 @@ function initMap() {
             }
 
             var _hexagon = new paper.Path.RegularPolygon(new paper.Point(_xpos, _ypos), 6, 25);
-            _hexagon.data.ocupiedBy = [];
+            _hexagon.data.ocupiedBy = undefined;
             _hexagon.style = {
                 fillColor: '#F2FBEF',
                 strokeColor: 'black',
@@ -97,7 +105,10 @@ function initMap() {
             }
 
             _hexagon.onMouseDown = function (event) {
-                //TODO: Check if this is not taken by other _man
+                if(this.data.ocupiedBy != undefined) {
+                    mapAlert("This tile is ocupied, off with you!");
+                    return;
+                }
                 if(selectedDummy != "" && selectedDummy.selected) {
                     var _man = new paper.Raster(selectedDummy.data.color);
                     _man.selected = false;
