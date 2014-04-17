@@ -2,8 +2,6 @@ var canvas = document.createElement('canvas');
 canvas.id               = "MapLayer";
 canvas.width            = 800;
 canvas.height           = 600;
-//canvas.style.zIndex   = 8;
-//canvas.style.position = "absolute";
 canvas.style.border     = "1px solid";
 
 mapCanvas = document.getElementById("mapCanvas");
@@ -12,8 +10,6 @@ mapCanvas.appendChild(canvas);
 paper.setup(canvas);
 
 var mapLayer = new paper.Layer();
-
-//canvas.width = $("#mapCanvas").width(); //Uncomment to make map canvas width dynamic
 
 var man_blue = new paper.Raster('man-blue');
     man_blue.data.color = 'man-blue';
@@ -141,5 +137,5 @@ $("#changeMapSizeBnt").click(function () {
     initMap();
 });
 
-//This must be last line of the code
+//This must be last line of 'paper' operations
 paper.view.draw();
