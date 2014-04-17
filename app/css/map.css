@@ -8,3 +8,10 @@
 .map-assets {
     visibility: hidden;
 }
+
+#map-popup {
+    position: absolute;
+    left:50%;
+    top:300px;
+    margin-left:-20px;
+}

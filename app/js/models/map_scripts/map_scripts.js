@@ -1,4 +1,6 @@
 $("#map-alert").hide(0);
+$("#map-popup").draggable();
+$("#map-popup").hide(0);
 
 var canvas = document.createElement('canvas');
 canvas.id               = "MapLayer";
@@ -50,8 +52,8 @@ function deselectAllSoldiers () {
 function toggleCoordsText() {
     map_tpl.toggleCoords = !map_tpl.toggleCoords;
 
-    if(!map_tpl.toggleCoords) $("#toggleCoords").val("Hide coords");
-    else $("#toggleCoords").val("Show coords");
+    if(!map_tpl.toggleCoords) $("#toggleCoords").val("Show coords");
+    else $("#toggleCoords").val("Hide coords");
 
     for(var i=0; i < coords_arr.length; i++) {
         coords_arr[i].visible = map_tpl.toggleCoords;
@@ -131,9 +133,11 @@ function initMap() {
                     placed_soldiers.push(_man);
 
                     _man.onMouseDown = function (event) {
+                        $("#map-popup").hide(0);
                         deselectAllSoldiers();
                         this.selected = true;
                         selected_soldier = this;
+                        $("#map-popup").show(300);
                     }
                 }
             }
@@ -157,7 +161,7 @@ initMap();
 
 $("#toggleCoords").click(function () {
     toggleCoordsText();
-});
+}); toggleCoordsText();
 
 $("#changeMapSizeBnt").click(function () {
     map_tpl.sizeX = parseInt($("#inpSizeX").val());
