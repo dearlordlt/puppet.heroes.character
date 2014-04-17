@@ -29,6 +29,10 @@ var coords_arr = [];
 
 var selectedDummy = "";
 
+/**
+* Displays Alert
+* @param {str} _message
+*/
 function mapAlert(_message) {
     $("#map-alert").hide(0);
     $("#map-alert").show(300);
