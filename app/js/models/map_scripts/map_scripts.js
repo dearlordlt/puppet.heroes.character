@@ -75,6 +75,7 @@ function initMap() {
             }
 
             var _hexagon = new paper.Path.RegularPolygon(new paper.Point(_xpos, _ypos), 6, 25);
+            _hexagon.data.ocupiedBy = [];
             _hexagon.style = {
                 fillColor: '#F2FBEF',
                 strokeColor: 'black',
@@ -96,13 +97,14 @@ function initMap() {
             }
 
             _hexagon.onMouseDown = function (event) {
+                //TODO: Check if this is not taken by other _man
                 if(selectedDummy != "" && selectedDummy.selected) {
                     var _man = new paper.Raster(selectedDummy.data.color);
                     _man.selected = false;
                     _man.position = this.position;
                     _man.rotation = selectedDummy.rotation;
                     selectedDummy.selected = false;
-                    console.log("Hexahon clicked");
+                    this.data.ocupiedBy = _man;
                 }
             }
 
