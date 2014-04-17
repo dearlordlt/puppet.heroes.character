@@ -16,6 +16,11 @@ float: none;
     height: 40px;
 }
 
+.scrollable-panel {
+    overflow-y:auto;
+    height: 215px;
+}
+
 .badge-error {
   background-color: #d9534f;
 }
