@@ -1,0 +1,20 @@
+.edit-mode-menu {
+    margin-right: -4px;
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.edit-mode-menu-talents {
+    margin-right: 0px;
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.edit-mode-menu-skills {
+    margin-right: 0px;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
