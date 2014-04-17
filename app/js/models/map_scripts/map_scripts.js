@@ -27,6 +27,8 @@ var man_red = new paper.Raster('man-red');
 var dummys_arr = [];
 var coords_arr = [];
 
+var selected_soldier = "";
+var placed_soldiers = [];
 var selectedDummy = "";
 
 /**
@@ -37,6 +39,12 @@ function mapAlert(_message) {
     $("#map-alert").hide(0);
     $("#map-alert").show(300);
     $("#map-alert-message").text(_message);
+}
+
+function deselectAllSoldiers () {
+    for(var i = 0; i < placed_soldiers.length; i++) {
+        placed_soldiers[i].selected = false;
+    }
 }
 
 function toggleCoordsText() {
@@ -120,6 +128,13 @@ function initMap() {
                     _man.rotation = selectedDummy.rotation;
                     selectedDummy.selected = false;
                     this.data.ocupiedBy = _man;
+                    placed_soldiers.push(_man);
+
+                    _man.onMouseDown = function (event) {
+                        deselectAllSoldiers();
+                        this.selected = true;
+                        selected_soldier = this;
+                    }
                 }
             }
 
