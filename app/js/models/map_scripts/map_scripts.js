@@ -158,7 +158,7 @@ function initMap() {
                         deselectAllSoldiers();
                         this.selected = true;
                         selected_soldier = this;
-                        $("#map-popup").show(300);
+                        $("#map-popup").show(300, "swing");
                     }
                 }
             }
@@ -183,6 +183,9 @@ initMap();
 $("#toggleCoords").click(function () {
     toggleCoordsText();
 }); toggleCoordsText();
+
+// To initially run the function:
+$(window).resize();
 
 //This must be last line of 'paper' operations
 paper.view.draw();
