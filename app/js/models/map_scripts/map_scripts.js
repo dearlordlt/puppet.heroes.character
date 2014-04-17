@@ -46,11 +46,11 @@ function toggleCoordsText() {
 function initDefaultCharacters() {
     dummys_arr = [man_blue, man_black, man_green, man_orange, man_red];
     for(var i=0; i < dummys_arr.length; i++) {
-        var dummy = dummys_arr[i];
-        dummy.position.x = 750;
-        dummy.position.y = i*35+25;
+        var _dummy = dummys_arr[i];
+        _dummy.position.x = 750;
+        _dummy.position.y = i*35+25;
 
-        dummy.onMouseDown = function(event) {
+        _dummy.onMouseDown = function(event) {
             for(var j = 0; j < dummys_arr.length; j++) {
                 dummys_arr[j].selected = false;
             }
@@ -67,55 +67,55 @@ function initDefaultCharacters() {
 
 function initMap() {
     for (var i = 0; i < map_tpl.sizeX; i++) {
-        var margin = 30;
+        var _margin = 30;
         for(var j = 0; j < map_tpl.sizeY; j++) {
-            var xpos, ypos;
+            var _xpos, _ypos;
             if(!isEven(j)) {
-                xpos = 43*i+margin;
-                ypos = 50*(j*0.75)+margin;
+                _xpos = 43*i+_margin;
+                _ypos = 50*(j*0.75)+_margin;
             } else {
-                xpos = 43*(i)+(margin+22);
-                ypos = 50*(j*0.75)+margin;
+                _xpos = 43*(i)+(_margin+22);
+                _ypos = 50*(j*0.75)+_margin;
             }
 
-            var hexagon = new paper.Path.RegularPolygon(new paper.Point(xpos, ypos), 6, 25);
-            hexagon.style = {
+            var _hexagon = new paper.Path.RegularPolygon(new paper.Point(_xpos, _ypos), 6, 25);
+            _hexagon.style = {
                 fillColor: '#F2FBEF',
                 strokeColor: 'black',
                 strokeWidth: 1
             }
-            hexagon.data = {
+            _hexagon.data = {
                 gridX : i,
                 gridY : j
             }
 
-            hexagon.onMouseEnter = function (event) {
+            _hexagon.onMouseEnter = function (event) {
                 this.fillColor = '#ADD8E6';
                 $("#tileX").text(this.data.gridX);
                 $("#tileY").text(this.data.gridY);
             }
 
-            hexagon.onMouseLeave = function (event) {
+            _hexagon.onMouseLeave = function (event) {
                 this.fillColor = '#F2FBEF';
             }
 
-            hexagon.onMouseDown = function (event) {
+            _hexagon.onMouseDown = function (event) {
                 if(selectedDummy != "" && selectedDummy.selected) {
-                    var man = new paper.Raster(selectedDummy.data.color);
-                    man.selected = false;
-                    man.position = this.position;
-                    man.rotation = selectedDummy.rotation;
+                    var _man = new paper.Raster(selectedDummy.data.color);
+                    _man.selected = false;
+                    _man.position = this.position;
+                    _man.rotation = selectedDummy.rotation;
                     selectedDummy.selected = false;
                     console.log("Hexahon clicked");
                 }
             }
 
-            var text = new paper.PointText(new paper.Point(xpos, ypos+3));
-            coords_arr.push(text);
-            text.justification = 'center';
-            text.fillColor = 'black';
-            text.content = '['+i+':'+j+']';
-            text.locked = true;
+            var _text = new paper.PointText(new paper.Point(_xpos, _ypos+3));
+            coords_arr.push(_text);
+            _text.justification = 'center';
+            _text.fillColor = 'black';
+            _text.content = '['+i+':'+j+']';
+            _text.locked = true;
         }
     }
     console.log("Map size : [" + map_tpl.sizeX + " : " + map_tpl.sizeY + "]");
