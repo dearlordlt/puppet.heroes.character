@@ -79,3 +79,14 @@ Handlebars.registerHelper("ifCond",function(v1,operator,v2,options) {
             return eval(""+v1+operator+v2)?options.fn(this):options.inverse(this);
     }
 });
+
+/**
+* Displays alert
+* @param {str} _header
+* @param {str} _message
+*/
+function phAlert(_header, _message) {
+    $("#global-alert").show();
+    $("#alert-header").html(_header);
+    $("#alert-message").html(_message);
+}

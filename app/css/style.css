@@ -6,12 +6,24 @@
     margin: 5px;
 }
 
- .vcenter {
-display: table-cell;
-vertical-align: middle;
-float: none;
+.vcenter {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
 }
 
-.vcenter-col{
+.vcenter-col {
     height: 40px;
+}
+
+#global-alert {
+    position: absolute;
+    top: 50%;
+    left: 200px;
+    z-index:10000000000000;
+    display: none;
+}
+
+.alert-body {
+    min-width: 300px;
 }
