@@ -18,10 +18,28 @@
                 <li><a id="menu_cg">Combat gear</a></li>
                 <li><a id="menu_ncg">Non combat gear</a></li>
                 <li><a id="menu_map">Map</a></li>
-                <li><a id="dnd_map">Layout</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 
+<div id="global-alert">
+    <div class="panel panel-default panel-info">
+        <div class="panel-heading alert-body">
+            <div class="row">
+                <div class="col-xs-6"><h5><span id="alert-header">[Alert]</span></h5></div>
+                <div class="col-xs-6">
+                    <button type="button" class="btn btn-default btn-sm pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body alert-body">
+            <span id="alert-message">[Message]</span>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript" src="./app/js/header.js"></script>
+<script type="text/javascript" src="./app/js/models/header_scripts/header_script.js"></script>

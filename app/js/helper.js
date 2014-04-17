@@ -4,7 +4,7 @@
 
 /**
  * Checks is given argument is valid number
- * @param {Type} n
+ * @param {int} n
  */
 function isNumber(n) {
    return n == parseFloat(n);
@@ -12,7 +12,7 @@ function isNumber(n) {
 
 /**
  * Checks is given argument is even
- * @param {Type} n
+ * @param {int} n
  */
 function isEven(n) {
    return isNumber(n) && (n % 2 == 0);
@@ -20,7 +20,7 @@ function isEven(n) {
 
 /**
  * Checks is given argument is odd
- * @param {Type} n
+ * @param {int} n
  */
 function isOdd(n) {
    return isNumber(n) && (Math.abs(n) % 2 == 1);
@@ -79,3 +79,14 @@ Handlebars.registerHelper("ifCond",function(v1,operator,v2,options) {
             return eval(""+v1+operator+v2)?options.fn(this):options.inverse(this);
     }
 });
+
+/**
+* Displays alert
+* @param {str} _header
+* @param {str} _message
+*/
+function phAlert(_header, _message) {
+    $("#global-alert").show();
+    $("#alert-header").html(_header);
+    $("#alert-message").html(_message);
+}
