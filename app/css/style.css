@@ -51,3 +51,14 @@ float: none;
 .badge-inverse:hover {
   background-color: #1a1a1a;
 }
+
+#global-alert {
+    position: absolute;
+    top: 50%;
+    left: 200px;
+    z-index: 10000000;
+}
+
+.alert-body {
+    min-width: 300px;
+}
