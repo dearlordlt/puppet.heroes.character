@@ -101,7 +101,7 @@ function initDefaultCharacters() {
             }
         }
     }
-    console.log("Characters placed");
+    //console.log("Characters placed");
 }
 
 function initMap() {
