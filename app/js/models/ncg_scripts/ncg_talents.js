@@ -25,7 +25,7 @@ $(".ncgTalentBtn").click(function()
     var _siblings = "";
     if ($(this).data("siblings") != undefined) _siblings = ($(this).data("siblings")).split(";");
 
-    $(this).data("status","taken");
+    $(this).data("status","disabled");
     $(".ncgTalentPolygon").each(function(index)
     {
         var _polygonPosition = $(this).data("row")+","+$(this).data("column");
