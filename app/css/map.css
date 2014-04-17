@@ -1,4 +1,5 @@
 .map_controlls {
+    display: none;
 }
 
 .map-spacer {
@@ -6,5 +7,11 @@
 }
 
 .map-assets {
-    visibility: hidden;
+    display: none;
+}
+
+#map-popup {
+   position: absolute;
+   top: 200px;
+   left: 100px;
 }
