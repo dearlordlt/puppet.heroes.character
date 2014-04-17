@@ -2,7 +2,7 @@ $("#map-alert").hide(0);
 
 var canvas = document.createElement('canvas');
 canvas.id               = "MapLayer";
-canvas.width            = 800;
+canvas.width            = 700;
 canvas.height           = 600;
 canvas.style.border     = "1px solid";
 
@@ -51,7 +51,7 @@ function initDefaultCharacters() {
     dummys_arr = [man_blue, man_black, man_green, man_orange, man_red];
     for(var i=0; i < dummys_arr.length; i++) {
         var _dummy = dummys_arr[i];
-        _dummy.position.x = 750;
+        _dummy.position.x = 650;
         _dummy.position.y = i*35+25;
 
         _dummy.onMouseDown = function(event) {
