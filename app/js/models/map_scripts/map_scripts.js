@@ -33,7 +33,7 @@ var selected_soldier = "";
 var placed_soldiers = [];
 var selectedDummy = "";
 
-/*
+/**
 * changes size of map
 * @param {_inpSizeX} width
 * @param {_inpSizeX} height
@@ -46,7 +46,7 @@ function changeMapSize (_inpSizeX, _inpSizeX) {
     mapLayer = new paper.Layer();
 
     initMap();
-});
+}
 
 /**
 * Displays Alert
@@ -58,7 +58,7 @@ function mapAlert(_message) {
     $("#map-alert-message").text(_message);
 }
 
-/*
+/**
 * Deselcts al soldiers
 */
 function deselectAllSoldiers () {
