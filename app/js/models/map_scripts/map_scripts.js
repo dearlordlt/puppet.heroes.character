@@ -49,16 +49,6 @@ function changeMapSize (_inpSizeX, _inpSizeX) {
 }
 
 /**
-* Displays Alert
-* @param {str} _message
-*/
-function mapAlert(_message) {
-    $("#map-alert").hide(0);
-    $("#map-alert").show(300);
-    $("#map-alert-message").text(_message);
-}
-
-/**
 * Deselcts al soldiers
 */
 function deselectAllSoldiers () {
@@ -141,7 +131,7 @@ function initMap() {
 
             _hexagon.onMouseDown = function (event) {
                 if(this.data.ocupiedBy != undefined) {
-                    mapAlert("This tile is ocupied, off with you!");
+                    phAlert("Warning!", "This tile is ocupied, off with you!");
                     return;
                 }
                 if(selectedDummy != "" && selectedDummy.selected) {

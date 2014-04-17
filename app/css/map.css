@@ -7,7 +7,7 @@
 }
 
 .map-assets {
-    visibility: hidden;
+    display: none;
 }
 
 #map-popup {
