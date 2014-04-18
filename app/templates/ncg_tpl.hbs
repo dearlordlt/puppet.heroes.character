@@ -225,7 +225,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-body scrollable-panel">
+                        <div class="panel-body">
                             <div class="col-sm-12">
                                 <div class="list-group row">
 
@@ -249,6 +249,60 @@
                                     {{/each}}
                                 </div>
                             </div>
+                        </div>
+                        <div class="panel-footer">
+
+                             <div class="row" style="padding-bottom: 10px;">
+                                <div class="col-sm-5 edit-mode-menu">
+                                    <h4>Specializations</h4>
+                                </div>
+                                <div class="col-sm-7 edit-mode-menu">
+                                    <div class="pull-right">
+                                    <div class="input-group input-group-sm">
+                                        <input class="form-control" type="text">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></button>
+                                            <ul class="dropdown-menu pull-right">
+                                                {{#each skillsList}}
+                                                <li><a href="#">{{this.skillname}}</a></li>
+                                                {{/each}}
+                                            </ul>
+                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                            <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+
+                                            <span class="badge badge-success edit-mode-menu-skills">3</span>
+
+                                        </div>
+
+                                    </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+
+                                </div>
+                             <div class="col-sm-12">
+                                <div class="list-group row">
+
+                                    {{#each skills}}
+
+                                    <a class="list-group-item col-sm-4">
+
+                                        <div class="col-sm-3">
+                                        {{this.skillName}}
+                                            </div>
+                                       <span class="badge badge-success edit-mode-menu-skills">3</span>
+                                    </a>
+                                    {{/each}}
+                                </div>
+                            </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -278,7 +332,14 @@
                             <div class="list-group">
                                 {{#each possessions}}
                                     <a class="list-group-item">
-                                        {{this}}
+                                        <div class="row">
+                                            <div class="col-sm-9 edit-mode-menu">
+                                                 {{this}}
+                                            </div>
+                                            <div class="col-sm-3 edit-mode-menu">
+                                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-file"></span></button>
+                                            </div>
+                                        </div>
                                     </a>
                                 {{/each}}
                             </div>
@@ -308,7 +369,14 @@
                             <div class="list-group">
                                 {{#each goals}}
                                     <a class="list-group-item">
-                                        {{this}}
+                                        <div class="row">
+                                            <div class="col-sm-9 edit-mode-menu">
+                                                 {{this}}
+                                            </div>
+                                            <div class="col-sm-3 edit-mode-menu">
+                                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-file"></span></button>
+                                            </div>
+                                        </div>
                                     </a>
                                 {{/each}}
                             </div>
@@ -340,7 +408,14 @@
                             <div class="list-group">
                                 {{#each knowledges}}
                                     <a class="list-group-item">
-                                        {{this}}
+                                        <div class="row">
+                                            <div class="col-sm-9 edit-mode-menu">
+                                                 {{this}}
+                                            </div>
+                                            <div class="col-sm-3 edit-mode-menu">
+                                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-file"></span></button>
+                                            </div>
+                                        </div>
                                     </a>
                                 {{/each}}
                             </div>
@@ -370,7 +445,14 @@
                             <div class="list-group">
                                 {{#each pockets}}
                                     <a class="list-group-item">
-                                        {{this}}
+                                        <div class="row">
+                                            <div class="col-sm-9 edit-mode-menu">
+                                                 {{this}}
+                                            </div>
+                                            <div class="col-sm-3 edit-mode-menu">
+                                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-file"></span></button>
+                                            </div>
+                                        </div>
                                     </a>
                                 {{/each}}
                             </div>
