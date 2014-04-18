@@ -1,7 +1,7 @@
 /* FUNCTION FOR SHOWCASE ONLY HIDES COMBAT SKILL EDIT CONTROLS*/
 /*------------------------------------*/
 $("li[id^=editCombatSkill]").hide();
-$("li[id=shieldStatistics]").hide();
+$("table[id=shieldStatistics]").hide();
 
 /*------------------------------------*/
 

@@ -99,3 +99,7 @@ float: none;
 .vcenter-col{
     height: 40px;
 }
+
+.vcenter-panel-base-col{
+    height: 30px;
+}
