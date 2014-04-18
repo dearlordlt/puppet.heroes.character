@@ -1,6 +1,6 @@
 var COLOR_ENABLED = "#ffffff";
-var COLOR_DISABLED = "#aaaaaa";
-var COLOR_TAKEN = "#428bca";
+var COLOR_DISABLED = "#3276b1";
+var COLOR_TAKEN = "#5cb85c";
 var isOppositeDisabled = false;
 var disabledTalentColumns = [];
 
