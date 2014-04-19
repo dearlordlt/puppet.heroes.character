@@ -12,7 +12,7 @@
                         <span>Edit mode</span>
                         <div class="btn-group">
                             <button class="btn btn-primary"><span class="glyphicon glyphicon-th-large"></span></button>
-                            <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+                            <button id="edit-mode-btn" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                                     <div class="col-sm-3 edit-mode-menu">
                                         <h4>Character</h4>
                                     </div>
-                                    <div class="col-sm-9 edit-mode-menu">
+                                    <div class="col-sm-9 edit-mode-menu edit-mode-item">
                                         <div class="input-group input-group-sm">
                                             <input class="form-control" type="text">
                                             <div class="input-group-btn">
@@ -104,7 +104,7 @@
                                 <div class="col-sm-3 edit-mode-menu">
                                     <h4>Talents</h4>
                                 </div>
-                                <div class="col-sm-9 edit-mode-menu">
+                                <div class="col-sm-9 edit-mode-menu edit-mode-item">
                                     <div class="pull-right">
                                     <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
                                 <span class="badge badge-success edit-mode-menu-talents">3</span>
@@ -199,7 +199,7 @@
                                 <div class="col-sm-5 edit-mode-menu">
                                     <h4>Skills</h4>
                                 </div>
-                                <div class="col-sm-7 edit-mode-menu">
+                                <div class="col-sm-7 edit-mode-menu edit-mode-item">
                                     <div class="pull-right">
                                     <div class="input-group input-group-sm">
                                         <input class="form-control" type="text">
@@ -239,8 +239,8 @@
                                         <div class="col-sm-9 edit-mode-menu">
                                         <div class="pull-right">
                                         <div class="btn-group btn-group-sm edit-mode-menu">
-                                            <button class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
-                                            <button class="btn btn-primary"><span class="glyphicon glyphicon-minus"></span></button>
+                                            <button class="btn btn-primary edit-mode-item"><span class="glyphicon glyphicon-plus"></span></button>
+                                            <button class="btn btn-primary edit-mode-item"><span class="glyphicon glyphicon-minus"></span></button>
                                         </div>
                                              <span class="badge edit-mode-menu-skills">{{this.skillValue}}</span>
                                         </div>
@@ -256,7 +256,7 @@
                                 <div class="col-sm-5 edit-mode-menu">
                                     <h4>Specializations</h4>
                                 </div>
-                                <div class="col-sm-7 edit-mode-menu">
+                                <div class="col-sm-7 edit-mode-menu edit-mode-item">
                                     <div class="pull-right">
                                     <div class="input-group input-group-sm">
                                         <input class="form-control" type="text">
@@ -318,7 +318,7 @@
                                <div class="col-sm-4 edit-mode-menu">
                                    <h4>Possessions</h4>
                                </div>
-                               <div class="col-sm-8 edit-mode-menu">
+                               <div class="col-sm-8 edit-mode-menu edit-mode-item">
                                    <div class="input-group input-group-sm">
                                        <input class="form-control" type="text">
                                        <div class="input-group-btn">
@@ -355,7 +355,7 @@
                                <div class="col-sm-3 edit-mode-menu">
                                    <h4>Goals</h4>
                                </div>
-                               <div class="col-sm-9 edit-mode-menu">
+                               <div class="col-sm-9 edit-mode-menu edit-mode-item">
                                    <div class="input-group input-group-sm">
                                        <input class="form-control" type="text">
                                        <div class="input-group-btn">
@@ -394,7 +394,7 @@
                                 <div class="col-sm-4 edit-mode-menu">
                                    <h4>Knowledges</h4>
                                 </div>
-                                <div class="col-sm-8 edit-mode-menu">
+                                <div class="col-sm-8 edit-mode-menu edit-mode-item">
                                     <div class="input-group input-group-sm">
                                         <input class="form-control" type="text">
                                         <div class="input-group-btn">
@@ -431,7 +431,7 @@
                                <div class="col-sm-3 edit-mode-menu">
                                    <h4>Pockets</h4>
                                </div>
-                               <div class="col-sm-9 edit-mode-menu">
+                               <div class="col-sm-9 edit-mode-menu edit-mode-item">
                                    <div class="input-group input-group-sm">
                                        <input class="form-control" type="text">
                                        <div class="input-group-btn">
@@ -465,6 +465,6 @@
         </div>
     </div>
  </div>
-
+<script src="./app/js/models/ncg_scripts/ncg_edit_mode.js"></script>
 <script src="./app/js/models/ncg_scripts/ncg_talents.js"></script>
 <script src="./app/js/models/ncg_scripts/ncg_skills.js"></script>
