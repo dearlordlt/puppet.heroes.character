@@ -17,68 +17,70 @@
     TOTAL POINTS = {{points}}
 </nav>
 
+
 <div class="container-fluid">
 <div class="row">
-
-
     <div class="col-sm-6">
         <div class="panel panel-default" >
-                    <div class="panel-heading">
+                      <div class="panel-heading edit-cg-mode-menu">
                         <div class="row">
-                             <div class="col-sm-8">
-                             <h4>Attributes</h4>
+                             <div class="col-sm-8 edit-mode-menu">
+                                <h4>Attributes</h4>
                              </div>
-                                <div class="col-sm-4 vcenter vcenter-col">
-                                   <span class="badge points-color pull-right">{{attributesPoints}}</span>
-                                </div>
-                            </div>
+                             <div class="col-sm-4 edit-mode-menu">
+                                <span class="badge badge-success pull-right">{{attributesPoints}}</span>
+                             </div>
                         </div>
-                        <div class="panel-body">
+                      </div>
+                      <div class="panel-body">
                             <ul class="list-group">
                                 {{#each Attributes}}
-                                <li class="list-group-item" style="vertical-align: middle;">
-                        <div class="row" style="vertical-align: middle;">
-                                    <div class="col-sm-3">
-                                {{this.attributeName}}
-                                </div>
-                                    <div class="col-sm-5">
-                                        <div class="btn-group pull-right">
-                                {{#ifCond this.attributeValue '<=' ../minAttribute}}
-
-                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm" disabled>
-                                        <span class="glyphicon glyphicon-minus"></span>
-                                    </button>
-                                {{else}}
-                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm">
-                                        <span class="glyphicon glyphicon-minus"></span>
-                                    </button>
-                                 {{/ifCond}}
-
-                                        {{#ifCond this.attributeValue '>=' ../maxAttribute}}
-                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm" disabled >
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                    </button>
-                                {{else}}
-                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm" >
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                    </button>
-                                {{/ifCond}}
-                                        </div>
-                                        </div>
-                                  <div class="col-sm-2 pull-right ">
-                                    <span class="badge pull-right">{{this.attributeValue}}</span>
+                                    <li class="list-group-item" style="vertical-align: middle;">
+                                    <div class="row">
+                                    <div class="col-sm-3 edit-mode-menu">
+                                    {{this.attributeName}}
                                     </div>
-                                <div class="col-sm-2 pull-right" style="padding-right:0px; padding-left:0px;">
-                                    <span class="badge points-color pull-right">{{this.attriPointValue}}</span>
-                                    </div>
-                                </li>
+                                        <div class="col-sm-5 edit-mode-menu">
+                                            <div class="btn-group pull-right  ">
+                                                {{#ifCond this.attributeValue '<=' ../minAttribute}}
+
+                                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm" disabled>
+                                                        <span class="glyphicon glyphicon-minus"></span>
+                                                    </button>
+                                                {{else}}
+                                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-minus"></span>
+                                                    </button>
+                                                 {{/ifCond}}
+
+                                                {{#ifCond this.attributeValue '>=' ../maxAttribute}}
+                                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm" disabled >
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                    </button>
+                                                {{else}}
+                                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm" >
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                    </button>
+                                                {{/ifCond}}
+                                            </div>
+                                            </div>
+                                            <div class="col-sm-2  edit-mode-menu">
+                                            <span class="badge badge-success pull-right">{{this.attriPointValue}}</span>
+                                            </div>
+                                            <div class="col-sm-2  edit-mode-menu">
+                                            <span class="badge pull-right">{{this.attributeValue}}</span>
+                                            </div>
+                                    </li>
+
                                 {{/each}}
-                            </ul>
-
+                                </div>
+                           </ul>
                         </div>
+
         </div>
-                <div class="row">
-                    <div class="col-sm-12">
+
+
+                    <div class="col-sm-6">
                         <div class="panel panel-default">
                             <div class="panel-heading"><h4>Encumberance</h4></span>
                             </div>
@@ -90,24 +92,21 @@
                                     <li class="list-group-item">Shield      <span class="badge pull-right">6</span></li>
                                     <li class="list-group-item">Main hand   <span class="badge pull-right">7</span></li>
                                     <li class="list-group-item">Offhand     <span class="badge pull-right">8</span></li>
-
-                                    <li class="list-group-item">Burden
-                                        <span class="badge pull-right">5</span>
-                                        <div class="btn-group pull-right">
-                                                                            <button class="btn btn-primary btn-sm" id="deleteCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-minus"></button>
-                                                                             <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
-                                                                        </div>
+                                    <li class="list-group-item "> Burden      <span class="badge pull-right">5</span>
+                                        <div class="btn-group edit-mode-menu">
+                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-minus"></button>
+                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+                                        </div>
                                     </li>
-
                                     <li class="list-group-item">Total       <span class="badge total-color pull-right">10</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-
     </div>
+
                  <!-- Damage div -->
+<div class="row">
     <div class="col-sm-6">
         <div class="panel panel-default">
   <div class="panel-heading"><h4>Damage</h4></div>
@@ -201,79 +200,71 @@
                                         </div>
     <!-- Vigor div end -->
     </div>
-
+</div>
 <!-- SHOWCASE DATA ONLY FROM HERE ON OUT!!!!   -->
 
   <!-- Combat gear table start -->
 
-
+<div class="row">
     <div class="col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <h4>Combat skills</h4>
-                        </div>
-                        <div class="col-sm-7 vcenter vcenter-col">
-                            <div class="form-inline" id="newCombatSkill">
-                                <div class="form-group input-group-sm">
-                                    <input type="hidden" value="{{this.combatSkillName}}" class="form-control" id="hiddenNewCombatSkillName{{@index}}">
+                            <div class="row">
+                                <div class="col-sm-5 edit-mode-menu">
+                                    <h4>Combat Skills</h4>
                                 </div>
-                                <div class="btn-group pull-right"  style="padding-left:15px;">
-                                    <button class="btn btn-primary btn-sm" id="newCombatSkillButton"><span class="glyphicon glyphicon-ok"></span></button>
-                                    <button class="btn btn-primary btn-sm" id="cancelNewCombatSkillButton"><span class="glyphicon glyphicon-remove"></span></button>
-                                    <button class="btn btn-primary btn-sm" id="deleteCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-minus"></button>
-                                </div>
-                                <div class="form-group input-group-sm pull-right">
-                                    <input id="newCombatSkillName" class="form-control" type="text">
+                                <div class="col-sm-7 edit-mode-menu">
+                                    <div class="pull-right">
+                                        <div class="input-group input-group-sm">
+                                            <input class="form-control" type="text">
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></button>
+                                                    <ul class="dropdown-menu pull-right">
+                                                        {{#each combatSkills}}
+                                                        <li><a href="#">{{this.combatSkillname}}</a></li>
+                                                        {{/each}}
+                                                    </ul>
+                                                    <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                                    <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                                    <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                                                    <span class="badge badge-success edit-mode-menu-skills">3</span>
+                                                </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="btn-group pull-right" id="addNewCombatSkillButton">
-                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
-                            </div>
                         </div>
-
-                        <div class="col-sm-1 vcenter vcenter-col ">
-                            <span class="badge points-color pull-right">{{combatSkillPoints}}</span>
-                        </div>
-                    </div>
-
-                </div>
                 <div class="panel-body">
                     <ul class="list-group split-list list-inline ;" style="display: inline">
                         <div class="row" style="vertical-align: middle;">
-                        {{#each combatSkills}}
+                            {{#each combatSkills}}
                             <div class="col-sm-6" style="padding-right:5px;padding-left:5px;">
-                            <li class="list-group-item" id="combatSkillNumber{{@index}}">
-                                <div class="row">
-                                    <div class="col-sm-4" style="padding-right:0px;">
-                                {{this.combatSkillname}}
-                                </div>
-                                <div  class="col-sm-4" style="padding-left:0px;">
-                                    <div class="btn-group pull-right">
-                                        <button class="btn btn-primary btn-sm" id="deleteCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-minus"></button>
-                                         <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+                                <li class="list-group-item" id="combatSkillNumber{{@index}}">
+                                    <div class="row">
+                                        <div class="col-sm-4" style="padding-right:0px;">
+                                        {{this.combatSkillname}}
+                                        </div>
+                                        <div  class="col-sm-4" style="padding-left:0px;">
+                                            <div class="btn-group pull-right">
+                                                 <button class="btn btn-primary btn-sm" id="deleteCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-minus"></button>
+                                                 <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 pull-right">
+                                            <span class="badge pull-right">{{this.combatSkillValue}}</span>
+                                        </div>
+                                        <div  class="col-sm-2 pull-right" style="padding-right:0px; padding-left:0px;">
+                                            <span class="badge badge-success pull-right">{{this.combatSkillPointsValue}}</span>
+                                        </div>
                                     </div>
-                                </div>
-
-                                    <div class="col-sm-2 pull-right">
-                                <span class="badge pull-right">{{this.combatSkillValue}}</span>
-                                </div>
-                                    <div  class="col-sm-2 pull-right" style="padding-right:0px; padding-left:0px;">
-                                        <span class="badge points-color pull-right">{{this.combatSkillPointsValue}}</span>
-                                        </div>
-                                </div>
-                            </li>
-                                        </div>
-                        {{/each}}
+                                </li>
                             </div>
+                            {{/each}}
+                        </div>
                     </ul>
                 </div>
             </div>
-
-
-        </div>
+    </div>
 
 
 
@@ -351,9 +342,9 @@
                                                       <th>DV <span class="badge">17</span></th>
                                                     </tr>
                                                 <tr>
-                                                        <th>Action</th>
-                                                         <td>Thrust</td>
-                                                         <td>Swing</td>
+                                                   <td><b>Action</b></td>
+                                                   <td>Thrust</td>
+                                                   <td>Swing</td>
                                                 </tr>
                                                 <tr></tr>
                                                 <tr>
@@ -413,26 +404,27 @@
        </div>
 
                     <div class="col-sm-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Testing Vigor options
-                     </div>
-                        <div class="panel-body" >
-                             <span class="glyphicon glyphicon-fire vigor-select"/>
-                             <span class="glyphicon glyphicon-fire vigor-select"/>
-                             <span class="glyphicon glyphicon-fire vigor-select"/>
-                             <span class="glyphicon glyphicon-fire vigor-select"/>
-                             <span class="glyphicon glyphicon-fire vigor-select"/>
-                             <span class="glyphicon glyphicon-fire vigor-select"/>
-                             <span class="glyphicon glyphicon-fire vigor-select"/>
-                             <span class="glyphicon glyphicon-fire vigor-select"/>
-                             <span class="glyphicon glyphicon-fire vigor-select"/>
-                             <span class="glyphicon glyphicon-fire vigor-permanent"/>
-                             <span class="glyphicon glyphicon-fire vigor-used"/>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Testing Vigor options
+                            </div>
+                            <div class="panel-body" >
+                                 <span class="glyphicon glyphicon-fire vigor-select"/>
+                                 <span class="glyphicon glyphicon-fire vigor-select"/>
+                                 <span class="glyphicon glyphicon-fire vigor-select"/>
+                                 <span class="glyphicon glyphicon-fire vigor-select"/>
+                                 <span class="glyphicon glyphicon-fire vigor-select"/>
+                                 <span class="glyphicon glyphicon-fire vigor-select"/>
+                                 <span class="glyphicon glyphicon-fire vigor-select"/>
+                                 <span class="glyphicon glyphicon-fire vigor-select"/>
+                                 <span class="glyphicon glyphicon-fire vigor-select"/>
+                                 <span class="glyphicon glyphicon-fire vigor-permanent"/>
+                                 <span class="glyphicon glyphicon-fire vigor-used"/>
 
-                     </div>
-                     </div>
-                     </div>
+                            </div>
+                        </div>
+                    </div>
 
 
  </div>
+                </div>
 <script src="./app/js/models/cg_scripts/cg_script.js"/>
