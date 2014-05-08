@@ -7,10 +7,10 @@ if(!supports_html5_storage()) {
 } else {
     //Check if user already have data setup
     if(localStorage["puppet.hero.signed"] == "true") {
-        console.log("Already user");
+        phAlert("Local storage", "Already user");
     } else {
         localStorage["puppet.hero.signed"] = "true"
-        console.log("Not user");
+        phAlert("Local storage", "Not user");
     }
 }
 
