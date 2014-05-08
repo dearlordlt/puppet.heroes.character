@@ -36,8 +36,8 @@ $("#load-name-close").click(function () {
 });
 
 $("#menu-new").click(function () {
-    $("#menu-save").show();
     $("#main-menu").show(200);
+    $("#menu-save").show();
 
     newMap ();
     new_ncg_tpl ();
@@ -69,4 +69,6 @@ $("#load-character-button").click(function() {
 
     $("#global-load-name").hide(200);
     $("#main-menu").show(200);
+    $("#menu-save").show();
+    loadPath("home_tpl");
 });
