@@ -73,11 +73,11 @@
                                         <h4>Character</h4>
                                     </div>
                                     <div class="col-sm-9 edit-mode-menu edit-mode-item">
-                                        <div class="input-group input-group-sm">
-                                            <input class="form-control" type="text">
+                                        <div id="ncg-character-edit" class="input-group input-group-sm">
+                                            <input id="ncg-character-input" class="form-control" type="text">
                                             <div class="input-group-btn">
-                                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
-                                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                                <button id="ncg-character-btn-save" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                                <button id="ncg-character-btn-cancel" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
                                             </div>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                             <div class="panel-body">
                                 <div class="list-group">
                                     {{#each character}}
-                                        <a class="list-group-item">
+                                        <a id="ncg-character-item-{{@index}}" data-key="{{@key}}" data-value="{{this}}" class="list-group-item ncg-character-info">
                                             {{@key}}: {{this}}
                                         </a>
                                     {{/each}}
