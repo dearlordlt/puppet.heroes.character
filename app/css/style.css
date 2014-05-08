@@ -6,6 +6,7 @@
     margin: 5px;
 }
 
+<<<<<<< HEAD
  .vcenter {
 display: table-cell;
 vertical-align: middle;
@@ -78,4 +79,43 @@ float: none;
 
 .alert-body {
     min-width: 300px;
+=======
+.vigor-used {
+    color: #101010;
+}
+
+.vigor-permanent {
+    color : #d43f3a;
+}
+
+.vigor-select{
+<<<<<<< HEAD
+    color :#4cae4c;
+>>>>>>> Updated visual styling of Encumberance, Vigor, Damage panels
+=======
+    color :#ddd;
+}
+
+.total-color{
+    background-color:#d9534f;
+}
+
+.points-color{
+    background-color:  #5cb85c;
+>>>>>>> Upgraded combat gear melee weapon panel
+}
+
+
+ .vcenter {
+display: table-cell;
+vertical-align: middle;
+float: none;
+}
+
+.vcenter-col{
+    height: 40px;
+}
+
+.vcenter-panel-base-col{
+    height: 30px;
 }

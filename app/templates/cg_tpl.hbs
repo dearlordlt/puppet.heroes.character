@@ -18,292 +18,100 @@
 </nav>
 
 
+<div class="container-fluid">
 <div class="row">
-
-
     <div class="col-sm-6">
         <div class="panel panel-default" >
-                    <div class="panel-heading">Attributes  <span class="label label-success pull-right">{{attributesPoints}}</span>
+                      <div class="panel-heading edit-cg-mode-menu">
+                        <div class="row">
+                             <div class="col-sm-8 edit-mode-menu">
+                                <h4>Attributes</h4>
+                             </div>
+                             <div class="col-sm-4 edit-mode-menu">
+                                <span class="badge badge-success pull-right">{{attributesPoints}}</span>
+                             </div>
                         </div>
-                        <div class="panel-body">
+                      </div>
+                      <div class="panel-body">
                             <ul class="list-group">
-
                                 {{#each Attributes}}
-                                <li class="list-group-item">
-                                {{this.attributeName}}  <span class="badge pull-right">{{this.attributeValue}}</span>
-                                {{#ifCond this.attributeValue '>=' ../maxAttribute}}
-                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-xs pull-right" disabled>
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                    </button>
-                                {{else}}
-                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-xs pull-right">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                    </button>
-                                {{/ifCond}}
+                                    <li class="list-group-item" style="vertical-align: middle;">
+                                    <div class="row">
+                                    <div class="col-sm-3 edit-mode-menu">
+                                    {{this.attributeName}}
+                                    </div>
+                                        <div class="col-sm-5 edit-mode-menu">
+                                            <div class="btn-group pull-right  ">
+                                                {{#ifCond this.attributeValue '<=' ../minAttribute}}
 
-                                {{#ifCond this.attributeValue '<=' ../minAttribute}}
-                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-xs pull-right" disabled>
-                                        <span class="glyphicon glyphicon-minus"></span>
-                                    </button>
-                                {{else}}
-                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-xs pull-right">
-                                        <span class="glyphicon glyphicon-minus"></span>
-                                    </button>
-                                 {{/ifCond}}
+                                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm" disabled>
+                                                        <span class="glyphicon glyphicon-minus"></span>
+                                                    </button>
+                                                {{else}}
+                                                    <button id="attrMinusButton{{@index}}" type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-minus"></span>
+                                                    </button>
+                                                 {{/ifCond}}
 
-                                </li>
+                                                {{#ifCond this.attributeValue '>=' ../maxAttribute}}
+                                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm" disabled >
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                    </button>
+                                                {{else}}
+                                                    <button id="attrPlusButton{{@index}}"type="button" class="btn btn-primary btn-sm" >
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                    </button>
+                                                {{/ifCond}}
+                                            </div>
+                                            </div>
+                                            <div class="col-sm-2  edit-mode-menu">
+                                            <span class="badge badge-success pull-right">{{this.attriPointValue}}</span>
+                                            </div>
+                                            <div class="col-sm-2  edit-mode-menu">
+                                            <span class="badge pull-right">{{this.attributeValue}}</span>
+                                            </div>
+                                    </li>
+
                                 {{/each}}
-                            </ul>
-
+                                </div>
+                           </ul>
                         </div>
+
         </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default col-sm-12">
-                            <div class="panel-heading">Encumberance</span>
+
+
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h4>Encumberance</h4></span>
                             </div>
                             <div class="panel-body">
-
-
-                                <table class="table table-condensed table-bordered hidingParts">
-                                                  <tr>
-                                                  <th>Athletics</th>
-                                                  <td>5</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>STA+PER-10</th>
-                                                  <td>10</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Armor</th>
-                                                  <td>3</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Shield</th>
-                                                  <td>2</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Main hand</th>
-                                                  <td>1</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Offhand</th>
-                                                  <td>52</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Burden</th>
-                                                  <td>3</td>
-                                                </tr>
-                                                <tr>
-                                                  <th>Total</th>
-                                                  <td>9000</td>
-                                                </tr>
-                                                </table>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Athletics   <span class="badge pull-right">5</span></li>
+                                    <li class="list-group-item">STA+PER-10  <span class="badge pull-right">3</span></li>
+                                    <li class="list-group-item">Armor       <span class="badge pull-right">8</span></li>
+                                    <li class="list-group-item">Shield      <span class="badge pull-right">6</span></li>
+                                    <li class="list-group-item">Main hand   <span class="badge pull-right">7</span></li>
+                                    <li class="list-group-item">Offhand     <span class="badge pull-right">8</span></li>
+                                    <li class="list-group-item "> Burden      <span class="badge pull-right">5</span>
+                                        <div class="btn-group edit-mode-menu">
+                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-minus"></button>
+                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">Total       <span class="badge total-color pull-right">10</span></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-    </div>
-    <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-sm-2">
-                            <span>Combat skills</span>
-                        </div>
-                        <div class="col-sm-9">
-                            <div class="btn-group" id="addNewCombatSkillButton">
-                                <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
-                            </div>
-
-                        <div class="form-inline" id="newCombatSkill">
-                            <div class="form-group input-group-sm">
-                                <input type="hidden" value="{{this.combatSkillName}}" class="form-control" id="hiddenNewCombatSkillName{{@index}}">
-                            </div>
-                            <div class="form-group input-group-sm">
-                                <input id="newCombatSkillName" class="form-control" type="text">
-                                <input id="newCombatSkillValue" min="1" class="form-control" type="number">
-                            </div>
-                            <div class="btn-group">
-                                <button class="btn btn-primary btn-sm" id="newCombatSkillButton"><span class="glyphicon glyphicon-ok"></span></button>
-                                <button class="btn btn-primary btn-sm" id="cancelNewCombatSkillButton"><span class="glyphicon glyphicon-remove"></span></button>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="col-sm-1">
-                            <span class="label label-success pull-right">{{combatSkillPoints}}</span>
-                            </div>
-                    </div>
-
-                </div>
-                <div class="panel-body">
-
-                    <ul class="list-group split-list">
-                        {{#each combatSkills}}
-                            <li class="list-group-item" id="combatSkillNumber{{@index}}">
-                                <span class="badge">{{this.combatSkillValue}}</span>
-                                {{this.combatSkillname}}
-                            </li>
-                            <li class="list-group-item" id="editCombatSkill{{@index}}">
-                                <div class="form-inline">
-                                    <div class="form-group input-group-sm">
-                                        <input type="hidden" value="{{this.combatSkillname}}" class="form-control" id="hiddenCombatSkillName{{@index}}">
-                                        <input type="text" id="editCombatSkillName{{@index}}" class="form-control" value="{{this.combatSkillname}}">
-                                        <input type="number" id="editCombatSkillValue{{@index}}" class="form-control" min="1" value="{{this.combatSkillValue}}">
-                                    </div>
-                                    <div class="btn-group">
-                                        <button class="btn btn-primary btn-sm" id="saveCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-ok"></button>
-                                        <button class="btn btn-primary btn-sm" id="cancelCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-remove"></button>
-                                        <button class="btn btn-primary btn-sm" id="deleteCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-minus"></button>
-                                    </div>
-                                </div>
-                            </li>
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
-
-
-        </div>
     </div>
 
-<!-- SHOWCASE DATA ONLY FROM HERE ON OUT!!!!   -->
- <div class="row">
-  <!-- Combat gear table start -->
-
-<!-- Weapon table start -->
-        <div class="col-sm-12">
-            <div class="panel panel-default">
-  <div class="panel-heading">Combat Gear</div>
-  <div class="panel-body">
-    <div class="row">
-                                <div class="col-sm-12">
-                                            <table class="table table-condensed table-bordered">
-
-                                        <tr>
-                                          <th>Weapon</th>
-                                          <th>Swing dmg</th>
-                                          <th>Swing fx</th>
-                                          <th>Thrust</th>
-                                          <th>Thrust fx</th>
-                                          <th>Minimum STR</th>
-                                          <th>AV</th>
-                                          <th>DV</th>
-                                          <th>Weight</th>
-                                          <th>Reach</th>
-                                          <th>Notes</th>
-                                        </tr>
-                                             <td>Broadsword</td>
-                                             <td>3</td>
-                                             <td>2b1t</td>
-                                             <td>3</td>
-                                             <td>2b3c</td>
-                                             <td>11</td>
-                                             <td>15</td>
-                                             <td>18</td>
-                                             <td>2</td>
-                                             <td>8</td>
-                                             <td>Best shit ever</td>
-                                            </table>
-                                </div>
-                                    </div>
-<!--Weapon table end -->
-<!-- Shield table start -->
-                                 <div class="row">
-                                <div class="col-sm-12">
-                                    <table class="table table-condensed table-bordered">
-
-                                            <tr>
-                                              <th>Shield</th>
-                                              <th>Dmg.</th>
-                                              <th>Bonus def.</th>
-                                              <th>HP</th>
-                                              <th>Break value</th>
-                                              <th>AV</th>
-                                              <th>DV</th>
-                                              <th>Notes</th>
-                                            </tr>
-                                             <td>Broadsword</td>
-                                             <td>3</td>
-                                             <td>2b1t</td>
-                                             <td>3</td>
-                                             <td>2b3c</td>
-                                             <td>11</td>
-                                             <td>15</td>
-                                             <td>Best shit ever</td>
-                                            </table>
-                                </div>
-                                     </div>
-<!-- Shield table end -->
-<!-- Ranged weapon and ammo start -->
-                                <div class="row">
-                                    <!-- Ranged weapon  start -->
-                                <div class="col-sm-8">
-                                            <table class="table table-condensed table-bordered">
-
-                                            <tr>
-                                              <th>Ranged Weapon</th>
-                                              <th>Dmg.</th>
-                                              <th>Weapon STR</th>
-                                              <th>Base Dmg.</th>
-                                              <th>Max Range</th>
-                                              <th>Range penalty</th>
-                                              <th>AV</th>
-                                              <th>Notes</th>
-                                            </tr>
-                                             <td>Broadsword</td>
-                                             <td>3</td>
-                                             <td>11</td>
-                                             <td>15</td>
-                                             <td>18</td>
-                                             <td>2</td>
-                                             <td>8</td>
-                                             <td>Best</td>
-                                            </table>
-                                </div>
-    <!-- Ranged weapon table end -->
-    <!-- Ammo start -->
-
-                                <div class="col-sm-4">
-                                <table class="table table-condensed table-bordered">
-
-                                            <tr>
-                                              <th>Ammo</th>
-                                              <th>Dmg</th>
-                                              <th>Weapon min STR</th>
-                                              <th>Eff.</th>
-                                            </tr>
-                                             <td>Bolt</td>
-                                             <td>3</td>
-                                             <td>2</td>
-                                             <td>3b1t</td>
-                                            </table>
-                                </div>
-    <!-- Ammo table end -->
-
-                                </div>
-  </div>
-</div>
-
-
-
-            </div>
-
-        </div>
-    <!-- Combat gear end -->
-
-
-
-
-
-<!-- Damage and Vigor div -->
+                 <!-- Damage div -->
 <div class="row">
-      <!-- Damage div -->
     <div class="col-sm-6">
         <div class="panel panel-default">
-  <div class="panel-heading">Damage</div>
+  <div class="panel-heading"><h4>Damage</h4></div>
   <div class="panel-body">
-                    <table class="table table-condensed table-bordered hidingParts">
+                    <table class="table table-striped">
 
                                             <tr>
                                               <th></th>
@@ -314,52 +122,51 @@
                                               <th>Total</th>
                                             </tr>
                                               <tr>
-                                                 <th>Head</th>
-                                                 <td>3</td>
-                                                 <td>2</td>
-                                                 <td>3</td>
-                                                 <td>3</td>
-                                                 <td>2</td>
+                                                 <td>Head</td>
+                                                 <td><span class="badge">3</span></td>
+                                                 <td><span class="badge">1&nbsp;<img src="./app/img/assets/Trauma.png"/></span></td>
+                                                 <td><span class="badge"></td>
+                                                 <td><span class="badge"></td>
+                                                 <td><span class="badge">1</span></td>
                                               </tr>
                                               <tr>
-                                                 <th>Body</th>
-                                                 <td>1</td>
-                                                 <td>2</td>
-                                                 <td>4</td>
-                                                 <td>5</td>
-                                                 <td>6</td>
+                                                 <td>Body</td>
+                                                 <td><span class="badge">3</span></td>
+                                                 <td></td>
+                                                 <td><span class="badge">2&nbsp;<img src="./app/img/assets/Bleed.png"/></span></td>
+                                                 <td><span class="badge">1&nbsp;<img src="./app/img/assets/Critical.png"/></span></td>
+                                                 <td><span class="badge">3</span></td>
                                               </tr>
                                               <tr>
-                                                 <th>L.Arm</th>
-                                                 <td>1</td>
-                                                 <td>2</td>
-                                                 <td>4</td>
-                                                 <td>5</td>
-                                                 <td>6</td>
+                                                 <td>L.Arm</td>
+                                                 <td><span class="badge">3</span></td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 <td><span class="badge">0</span></td>
                                               </tr>
                                                 <tr>
-                                                 <th>R.Arm</th>
-                                                 <td>1</td>
-                                                 <td>2</td>
-                                                 <td>4</td>
-                                                 <td>5</td>
-                                                 <td>6</td>
+                                                 <td>R.Arm</td>
+                                                 <td><span class="badge">3</span></td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 <td></td>
+                                                 <td><span class="badge">0</span></td>
                                               </tr>
                                                 <tr>
-                                                 <th>L.Leg</th>
-                                                 <td>1</td>
-                                                 <td>2</td>
-                                                 <td>4</td>
-                                                 <td>5</td>
-                                                 <td>6</td>
+                                                 <td>L.Leg</td>
+                                                 <td><span class="badge">3</span></td>
+                                                 <td></td>
+                                                 <td><span class="badge">3&nbsp;<img src="./app/img/assets/Bleed.png"/></span></td>
+                                                 <td></td>
+                                                 <td><span class="badge">3</span></td>
                                               </tr>
-                                              <tr>
-                                                 <th>R.Leg</th>
-                                                 <td>1</td>
-                                                 <td>2</td>
-                                                 <td>4</td>
-                                                 <td>5</td>
-                                                 <td>6</td>
+                                              <td><b>Total</b></td>
+                                                 <td></td>
+                                                 <td><span class="badge total-color">1&nbsp;<img src="./app/img/assets/Trauma.png"/></span></td>
+                                                 <td><span class="badge total-color">5&nbsp;<img src="./app/img/assets/Bleed.png"/></span></td>
+                                                 <td><span class="badge total-color">1&nbsp;<img src="./app/img/assets/Critical.png"/></span></td>
+                                                 <td><span class="badge total-color">7</span></td>
                                               </tr>
                         </table>
 
@@ -368,131 +175,243 @@
         </div>
     </div>
       <!-- Damage div end-->
-      <!-- Vigor div -->
+                   <!-- Vigor div -->
 
 
       <div class="col-sm-6">
           <div class="panel panel-default">
-  <div class="panel-heading">Vigor</div>
-  <div class="panel-body">
-   <table class="table table-condensed table-bordered hidingParts">
-                                                <tr>
-                                                <th></th>
-                                                <th>1</th>
-                                                <th>2</th>
-                                                <th>3</th>
-                                                <th>4</th>
-                                                <th>5</th>
-                                                <th>6</th>
-                                                <th>7</th>
-                                                <th>8</th>
-                                                <th>9</th>
-                                                <th>10</th>
-                                                <th>11</th>
-                                                <th>12</th>
-                                                <th>13</th>
-                                                </tr>
-                                                <tr>
-                                                    <th>0</th>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td>/</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>-1</th>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                          </tr>
-                                           <tr>
-                                             <th>-2</th>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                          </tr>
-                                            <tr>
-                                             <th>-3</th>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                          </tr>
-                                           <tr>
-                                             <th>-4</th>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                          </tr>
-                                          <tr>
-                                             <th>-5</th>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                          </tr>
-                                            </table>
+  <div class="panel-heading">
+      <div class="row">
+          <div class="col-sm-9">
+      <h4>Vigor</h4>
+
+          </div>
+          <div class="col-sm-3">
+          <button class="btn btn-primary btn-sm pull-right" id="newCombatSkillButton"><img src="./app/img/assets/zzz.png" height="12px" width="18px"/></span></button>
+          </div>
+      </div>
+  </div>
+  <div class="panel-body custom-vigor-table">
+
+         <span class="glyphicon glyphicon-fire vigor-select"/>
+        <span class="glyphicon glyphicon-fire vigor-select"/>
+      <span class="glyphicon glyphicon-fire vigor-select"/>
+      <span class="glyphicon glyphicon-fire vigor-select"/>
+      <span class="glyphicon glyphicon-fire vigor-select"/>
+      <span class="glyphicon glyphicon-fire vigor-select"/>
+      <span class="glyphicon glyphicon-fire vigor-select"/>
+      <span class="glyphicon glyphicon-fire vigor-select"/>
+      <span class="glyphicon glyphicon-fire vigor-select"/>
+      <span class="glyphicon glyphicon-fire vigor-select"/>
+      <span class="glyphicon glyphicon-fire vigor-select"/>
+      <span class="glyphicon glyphicon-fire vigor-select"/>
+
                                           </div>
                                         </div>
     <!-- Vigor div end -->
-    <!-- Damage and Vigor div end -->
+    </div>
+</div>
+<!-- SHOWCASE DATA ONLY FROM HERE ON OUT!!!!   -->
+
+  <!-- Combat gear table start -->
+
+<div class="row">
+    <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-5 edit-mode-menu">
+                                    <h4>Combat Skills</h4>
+                                </div>
+                                <div class="col-sm-7 edit-mode-menu">
+                                    <div class="pull-right">
+                                        <div class="input-group input-group-sm">
+                                            <input class="form-control" type="text">
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></button>
+                                                    <ul class="dropdown-menu pull-right">
+                                                        {{#each combatSkills}}
+                                                        <li><a href="#">{{this.combatSkillname}}</a></li>
+                                                        {{/each}}
+                                                    </ul>
+                                                    <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                                    <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                                    <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                                                    <span class="badge badge-success edit-mode-menu-skills">3</span>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <div class="panel-body">
+                    <ul class="list-group split-list list-inline ;" style="display: inline">
+                        <div class="row" style="vertical-align: middle;">
+                            {{#each combatSkills}}
+                            <div class="col-sm-6" style="padding-right:5px;padding-left:5px;">
+                                <li class="list-group-item" id="combatSkillNumber{{@index}}">
+                                    <div class="row">
+                                        <div class="col-sm-4" style="padding-right:0px;">
+                                        {{this.combatSkillname}}
+                                        </div>
+                                        <div  class="col-sm-4" style="padding-left:0px;">
+                                            <div class="btn-group pull-right">
+                                                 <button class="btn btn-primary btn-sm" id="deleteCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-minus"></button>
+                                                 <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2 pull-right">
+                                            <span class="badge pull-right">{{this.combatSkillValue}}</span>
+                                        </div>
+                                        <div  class="col-sm-2 pull-right" style="padding-right:0px; padding-left:0px;">
+                                            <span class="badge badge-success pull-right">{{this.combatSkillPointsValue}}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </ul>
+                </div>
+            </div>
+    </div>
 
 
+
+<!-- Weapon table start -->
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                    <div class="panel-heading"><h4>Combat Gear</h4></div>
+            <div class="panel-body">
+                 <div class="row">
+                <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                     <div class="panel-heading text-center"><h4>Main hand</h4></div>
+                                        <div class="panel-body">
+                                            <table class="table">
+                                                    <tr>
+                                                      <th>Broadsword</th>
+                                                      <th>AV <span class="badge">18</span></th>
+                                                      <th>DV <span class="badge">17</span></th>
+                                                    </tr>
+                                                <tr>
+                                                        <th>Action</th>
+                                                         <td>Thrust</td>
+                                                         <td>Swing</td>
+                                                </tr>
+                                                <tr></tr>
+                                                <tr>
+                                                         <th>Damage</th>
+                                                         <td><span class="badge">3</span></td>
+                                                         <td><span class="badge">3</span></td>
+                                                </tr>
+                                                <tr>
+                                                         <th>Effect</th>
+                                                         <td><span class="badge">2<img src="./app/img/assets/Bleed.png"/></span><span class="badge">1<img src="./app/img/assets/Trauma.png"/></span></td>
+                                                         <td><span class="badge">2<img src="./app/img/assets/Bleed.png"/></span><span class="badge">1<img src="./app/img/assets/Trauma.png"/></span></td>
+                                                </tr>
+                                                <tr>
+                                                <td>
+                                                    <b>Weight </b><span class="badge">2</span>
+                                                    </td>
+                                                <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                <td><button type="button" class="btn btn-primary btn-sm">
+                                                            <span class="glyphicon glyphicon-briefcase">
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                            <span class="glyphicon glyphicon-info-sign">
+                                                    </button></td>
+                                                <td></td>
+                                                <td></td>
+
+
+                                                </tr>
+                                            </table>
+
+                                        </div>
+                            </div>
+                    </div>
+                                 <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                     <div class="panel-heading text-center">
+                                         <div class="row">
+
+                                         <h4>Off-Hand</h4>
+
+
+                                     </div>
+                                                 </div>
+                                        <div class="panel-body">
+                                                     <table class="table">
+                                                    <tr>
+                                                      <th>Broadsword</th>
+                                                      <th>AV <span class="badge">18</span></th>
+                                                      <th>DV <span class="badge">17</span></th>
+                                                    </tr>
+                                                <tr>
+                                                   <td><b>Action</b></td>
+                                                   <td>Thrust</td>
+                                                   <td>Swing</td>
+                                                </tr>
+                                                <tr></tr>
+                                                <tr>
+                                                         <th>Damage</th>
+                                                         <td><span class="badge">3</span></td>
+                                                         <td><span class="badge">3</span></td>
+                                                </tr>
+                                                <tr>
+                                                         <th>Effect</th>
+                                                         <td><span class="badge">2<img src="./app/img/assets/Bleed.png"/></span><span class="badge">1<img src="./app/img/assets/Trauma.png"/></span></td>
+                                                         <td><span class="badge">2<img src="./app/img/assets/Bleed.png"/></span><span class="badge">1<img src="./app/img/assets/Trauma.png"/></span></td>
+                                                </tr>
+                                                <tr>
+                                                <td>
+                                                    <b>Weight </b><span class="badge">2</span>
+                                                    </td>
+                                                <td></td>
+                                                    <td></td>
+                                                </tr>
+
+
+                                                <tr>
+                                                <td><button type="button" class="btn btn-primary btn-sm">
+                                                            <span class="glyphicon glyphicon-briefcase">
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                            <span class="glyphicon glyphicon-info-sign">
+                                                    </button></td>
+                                                <td colspan="2" class="text-right"><span class="glyphicon glyphicon-warning-sign vigor-permanent"/><b>Min STR:</b><span class="badge">11</span></td>
+                                                </tr>
+                                            </table>
+
+                                              <table class="table" id="shieldStatistics">
+                                                    <tr>
+                                                      <th>Shield</th>
+                                                      <th>Dmg.</th>
+                                                      <th>Bonus def.</th>
+                                                      <th>HP</th>
+                                                      <th>Break value</th>
+                                                      <th>AV</th>
+                                                      <th>DV</th>
+                                                      <th>Notes</th>
+                                                    </tr>
+                                                     <td>Broadsword</td>
+                                                     <td>3</td>
+                                                     <td>2b1t</td>
+                                                     <td>3</td>
+                                                     <td>2b3c</td>
+                                                     <td>11</td>
+                                                     <td>15</td>
+                                                     <td>Best shit ever</td>
+                                            </table>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+       </div>
+ </div>
+                </div>
 <script src="./app/js/models/cg_scripts/cg_script.js"/>
