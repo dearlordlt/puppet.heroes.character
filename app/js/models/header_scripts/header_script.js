@@ -39,7 +39,9 @@ $("#menu-new").click(function () {
     $("#menu-save").show();
     $("#main-menu").show(200);
 
-    newMap();
+    newMap ();
+    new_ncg_tpl ();
+    new_cg_tpl ();
 });
 
 $("#menu-save").click(function () {
