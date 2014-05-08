@@ -2,8 +2,12 @@
 /*------------------------------------*/
 $("li[id^=editCombatSkill]").hide();
 $("table[id=shieldStatistics]").hide();
-
+$( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-select"/>' );
 /*------------------------------------*/
+
+
+
+$( ".custom-vigor-table" )
 
 $("button[id^=attrMinusButton]").click(function () {
     var arrayPlace = this.id.match(/\d+/),
