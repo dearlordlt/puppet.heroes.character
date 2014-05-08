@@ -14,10 +14,21 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+            <ul id="main-menu" class="nav navbar-nav">
                 <li><a id="menu_cg">Combat gear</a></li>
                 <li><a id="menu_ncg">Non combat gear</a></li>
                 <li><a id="menu_map">Map</a></li>
+            </ul>
+            <ul id="actions-menu" class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>  Actions <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li id="menu-load"><a href="#"><span class="glyphicon glyphicon-user"></span>  Characters</a></li>
+                        <li class="divider"></li>
+                        <li id="menu-save"><a href="#"><span class="glyphicon glyphicon-floppy-disk"></span>  Save</a></li>
+                        <li id="menu-new"><a href="#"><span class="glyphicon glyphicon-file"></span>  New</a></li>
+                    </ul>
+                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -37,6 +48,44 @@
         </div>
         <div class="panel-body alert-body">
             <span id="alert-message">[Message]</span>
+        </div>
+    </div>
+</div>
+
+<div id="global-save-name">
+    <div class="panel panel-default panel-info">
+        <div class="panel-heading alert-body">
+            <div class="row">
+                <div class="col-xs-6"><h5>Save character As</h5></div>
+                <div class="col-xs-6">
+                    <button id="save-name-close" type="button" class="btn btn-default btn-sm pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body alert-body">
+            <input type="text" id="save-as-name">
+            <button type="button" class="btn btn-default btn-sm" id="save-character-button">Save</button>
+        </div>
+    </div>
+</div>
+
+<div id="global-load-name">
+    <div class="panel panel-default panel-info">
+        <div class="panel-heading alert-body">
+            <div class="row">
+                <div class="col-xs-6"><h5>Load character</h5></div>
+                <div class="col-xs-6">
+                    <button id="load-name-close" type="button" class="btn btn-default btn-sm pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body alert-body">
+            <input type="text" id="load-as-name">
+            <button type="button" class="btn btn-default btn-sm" id="load-character-button">Load</button>
         </div>
     </div>
 </div>
