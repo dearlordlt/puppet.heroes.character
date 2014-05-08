@@ -2,12 +2,32 @@
 /*------------------------------------*/
 $("li[id^=editCombatSkill]").hide();
 $("table[id=shieldStatistics]").hide();
-$( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-select"/>' );
 /*------------------------------------*/
 
+function vigor_table_fill () {
 
 
-$( ".custom-vigor-table" )
+        for (var i, i=0 ; i < cg_tpl.vigorFatigue ; i++){
+        $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-permanent"/>' );
+         }
+
+
+            for (var i, i=0 ; i < cg_tpl.vigorUsed ; i++){
+        $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-used"/>' );
+         }
+
+           $( ".custom-vigor-table" ).append( "<br>" );
+
+    for (var a, a=0 ; a < 6; a++) {
+    for (var i, i=0 ; i < cg_tpl.vigorSelect; i++){
+        $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-select"/>' );
+         }
+        $( ".custom-vigor-table" ).append( "<br>" );
+         }
+
+};
+
+vigor_table_fill();
 
 $("button[id^=attrMinusButton]").click(function () {
     var arrayPlace = this.id.match(/\d+/),

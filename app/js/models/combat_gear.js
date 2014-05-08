@@ -37,7 +37,7 @@ var cg_tpl = new model_cg_tpl(
         {combatSkillname: "Unbalanced",          combatSkillValue: 10 , combatSkillPointsValue : 22},
         {combatSkillname: "Crossbows",          combatSkillValue: 15 , combatSkillPointsValue : 31}
     ],
-    100,    //Vigor pool
+    15,    //Vigor pool
     0,      //Used Vigor
     0       //Vigor Fatigue
 );
@@ -61,9 +61,9 @@ function new_cg_tpl() {
             //Skills array
     [
     ],
-    100,    //Vigor pool
-    0,      //Used Vigor
-    0       //Vigor Fatigue
+    20,    //Vigor pool
+    15,      //Used Vigor
+    5       //Vigor Fatigue
 
     );
 
