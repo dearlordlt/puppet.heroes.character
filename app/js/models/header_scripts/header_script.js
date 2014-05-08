@@ -19,8 +19,52 @@ if(!supports_html5_storage()) {
 
 //Make stuff draggable
 $("#global-alert").draggable();
+$("#global-save-name").draggable();
+$("#global-load-name").draggable();
 
 //Events
 $("#global-alert button").click(function () {
     $("#global-alert").toggle(200);
+});
+
+$("#save-name-close").click(function () {
+    $("#global-save-name").hide(200);
+});
+
+$("#load-name-close").click(function () {
+    $("#global-load-name").hide(200);
+});
+
+$("#menu-new").click(function () {
+    $("#menu-save").show();
+    $("#main-menu").show(200);
+
+    newMap();
+});
+
+$("#menu-save").click(function () {
+    $("#global-save-name").show(200);
+    $("#save-as-name").val(ncg_tpl.character.Name);
+});
+
+$("#menu-load").click(function () {
+    $("#global-load-name").show(200);
+    $("#load-as-name").val(ncg_tpl.character.Name);
+});
+
+$("#save-character-button").click(function() {
+    localStorage["puppet.hero.#."+ncg_tpl.character.Name+".cg"] = JSON.stringify(cg_tpl);
+    localStorage["puppet.hero.#."+ncg_tpl.character.Name+".ncg"] = JSON.stringify(ncg_tpl);
+    localStorage["puppet.hero.#."+ncg_tpl.character.Name+".map"] = JSON.stringify(map_tpl);
+
+    $("#global-save-name").hide(200);
+});
+
+$("#load-character-button").click(function() {
+    cg_tpl = JSON.parse(localStorage["puppet.hero.#."+$("#load-as-name").val()+".cg"]);
+    ncg_tpl = JSON.parse(localStorage["puppet.hero.#."+$("#load-as-name").val()+".ncg"]);
+    map_tpl = JSON.parse(localStorage["puppet.hero.#."+$("#load-as-name").val()+".map"]);
+
+    $("#global-load-name").hide(200);
+    $("#main-menu").show(200);
 });

@@ -60,6 +60,22 @@ float: none;
     display: none;
 }
 
+#global-save-name {
+    position: absolute;
+    top: 50%;
+    left: 200px;
+    z-index: 10000001;
+    display: none;
+}
+
+#global-load-name {
+    position: absolute;
+    top: 50%;
+    left: 200px;
+    z-index: 10000002;
+    display: none;
+}
+
 .alert-body {
     min-width: 300px;
 }
