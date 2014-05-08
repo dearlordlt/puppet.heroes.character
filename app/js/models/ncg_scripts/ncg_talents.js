@@ -1,8 +1,14 @@
 var COLOR_ENABLED = "#ffffff";
-var COLOR_DISABLED = "#aaaaaa";
-var COLOR_TAKEN = "#428bca";
+var COLOR_DISABLED = "#3276b1";
+var COLOR_TAKEN = "#5cb85c";
 var isOppositeDisabled = false;
 var disabledTalentColumns = [];
+
+function initTalents()
+{
+    //TODO: redraw talen circle.
+}
+initTalents();
 
 function isColumnDisabled(_column)
 {
@@ -25,7 +31,7 @@ $(".ncgTalentBtn").click(function()
     var _siblings = "";
     if ($(this).data("siblings") != undefined) _siblings = ($(this).data("siblings")).split(";");
 
-    $(this).data("status","taken");
+    $(this).data("status","disabled");
     $(".ncgTalentPolygon").each(function(index)
     {
         var _polygonPosition = $(this).data("row")+","+$(this).data("column");
@@ -34,6 +40,8 @@ $(".ncgTalentBtn").click(function()
             if (_polygonPosition == _children[i])
             {
                 $(this).data("status","taken");
+                ncg_tpl.talents[$(this).data("name")] = $(this).data("row");
+                $("#talent-"+$(this).data("name")).text($(this).data("row"));
             }
         }
     });
@@ -75,7 +83,7 @@ $(".ncgTalentBtn").click(function()
         });
     }
 
-    if(_clickedRow == 2)
+    if(_clickedRow == 2) //TODO: disable level 2 buttons on positions +3 and -3, when first level 2 talent picked.
     {
         var _thisColumn = parseInt($(this).data("column"));
         $(".ncgTalentBtn").each(function(index)
@@ -84,6 +92,8 @@ $(".ncgTalentBtn").click(function()
             var _disableRight = _thisColumn + 1;
             if (_disableLeft < 1) _disableLeft = 8;
             if (_disableRight > 8) _disableRight = 1;
+
+
             if (parseInt($(this).data("column")) == _disableLeft || parseInt($(this).data("column")) == _disableRight)
             {
                 if ($(this).data("row") == "2")
