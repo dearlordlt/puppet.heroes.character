@@ -3,7 +3,7 @@ if(!supports_html5_storage()) {
     phAlert("System alert", "Local storage is not supported by your system. Try to use different browser");
 
     //Check if user already have data setup
-    if(!localStorage["puppet.heroes.characters"])
+
 }
 
 //Make stuff draggable
