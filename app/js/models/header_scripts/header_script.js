@@ -36,8 +36,8 @@ $("#load-name-close").click(function () {
 });
 
 $("#menu-new").click(function () {
-    $("#menu-save").show();
     $("#main-menu").show(200);
+    $("#menu-save").show();
 
     newMap ();
     new_ncg_tpl ();
