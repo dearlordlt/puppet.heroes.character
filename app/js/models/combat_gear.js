@@ -42,7 +42,7 @@ var cg_tpl = new model_cg_tpl(
     0       //Vigor Fatigue
 );
 
-function new_cg-tpl(
+function new_cg_tpl() {
     cg_tpl = new model_cg_tpl(
      "Combat Gear", //title
     0,  //attributePoints
@@ -67,4 +67,4 @@ function new_cg-tpl(
 
     );
 
-)
+};
