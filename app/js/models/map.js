@@ -11,3 +11,12 @@ var map_tpl = new model_map_tpl(
     15, /* sizeY */
     false /* toggleCoords */
 );
+
+function newMap() {
+    map_tpl = new model_map_tpl(
+        "Map", /* Title */
+        13, /* sizeX */
+        15, /* sizeY */
+        false /* toggleCoords */
+    );
+}

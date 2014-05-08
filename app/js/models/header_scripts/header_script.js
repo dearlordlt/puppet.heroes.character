@@ -1,3 +1,6 @@
+$("#main-menu").hide(); //Nothing to work with
+$("#menu-save").hide(); //Nothing to save
+
 if(!supports_html5_storage()) {
     $("#actions-menu").hide();
     phAlert(
