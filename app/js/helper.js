@@ -90,3 +90,14 @@ function phAlert(_header, _message) {
     $("#alert-header").html(_header);
     $("#alert-message").html(_message);
 }
+
+/**
+* Checks if web storage is available
+*/
+function supports_html5_storage() {
+  try {
+    return 'localStorage' in window && window['localStorage'] !== null;
+  } catch (e) {
+    return false;
+  }
+}
