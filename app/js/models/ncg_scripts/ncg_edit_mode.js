@@ -17,37 +17,31 @@ $(".ncg-character-info").each(function (index) {
     });
 });
 
+function characterFormDanger (_originalAttr,_originalBtnAttr) {
+     if ($("#ncg-character-edit").hasClass("has-error")) return false;
+     $("#ncg-character-edit").attr('class', "has-error " + _originalAttr);
+     $("#ncg-character-btn-save").attr('class', "btn-danger " + _originalBtnAttr);
+}
+
+
+
 $("#ncg-character-btn-save").click(function () {
-
-
 
     var _originalAttr = $("#ncg-character-edit").attr("class");
     var _originalBtnAttr = $("#ncg-character-btn-save").attr("class");
     var _characterItemValue = $("#ncg-character-input").val();
     var _characterItemKey = $("#ncg-character-input").data("key");
     if (_characterItemKey == "Age") {
-        if (!isNumber(_characterItemValue)) {
-            $("#ncg-character-edit").attr('class', "has-error " + _originalAttr);
-            $("#ncg-character-btn-save").attr('class', "btn-danger " + _originalBtnAttr);
-            return;
-        }
-        if (parseInt(_characterItemValue) < 0) {
-            $("#ncg-character-edit").attr('class', "has-error " + _originalAttr);
-            $("#ncg-character-btn-save").attr('class', "btn-danger " + _originalBtnAttr);
-            return;
-        }
-        if (_characterItemValue.length > 5) {
-            $("#ncg-character-edit").attr('class', "has-error " + _originalAttr);
-            $("#ncg-character-btn-save").attr('class', "btn-danger " + _originalBtnAttr);
+        if (!isIntegerAge(parseInt(_characterItemValue))) {
+            characterFormDanger(_originalAttr, _originalBtnAttr);
             return;
         }
         ncg_tpl.character[_characterItemKey] = _characterItemValue;
         loadPath("ncg_tpl");
-    }
+        }
     else {
         if (_characterItemValue.length < 2 || _characterItemValue.length > 30) {
-            $("#ncg-character-edit").attr('class', "has-error " + _originalAttr);
-            $("#ncg-character-btn-save").attr('class', "btn-danger " + _originalBtnAttr);
+            characterFormDanger(_originalAttr, _originalBtnAttr);
             return;
         }
         ncg_tpl.character[_characterItemKey] = _characterItemValue;
