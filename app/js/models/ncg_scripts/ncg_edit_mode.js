@@ -1,5 +1,3 @@
-$(".edit-mode-item").hide(); // Hide edit mode buttons.
-
 //EDIT buttons ON/OFF.
 $("#edit-mode-btn").click(function() {
     $(".edit-mode-item").toggle();
