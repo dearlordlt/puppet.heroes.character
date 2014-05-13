@@ -24,6 +24,9 @@ function vigor_table_fill () {
 };
 
 vigor_table_fill();
+/*-----------------------------------
+    Attribute control scripts
+------------------------------------*/
 
 $("button[id^=attrMinusButton]").click(function () {
     var arrayPlace = this.id.match(/\d+/),
@@ -80,20 +83,14 @@ $("button[id^=attrPlusButton]").click(function () {
     $("#collapseOne" + arrayPlace).addClass("panel-collapse collapse in");
 });
 
-$("#newCombatSkill").toggle();
+/*-----------------------------------
+    End of Attribute control scripts
+------------------------------------*/
 
-$("#addNewCombatSkillButton").click(function()
-{
-    $("#addNewCombatSkillButton").hide();
-    $("#newCombatSkill").show();
-});
+/*-----------------------------------
+    Burden control scripts
+------------------------------------*/
 
-$("#cancelNewCombatSkillButton").click(function()
-{
-    $("#newCombatSkill").hide();
-    $("#addNewCombatSkillButton").show();
-
-});
 $("#increaseBurden").click(function () {
         cg_tpl.burden += 1;
     loadPath("cg_tpl");
@@ -102,3 +99,21 @@ $("#decreaseBurden").click(function () {
         cg_tpl.burden -= 1;
     loadPath("cg_tpl");
 });
+
+
+/*-----------------------------------
+    End of Burden control scripts
+------------------------------------*/
+$("#editCombatSkill").hide();
+$("#addNewCombatSkillButton , #cancelCombatSkilledit").click(function () {
+        $("#editCombatSkill").toggle();
+        $("#addNewCombatSkill").toggle();
+});
+
+/*-----------------------------------
+Combat Skill control scripts
+------------------------------------*/
+
+/*-----------------------------------
+End of Skill control scripts
+------------------------------------*/

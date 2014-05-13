@@ -264,25 +264,28 @@
                                 <div class="col-sm-5 edit-mode-menu">
                                     <h4>Combat Skills</h4>
                                 </div>
-                                <div class="col-sm-7 edit-mode-menu">
+                                <div class="col-sm-6 edit-mode-menu" id="editCombatSkill">
                                     <div class="pull-right">
                                         <div class="input-group input-group-sm">
                                             <input class="form-control" type="text">
-                                                <div class="input-group-btn">
-                                                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></button>
-                                                    <ul class="dropdown-menu pull-right">
-                                                        {{#each combatSkills}}
-                                                        <li><a href="#">{{this.combatSkillname}}</a></li>
-                                                        {{/each}}
-                                                    </ul>
-                                                    <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
-                                                    <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
-                                                    <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
-                                                    <span class="badge badge-success edit-mode-menu-skills">0</span>
+                                                <div class="input-group-btn" >
+                                                    <button class="btn btn-primary btn-sm" id="saveNewCombatSkill"><span class="glyphicon glyphicon-ok"></span></button>
+                                                    <button class="btn btn-primary btn-sm" id="removeCombatSkill"><span class="glyphicon glyphicon-remove"></span></button>
+                                                    <button class="btn btn-primary btn-sm btn-danger" id="cancelCombatSkilledit"><span class="glyphicon glyphicon-ban-circle"></span></button>
+
                                                 </div>
                                         </div>
+
                                     </div>
                                 </div>
+                                 <div class="col-sm-6 edit-mode-menu" id="addNewCombatSkill">
+                                     <div class="pull-right">
+                                  <button class="btn btn-primary btn-sm" id="addNewCombatSkillButton"><span class="glyphicon glyphicon-plus"></span></button>
+                                    </div>
+                                </div>
+                               <div class="col-sm-1 edit-mode-menu">
+                                <span class="badge badge-success">0</span>
+                              </div>
                             </div>
                         </div>
                 <div class="panel-body">
@@ -291,19 +294,19 @@
                             <div class="col-sm-6" style="padding-right:5px;padding-left:5px; padding-bottom:5px; ">
                                 <a class="list-group-item" id="combatSkillNumber{{@index}}">
                                     <div class="row">
-                                        <div class="col-sm-4" style="padding-right:0px;">
+                                        <div class="col-sm-4 edit-mode-menu" style="padding-right:0px;">
                                         {{this.combatSkillname}}
                                         </div>
-                                        <div  class="col-sm-4" style="padding-left:0px;">
+                                        <div  class="col-sm-4 edit-mode-menu" style="padding-left:0px;">
                                             <div class="btn-group pull-right">
-                                                 <button class="btn btn-primary btn-sm" id="deleteCombatSkillButton{{@index}}"><span class="glyphicon glyphicon-minus"></button>
-                                                 <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button>
+                                                 <button class="btn btn-primary btn-sm" id="combatSkillMinusButton{{@index}}"><span class="glyphicon glyphicon-minus"></button>
+                                                 <button class="btn btn-primary btn-sm" id="combatSkillPlusButton{{@index}}"><span class="glyphicon glyphicon-plus"></span></button>
                                             </div>
                                         </div>
-                                        <div class="col-sm-2 pull-right">
+                                        <div class="col-sm-2 edit-mode-menu">
                                             <span class="badge pull-right">{{this.combatSkillValue}}</span>
                                         </div>
-                                        <div  class="col-sm-2 pull-right" style="padding-right:0px; padding-left:0px;">
+                                        <div  class="col-sm-2  edit-mode-menu">
                                             <span class="badge badge-success pull-right">{{this.combatSkillPointsValue}}</span>
                                         </div>
                                     </div>
