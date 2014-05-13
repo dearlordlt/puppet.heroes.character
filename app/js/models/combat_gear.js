@@ -16,7 +16,7 @@ var cg_tpl = new model_cg_tpl(
     "Combat Gear", //title
     0,  //attributePoints
     0,  //combatSkillPoints
-    7,  //
+    0,  //totalSkill Points
     [
         {attributeName : "Strength",   attributeValue : 10 , attriPointValue: 220},  // Base attributes nonchangible
         {attributeName : "Stamina",    attributeValue : 10 , attriPointValue: 50},
@@ -29,13 +29,9 @@ var cg_tpl = new model_cg_tpl(
     20,     //Maximum Attribute value
             //Skills array
     [
-        {combatSkillname: "Athletics",      combatSkillValue: 79 , combatSkillPointsValue : 203},
-        {combatSkillname: "Evade",          combatSkillValue: 35 , combatSkillPointsValue : 102},
-        {combatSkillname: "Close Quarters", combatSkillValue:  5 , combatSkillPointsValue : 7},
-        {combatSkillname: "Blades",          combatSkillValue: 9 , combatSkillPointsValue : 18},
-        {combatSkillname: "Polearms",          combatSkillValue: 16 , combatSkillPointsValue : 35},
-        {combatSkillname: "Unbalanced",          combatSkillValue: 10 , combatSkillPointsValue : 22},
-        {combatSkillname: "Crossbows",          combatSkillValue: 15 , combatSkillPointsValue : 31}
+        {combatSkillname: "Athletics",      combatSkillValue: 0 , combatSkillPointsValue : 0},
+        {combatSkillname: "Evade",          combatSkillValue: 0 , combatSkillPointsValue : 0},
+        {combatSkillname: "Close Quarters", combatSkillValue: 0 , combatSkillPointsValue : 0},
     ],
     15,    //Vigor pool
     0,      //Used Vigor
@@ -47,7 +43,7 @@ function new_cg_tpl() {
      "Combat Gear", //title
     0,  //attributePoints
     0,  //combatSkillPoints
-    7,  //
+    0,  //totalSkillPoints
     [
         {attributeName : "Strength",   attributeValue : 10 , attriPointValue: 0},  // Base attributes nonchangible
         {attributeName : "Stamina",    attributeValue : 10 , attriPointValue: 0},
@@ -60,13 +56,9 @@ function new_cg_tpl() {
     20,     //Maximum Attribute value
             //Skills array
     [
-        {combatSkillname: "Athletics",      combatSkillValue: 10 , combatSkillPointsValue : 22},
-        {combatSkillname: "Evade",          combatSkillValue: 11 , combatSkillPointsValue : 26},
-        {combatSkillname: "Close Quarters", combatSkillValue:  5 , combatSkillPointsValue : 7},
-        {combatSkillname: "Blades",          combatSkillValue: 9 , combatSkillPointsValue : 18},
-        {combatSkillname: "Polearms",          combatSkillValue: 10 , combatSkillPointsValue : 22},
-        {combatSkillname: "Unbalanced",          combatSkillValue: 10 , combatSkillPointsValue : 22},
-        {combatSkillname: "Crossbows",          combatSkillValue: 19 , combatSkillPointsValue : 31}
+        {combatSkillname: "Athletics",      combatSkillValue: 0 , combatSkillPointsValue : 0},
+        {combatSkillname: "Evade",          combatSkillValue: 0 , combatSkillPointsValue : 0},
+        {combatSkillname: "Close Quarters", combatSkillValue: 0 , combatSkillPointsValue : 0},
     ],
     20,    //Vigor pool
     15,      //Used Vigor
