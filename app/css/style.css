@@ -53,6 +53,11 @@ float: none;
   background-color: #1a1a1a;
 }
 
+.badge-vigor-used {
+  background-color: #333;
+}
+
+
 #global-alert {
     position: absolute;
     top: 50%;
@@ -79,6 +84,7 @@ float: none;
 
 .alert-body {
     min-width: 300px;
+}
 =======
 .vigor-used {
     color: #101010;
@@ -89,11 +95,10 @@ float: none;
 }
 
 .vigor-select{
-<<<<<<< HEAD
-    color :#4cae4c;
->>>>>>> Updated visual styling of Encumberance, Vigor, Damage panels
+
+    color :#999;
+
 =======
-    color :#ddd;
 }
 
 .total-color{

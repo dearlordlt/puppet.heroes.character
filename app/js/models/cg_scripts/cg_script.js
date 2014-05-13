@@ -2,12 +2,31 @@
 /*------------------------------------*/
 $("li[id^=editCombatSkill]").hide();
 $("table[id=shieldStatistics]").hide();
-$( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-select"/>' );
 /*------------------------------------*/
 
+function vigor_table_fill () {
+        for (var i, i=0 ; i < cg_tpl.vigorFatigue ; i++){
+            $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-permanent" style="padding-right:0px; padding-left:0px;"/>' );
+             }
+            for (var i, i=0 ; i < cg_tpl.vigorUsed ; i++){
+        $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-used" style="padding-right:0px; padding-left:0px;"/>' );
+         }
 
+        $( ".custom-vigor-table" ).append( "<br>" );
 
-$( ".custom-vigor-table" )
+        for (var a, a=0 ; a < 6; a++) {
+        for (var i, i=0 ; i < cg_tpl.vigorSelect; i++){
+            $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-select" style="padding-right:0px; padding-left:0px;"/>' );
+             }
+        $( ".custom-vigor-table" ).append( "<br>" );
+         }
+
+};
+
+vigor_table_fill();
+/*-----------------------------------
+    Attribute control scripts
+------------------------------------*/
 
 $("button[id^=attrMinusButton]").click(function () {
     var arrayPlace = this.id.match(/\d+/),
@@ -17,6 +36,7 @@ $("button[id^=attrMinusButton]").click(function () {
 
     if (cg_tpl.Attributes[arrayPlace].attributeValue > 10) {
         cg_tpl.attributesPoints -= (Math.ceil((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
+        cg_tpl.Attributes[arrayPlace].attriPointValue -= (Math.ceil((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
     }
 
 
@@ -28,6 +48,7 @@ $("button[id^=attrMinusButton]").click(function () {
 
     if (cg_tpl.Attributes[arrayPlace].attributeValue < 10) {
         cg_tpl.attributesPoints += (Math.floor((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
+        cg_tpl.Attributes[arrayPlace].attriPointValue += (Math.floor((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
     }
     cg_tpl.points = cg_tpl.attributesPoints + cg_tpl.combatSkillPoints;
     loadPath("cg_tpl");
@@ -42,6 +63,7 @@ $("button[id^=attrPlusButton]").click(function () {
 
     if (cg_tpl.Attributes[arrayPlace].attributeValue < 10) {
         cg_tpl.attributesPoints -= (Math.floor((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
+        cg_tpl.Attributes[arrayPlace].attriPointValue -= (Math.floor((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
     }
 
     if (_validatesmall >= 20) {
@@ -53,6 +75,7 @@ $("button[id^=attrPlusButton]").click(function () {
 
     if (cg_tpl.Attributes[arrayPlace].attributeValue > 10) {
         cg_tpl.attributesPoints += (Math.ceil((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
+        cg_tpl.Attributes[arrayPlace].attriPointValue += (Math.ceil((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
     }
      cg_tpl.points = cg_tpl.attributesPoints + cg_tpl.combatSkillPoints;
     loadPath("cg_tpl");
@@ -60,18 +83,37 @@ $("button[id^=attrPlusButton]").click(function () {
     $("#collapseOne" + arrayPlace).addClass("panel-collapse collapse in");
 });
 
-$("#newCombatSkill").toggle();
+/*-----------------------------------
+    End of Attribute control scripts
+------------------------------------*/
 
-$("#addNewCombatSkillButton").click(function()
-{
-    $("#addNewCombatSkillButton").hide();
-    $("#newCombatSkill").show();
+/*-----------------------------------
+    Burden control scripts
+------------------------------------*/
+
+$("#increaseBurden").click(function () {
+        cg_tpl.burden += 1;
+    loadPath("cg_tpl");
+});
+$("#decreaseBurden").click(function () {
+        cg_tpl.burden -= 1;
+    loadPath("cg_tpl");
 });
 
-$("#cancelNewCombatSkillButton").click(function()
-{
-    $("#newCombatSkill").hide();
-    $("#addNewCombatSkillButton").show();
 
+/*-----------------------------------
+    End of Burden control scripts
+------------------------------------*/
+$("#editCombatSkill").hide();
+$("#addNewCombatSkillButton , #cancelCombatSkilledit").click(function () {
+        $("#editCombatSkill").toggle();
+        $("#addNewCombatSkill").toggle();
 });
 
+/*-----------------------------------
+Combat Skill control scripts
+------------------------------------*/
+
+/*-----------------------------------
+End of Skill control scripts
+------------------------------------*/
