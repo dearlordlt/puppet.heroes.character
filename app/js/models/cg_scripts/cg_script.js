@@ -33,6 +33,7 @@ $("button[id^=attrMinusButton]").click(function () {
 
     if (cg_tpl.Attributes[arrayPlace].attributeValue > 10) {
         cg_tpl.attributesPoints -= (Math.ceil((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
+        cg_tpl.Attributes[arrayPlace].attriPointValue -= (Math.ceil((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
     }
 
 
@@ -44,6 +45,7 @@ $("button[id^=attrMinusButton]").click(function () {
 
     if (cg_tpl.Attributes[arrayPlace].attributeValue < 10) {
         cg_tpl.attributesPoints += (Math.floor((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
+        cg_tpl.Attributes[arrayPlace].attriPointValue += (Math.floor((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
     }
     cg_tpl.points = cg_tpl.attributesPoints + cg_tpl.combatSkillPoints;
     loadPath("cg_tpl");
@@ -58,6 +60,7 @@ $("button[id^=attrPlusButton]").click(function () {
 
     if (cg_tpl.Attributes[arrayPlace].attributeValue < 10) {
         cg_tpl.attributesPoints -= (Math.floor((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
+        cg_tpl.Attributes[arrayPlace].attriPointValue -= (Math.floor((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
     }
 
     if (_validatesmall >= 20) {
@@ -69,6 +72,7 @@ $("button[id^=attrPlusButton]").click(function () {
 
     if (cg_tpl.Attributes[arrayPlace].attributeValue > 10) {
         cg_tpl.attributesPoints += (Math.ceil((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
+        cg_tpl.Attributes[arrayPlace].attriPointValue += (Math.ceil((((cg_tpl.Attributes[arrayPlace].attributeValue - 10) / 3) * 10) / 10)) * 10;
     }
      cg_tpl.points = cg_tpl.attributesPoints + cg_tpl.combatSkillPoints;
     loadPath("cg_tpl");
@@ -90,4 +94,11 @@ $("#cancelNewCombatSkillButton").click(function()
     $("#addNewCombatSkillButton").show();
 
 });
-
+$("#increaseBurden").click(function () {
+        cg_tpl.burden += 1;
+    loadPath("cg_tpl");
+});
+$("#decreaseBurden").click(function () {
+        cg_tpl.burden -= 1;
+    loadPath("cg_tpl");
+});
