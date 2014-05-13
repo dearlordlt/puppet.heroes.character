@@ -5,23 +5,19 @@ $("table[id=shieldStatistics]").hide();
 /*------------------------------------*/
 
 function vigor_table_fill () {
-
-
         for (var i, i=0 ; i < cg_tpl.vigorFatigue ; i++){
-        $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-permanent"/>' );
-         }
-
-
+            $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-permanent" style="padding-right:0px; padding-left:0px;"/>' );
+             }
             for (var i, i=0 ; i < cg_tpl.vigorUsed ; i++){
-        $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-used"/>' );
+        $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-used" style="padding-right:0px; padding-left:0px;"/>' );
          }
 
-           $( ".custom-vigor-table" ).append( "<br>" );
+        $( ".custom-vigor-table" ).append( "<br>" );
 
-    for (var a, a=0 ; a < 6; a++) {
-    for (var i, i=0 ; i < cg_tpl.vigorSelect; i++){
-        $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-select"/>' );
-         }
+        for (var a, a=0 ; a < 6; a++) {
+        for (var i, i=0 ; i < cg_tpl.vigorSelect; i++){
+            $( ".custom-vigor-table" ).append( '<span class="glyphicon glyphicon-fire vigor-select" style="padding-right:0px; padding-left:0px;"/>' );
+             }
         $( ".custom-vigor-table" ).append( "<br>" );
          }
 

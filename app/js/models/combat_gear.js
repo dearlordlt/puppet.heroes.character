@@ -60,6 +60,13 @@ function new_cg_tpl() {
     20,     //Maximum Attribute value
             //Skills array
     [
+        {combatSkillname: "Athletics",      combatSkillValue: 10 , combatSkillPointsValue : 22},
+        {combatSkillname: "Evade",          combatSkillValue: 11 , combatSkillPointsValue : 26},
+        {combatSkillname: "Close Quarters", combatSkillValue:  5 , combatSkillPointsValue : 7},
+        {combatSkillname: "Blades",          combatSkillValue: 9 , combatSkillPointsValue : 18},
+        {combatSkillname: "Polearms",          combatSkillValue: 10 , combatSkillPointsValue : 22},
+        {combatSkillname: "Unbalanced",          combatSkillValue: 10 , combatSkillPointsValue : 22},
+        {combatSkillname: "Crossbows",          combatSkillValue: 19 , combatSkillPointsValue : 31}
     ],
     20,    //Vigor pool
     15,      //Used Vigor
