@@ -9,9 +9,12 @@ function user(username, password, email) {
     this.email = email;
 }
 
+//db.users.remove({'email' : 'sarunas79@gmail.com'});
+
+db.users.ensureIndex({email:1} , {unique:true});
+
 var user1 = new user("saras", "saras++", "sarunas79@gmail.com");
 
-/*
 db.users.save(user1, function(err, savedUser) {
     if(err || !savedUser) {
         console.log("User " + user1.email + " not saved because of error " + err);
@@ -19,7 +22,6 @@ db.users.save(user1, function(err, savedUser) {
         console.log("User " + savedUser.email + "saved");
     }
 });
-*/
 
 db.users.find(user1, function(err, users) {
     if(err || !users.length) console.log("User " + user.email + " not found");
