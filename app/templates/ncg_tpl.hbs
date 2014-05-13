@@ -199,7 +199,7 @@
                                 <div class="col-sm-5 edit-mode-menu">
                                     <h4>Skills</h4>
                                 </div>
-                                <div class="col-sm-7 edit-mode-menu edit-mode-item">
+                                <div class="col-sm-7 edit-mode-menu edit-mode-item" align="right">
                                     <div class="pull-right">
                                     <div class="input-group input-group-sm">
                                         <input class="form-control" type="text">
@@ -319,12 +319,15 @@
                                    <h4>Possessions</h4>
                                </div>
                                <div class="col-sm-8 edit-mode-menu edit-mode-item">
-                                   <div class="input-group input-group-sm">
-                                       <input class="form-control" type="text">
+                                   <div align="right">
+                                       <button id="ncg-possessions-add" class="btn btn-primary btn-sm" style=""><span class="glyphicon glyphicon-plus"></span></button>
+                                   </div>
+                                   <div id="ncg-possessions-edit" class="input-group input-group-sm">
+                                       <input id="ncg-possessions-input" class="form-control" type="text">
                                        <div class="input-group-btn">
-                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
-                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
-                                           <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                                           <button id="ncg-possessions-btn-save" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                           <button id="ncg-possessions-btn-cancel" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                           <button id="ncg-possessions-btn-remove" class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
                                        </div>
                                    </div>
                                </div>
@@ -333,12 +336,12 @@
                         <div class="panel-body scrollable-panel">
                             <div class="list-group">
                                 {{#each possessions}}
-                                    <a class="list-group-item">
+                                    <a id="ncg-possessions-item-{{@index}}" data-key="{{@key}}" data-value="{{this}}" class="list-group-item ncg-possessions-info">
                                         <div class="row">
                                             <div class="col-sm-9 edit-mode-menu">
                                                  {{this}}
                                             </div>
-                                            <div class="col-sm-3 edit-mode-menu">
+                                            <div class="col-sm-3 edit-mode-menu" align="right">
                                                 <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-file"></span></button>
                                             </div>
                                         </div>
@@ -356,12 +359,15 @@
                                    <h4>Goals</h4>
                                </div>
                                <div class="col-sm-9 edit-mode-menu edit-mode-item">
-                                   <div class="input-group input-group-sm">
-                                       <input class="form-control" type="text">
+                                   <div align="right">
+                                       <button id="ncg-goals-add" class="btn btn-primary btn-sm" style=""><span class="glyphicon glyphicon-plus"></span></button>
+                                   </div>
+                                   <div id="ncg-goals-edit" class="input-group input-group-sm">
+                                       <input id="ncg-goals-input" class="form-control" type="text">
                                        <div class="input-group-btn">
-                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
-                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
-                                           <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                                           <button id="ncg-goals-btn-save" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                           <button id="ncg-goals-btn-cancel" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                           <button id="ncg-goals-btn-remove" class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
                                        </div>
                                    </div>
                                </div>
@@ -370,12 +376,12 @@
                         <div class="panel-body scrollable-panel">
                             <div class="list-group">
                                 {{#each goals}}
-                                    <a class="list-group-item">
+                                    <a id="ncg-goals-item-{{@index}}" data-key="{{@key}}" data-value="{{this}}" class="list-group-item ncg-goals-info">
                                         <div class="row">
                                             <div class="col-sm-9 edit-mode-menu">
                                                  {{this}}
                                             </div>
-                                            <div class="col-sm-3 edit-mode-menu">
+                                            <div class="col-sm-3 edit-mode-menu" align="right">
                                                 <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-file"></span></button>
                                             </div>
                                         </div>
@@ -395,12 +401,15 @@
                                    <h4>Knowledges</h4>
                                 </div>
                                 <div class="col-sm-8 edit-mode-menu edit-mode-item">
-                                    <div class="input-group input-group-sm">
-                                        <input class="form-control" type="text">
+                                    <div align="right">
+                                       <button id="ncg-knowledges-add" class="btn btn-primary btn-sm" style=""><span class="glyphicon glyphicon-plus"></span></button>
+                                    </div>
+                                    <div id="ncg-knowledges-edit" class="input-group input-group-sm">
+                                        <input id="ncg-knowledges-input" class="form-control" type="text">
                                         <div class="input-group-btn">
-                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
-                                            <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
-                                            <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                                            <button id="ncg-knowledges-btn-save" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                            <button id="ncg-knowledges-btn-cancel" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                            <button id="ncg-knowledges-btn-remove" class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
                                         </div>
                                     </div>
                                 </div>
@@ -409,12 +418,12 @@
                         <div class="panel-body scrollable-panel">
                             <div class="list-group">
                                 {{#each knowledges}}
-                                    <a class="list-group-item">
+                                    <a id="ncg-knowledges-item-{{@index}}" data-key="{{@key}}" data-value="{{this}}" class="list-group-item ncg-knowledges-info">
                                         <div class="row">
                                             <div class="col-sm-9 edit-mode-menu">
                                                  {{this}}
                                             </div>
-                                            <div class="col-sm-3 edit-mode-menu">
+                                            <div class="col-sm-3 edit-mode-menu" align="right">
                                                 <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-file"></span></button>
                                             </div>
                                         </div>
@@ -432,12 +441,15 @@
                                    <h4>Pockets</h4>
                                </div>
                                <div class="col-sm-9 edit-mode-menu edit-mode-item">
-                                   <div class="input-group input-group-sm">
-                                       <input class="form-control" type="text">
+                                   <div align="right">
+                                       <button id="ncg-pockets-add" class="btn btn-primary btn-sm" style=""><span class="glyphicon glyphicon-plus"></span></button>
+                                    </div>
+                                   <div id="ncg-pockets-edit" class="input-group input-group-sm">
+                                       <input id="ncg-pockets-input" class="form-control" type="text">
                                        <div class="input-group-btn">
-                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
-                                           <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
-                                           <button class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                                           <button id="ncg-pockets-btn-save" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"></span></button>
+                                           <button id="ncg-pockets-btn-cancel" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                                           <button id="ncg-pockets-btn-remove" class="btn btn-primary btn-sm btn-danger"><span class="glyphicon glyphicon-ban-circle"></span></button>
                                        </div>
                                    </div>
                                </div>
@@ -446,12 +458,12 @@
                         <div class="panel-body scrollable-panel">
                             <div class="list-group">
                                 {{#each pockets}}
-                                    <a class="list-group-item">
+                                    <a id="ncg-pockets-item-{{@index}}" data-key="{{@key}}" data-value="{{this}}" class="list-group-item ncg-pockets-info">
                                         <div class="row">
                                             <div class="col-sm-9 edit-mode-menu">
                                                  {{this}}
                                             </div>
-                                            <div class="col-sm-3 edit-mode-menu">
+                                            <div class="col-sm-3 edit-mode-menu" align="right">
                                                 <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-file"></span></button>
                                             </div>
                                         </div>

@@ -11,6 +11,14 @@ function isNumber(n) {
 }
 
 /**
+ * Checks is given argument is valid age
+ * @param {int} n
+ */
+function isIntegerAge(n) {
+    return isNumber(n) && n>0 && n<=Infinity && n%1===0;
+}
+
+/**
  * Checks is given argument is even
  * @param {int} n
  */
